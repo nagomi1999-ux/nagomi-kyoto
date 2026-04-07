@@ -1233,12 +1233,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
         <input type="hidden" name="access_key" value="f0fe1e71-8456-4be6-bd21-32b35236ebde">
         <input type="hidden" name="subject" value="【和nagomi】お問い合わせが届きました">
         <input type="hidden" name="from_name" value="和nagomi Premium Wellness">
-        <input type="hidden" name="replyto" value="kyoto@nagomi.net">
-        <input type="hidden" name="redirect" value="false">
-        <!-- 自動返信設定 -->
-        <input type="hidden" name="autoresponse" value="true">
-        <input type="hidden" name="autoresponse_subject" value="【和nagomi】お問い合わせを受け付けました">
-        <input type="hidden" name="autoresponse_message" value="この度はお問い合わせいただき、ありがとうございます。&#10;&#10;内容を確認の上、2営業日以内にご連絡いたします。&#10;&#10;数日経っても返信がない場合は、メールが届いていない可能性がございます。大変お手数ですが、お電話にてご連絡いただけますと幸いです。&#10;&#10;TEL：070-8570-1320 / 0771-33-0029&#10;&#10;&#12288;&#10;和nagomi Premium Wellness&#10;紫藤 珠佑&#10;&#10;ご返信いただく場合は、kyoto@nagomi.net までご連絡ください。">
+        <input type="checkbox" name="botcheck" style="display:none;">
         <div class="form-group">
           <label>お名前 <span>必須</span></label>
           <input type="text" name="name" placeholder="例：山田 花子" required>
@@ -1305,16 +1300,16 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 
     <!-- 電話番号 -->
     <div style="margin-top:32px;padding:28px 32px;background:white;border-top:2px solid var(--sage-light);text-align:center;">
+      <p style="font-size:15px;color:var(--text-mid);margin-bottom:20px;line-height:2.1;">
+        フォーム送信後、数日経っても返信がない場合は、<br>
+        メールが届いていない可能性がございます。<br>
+        大変お手数ですが、お電話にてご連絡いただけますと幸いです。
+      </p>
       <p style="font-size:13px;letter-spacing:0.14em;color:var(--earth);margin-bottom:14px;font-weight:500;">TEL</p>
       <p style="font-family:'Noto Serif JP',serif;font-size:26px;color:var(--moss);line-height:1.8;letter-spacing:0.06em;">
         <a href="tel:07085701320" style="color:var(--moss);text-decoration:none;">070-8570-1320</a>
         　／　
         <a href="tel:0771330029" style="color:var(--moss);text-decoration:none;">0771-33-0029</a>
-      </p>
-      <p style="font-size:15px;color:var(--text-mid);margin-top:20px;line-height:2.1;">
-        フォーム送信後、数日経っても返信がない場合は、<br>
-        メールが届いていない可能性がございます。<br>
-        大変お手数ですが、お電話にてご連絡いただけますと幸いです。
       </p>
       <p style="font-size:13px;color:var(--text-light);margin-top:16px;line-height:2;padding:12px 16px;background:var(--cream);">
         ※ 携帯電話でドメイン指定受信を設定されている場合は、<br>
@@ -1371,11 +1366,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <input type="hidden" name="access_key" value="f0fe1e71-8456-4be6-bd21-32b35236ebde">
           <input type="hidden" name="subject" value="【和nagomi・業務提携】お問い合わせが届きました">
           <input type="hidden" name="from_name" value="和nagomi Premium Wellness">
-          <input type="hidden" name="replyto" value="kyoto@nagomi.net">
-          <input type="hidden" name="redirect" value="false">
-          <input type="hidden" name="autoresponse" value="true">
-          <input type="hidden" name="autoresponse_subject" value="【和nagomi】お問い合わせを受け付けました">
-          <input type="hidden" name="autoresponse_message" value="この度はお問い合わせいただき、ありがとうございます。&#10;&#10;内容を確認の上、2営業日以内にご連絡いたします。&#10;&#10;数日経っても返信がない場合は、メールが届いていない可能性がございます。大変お手数ですが、お電話にてご連絡いただけますと幸いです。&#10;&#10;TEL：070-8570-1320 / 0771-33-0029&#10;&#10;&#12288;&#10;和nagomi Premium Wellness&#10;紫藤 珠佑&#10;&#10;ご返信いただく場合は、kyoto@nagomi.net までご連絡ください。">
+          <input type="checkbox" name="botcheck" style="display:none;">
           <input type="hidden" name="type" value="業務提携・B2B">
           <div class="form-group">
             <label>会社名・ホテル名 <span>必須</span></label>
