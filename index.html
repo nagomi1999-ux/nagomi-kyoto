@@ -39,6 +39,24 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--t
 
 .field-error{display:none;font-size:12px;color:#C0392B;margin-top:6px;letter-spacing:0.06em;}
 
+/* ローディングオーバーレイ */
+#sendingOverlay{
+  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(247,243,236,0.92);z-index:9999;
+  flex-direction:column;align-items:center;justify-content:center;
+  backdrop-filter:blur(4px);
+}
+.sending-spinner{
+  width:48px;height:48px;border:2px solid var(--sage-light);
+  border-top-color:var(--moss);border-radius:50%;
+  animation:spin 0.9s linear infinite;margin-bottom:24px;
+}
+@keyframes spin{ to{transform:rotate(360deg)} }
+.sending-text{
+  font-family:'Noto Serif JP',serif;font-size:16px;
+  color:var(--text-mid);letter-spacing:0.12em;
+}
+
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   padding:20px 60px;display:flex;justify-content:space-between;align-items:center;
@@ -1247,8 +1265,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           担当者より2営業日以内にご連絡いたします。<br>
           しばらくお待ちくださいませ。<br>
           <br>
-          フォーム送信後、数日経っても返信がない場合は、<br>
-          迷惑フォルダをご確認いただくか、<br>
+          フォーム送信後、数日経っても和（nagomi）より返信がない場合は、<br>
           メールが届いていない可能性がございます。<br>
           大変お手数ですが、お電話にてご連絡いただけますと幸いです。
         </p>
@@ -1340,7 +1357,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
         <button type="submit" class="form-submit" id="fsubmitBtn">送信する</button>
         <p class="form-note" style="margin-top:16px;text-align:center;">送信後、自動返信メールが届きます</p>
         <p class="form-note" style="margin-top:10px;text-align:center;">
-          フォーム送信後、数日経っても返信がない場合は、迷惑フォルダをご確認いただくか、<br>
+          フォーム送信後、数日経っても和（nagomi）より返信がない場合は、<br>
           メールが届いていない可能性がございます。<br>
           大変お手数ですが、お電話にてご連絡いただけますと幸いです。
         </p>
@@ -1351,7 +1368,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
     <!-- 電話番号 -->
     <div style="margin-top:32px;padding:28px 32px;background:white;border-top:2px solid var(--sage-light);text-align:center;">
       <p style="font-size:15px;color:var(--text-mid);margin-bottom:20px;line-height:2.1;">
-        フォーム送信後、数日経っても返信がない場合は、<br>
+        フォーム送信後、数日経っても和（nagomi）より返信がない場合は、<br>
         メールが届いていない可能性がございます。<br>
         大変お手数ですが、お電話にてご連絡いただけますと幸いです。
       </p>
@@ -1460,6 +1477,11 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
     </div>
   </div>
 </section>
+
+<div id="sendingOverlay">
+  <div class="sending-spinner"></div>
+  <p class="sending-text">送信しています...</p>
+</div>
 
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -1642,6 +1664,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   btn.disabled = true;
   btn.textContent = '送信中...';
 
+  // ローディングオーバーレイを表示
+  var overlay = document.getElementById('sendingOverlay');
+  if (overlay) overlay.style.display = 'flex';
+
   var GAS_URL = 'https://script.google.com/macros/s/AKfycbype6W3vCtdZrFGk5cpgfJ5AD0toOvYTa4PtcRGAwaVOhJN-XoceLF_4sduWN36tTBw/exec';
 
   var data = {
@@ -1663,10 +1689,15 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     body: JSON.stringify(data)
   })
   .then(function() {
+    if (overlay) overlay.style.display = 'none';
     document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    var success = document.getElementById('formSuccess');
+    success.style.display = 'block';
+    // 送信完了メッセージまでスクロール
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
   })
   .catch(function() {
+    if (overlay) overlay.style.display = 'none';
     btn.disabled = false;
     btn.textContent = '送信する';
     alert('送信に失敗しました。お電話またはLINEにてご連絡ください。');
