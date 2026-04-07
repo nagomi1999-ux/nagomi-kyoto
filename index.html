@@ -3,16 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>快眠・睡眠改善 京都｜セロトニン活性療法 和nagomi Premium Wellness</title>
-<meta name="description" content="京都の快眠・睡眠改善専門セラピスト紫藤珠佑による、セロトニン活性療法と屋外歩行セラピー。自律神経ケアで脳から整え、深い眠りへ。全国唯一のウェルネスリトリートプログラム。">
-<meta name="keywords" content="快眠,睡眠改善,京都,セロトニン,セロトニン活性療法,自律神経,ウェルネス,リトリート,歩行セラピー,睡眠専門,セラピスト">
-<meta property="og:title" content="快眠・睡眠改善 京都｜セロトニン活性療法 和nagomi Premium Wellness">
-<meta property="og:description" content="京都の快眠・睡眠改善専門セラピスト紫藤珠佑による、セロトニン活性療法と屋外歩行セラピー。脳から整え、深い眠りへ。">
+<title>京都スリープツーリズム｜眠りを変える旅を、京都で。和nagomi Premium Wellness</title>
+<meta name="description" content="京都発・スリープツーリズム。快眠専門セラピスト紫藤珠佑によるセロトニン活性療法と屋外歩行セラピー。眠れない原因は脳疲労。京都を歩いて遊んで、気づけば整っていく。全国唯一の快眠ウェルネスリトリートプログラム。">
+<meta name="keywords" content="スリープツーリズム,京都,快眠,睡眠改善,セロトニン,セロトニン活性療法,自律神経,脳疲労,眠れない,睡眠専門,セラピスト,京都旅行,ウェルネス,リトリート,歩行セラピー,sleep tourism">
+<meta property="og:title" content="京都スリープツーリズム｜眠りを変える旅を、京都で。和nagomi Premium Wellness">
+<meta property="og:description" content="眠れない原因は脳疲労。京都を歩いて遊んで、気づけば整っていく。快眠専門セラピスト紫藤珠佑による、京都発スリープツーリズム。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nagomi-kyoto.net/">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://nagomi-kyoto.net/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nagomi-kyoto.net/ogp.jpg">
 <link rel="canonical" href="https://nagomi-kyoto.net/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -35,13 +45,14 @@ nav{
 }
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--moss);letter-spacing:0.12em}
 .nav-logo em{font-style:italic;color:var(--moss)}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{font-size:14px;color:var(--text-mid);text-decoration:none;letter-spacing:0.1em;transition:color 0.3s}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:12px;color:var(--text-mid);text-decoration:none;letter-spacing:0.06em;transition:color 0.3s}
 .nav-links a:hover{color:var(--moss)}
 .nav-cta{
   background:transparent;color:var(--moss);padding:10px 28px;
   font-size:14px;letter-spacing:0.12em;text-decoration:none;
   font-weight:500;transition:all 0.3s;border:1px solid var(--moss);
+  white-space:nowrap;flex-shrink:0;
 }
 .nav-cta:hover{background:var(--moss);color:white}
 
@@ -60,10 +71,10 @@ nav{
 }
 .hero-inner{max-width:720px;position:relative;z-index:1}
 .hero-eyebrow{
-  font-family:'Noto Sans JP',sans-serif;font-size:17px;letter-spacing:0.16em;
+  font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:0.1em;
   color:var(--earth);margin-bottom:36px;
   display:flex;align-items:center;gap:14px;font-weight:500;
-  white-space:nowrap;flex-wrap:nowrap;
+  white-space:normal;flex-wrap:wrap;
 }
 .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);display:block}
 .hero-headline{
@@ -104,23 +115,6 @@ nav{
   font-weight:400;transition:all 0.3s;border:1px solid var(--gold-light);
 }
 .btn-sub:hover{border-color:var(--earth);background:rgba(139,111,90,0.06)}
-.hero-stats{
-  display:flex;flex-wrap:wrap;gap:12px;margin-top:52px;max-width:560px;
-}
-.hero-stat{
-  flex:1;min-width:118px;padding:22px 16px;text-align:center;
-  background:white;border-bottom:3px solid var(--sage);
-  box-shadow:0 2px 16px rgba(61,102,57,0.09);
-}
-.hero-stat-n{
-  font-family:'Cormorant Garamond',serif;font-size:32px;
-  color:var(--moss);display:block;line-height:1;font-weight:600;
-}
-.hero-stat-l{
-  font-size:14px;color:var(--text-mid);letter-spacing:0.04em;
-  margin-top:8px;display:block;font-weight:400;line-height:1.6;
-}
-
 /* RECOGNITION */
 .recog{
   padding:120px 60px;background:var(--moss);
@@ -173,7 +167,7 @@ nav{
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .why-card{background:white;padding:48px 36px;border-bottom:2px solid transparent;transition:all 0.4s}
 .why-card:hover{border-bottom-color:var(--moss);transform:translateY(-4px);box-shadow:0 20px 60px rgba(61,102,57,0.1)}
-.why-num{font-family:'Cormorant Garamond',serif;font-size:56px;color:rgba(91,138,95,0.4);line-height:1;margin-bottom:20px;font-weight:500}
+.why-num{font-family:'Noto Serif JP',serif;font-size:56px;color:rgba(91,138,95,0.4);line-height:1;margin-bottom:20px;font-weight:500}
 .why-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:500;color:var(--text);margin-bottom:14px}
 .why-body{font-size:16px;line-height:2.2;color:var(--text-mid);font-weight:400}
 
@@ -201,7 +195,7 @@ nav{
   border:1px solid rgba(122,158,118,0.2);transition:all 0.3s;
 }
 .science-step:hover{border-color:var(--sage);transform:translateX(6px);background:white}
-.science-step-n{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--sage-light);line-height:1;flex-shrink:0;font-weight:300;width:36px}
+.science-step-n{font-family:'Noto Serif JP',serif;font-size:34px;color:var(--sage-light);line-height:1;flex-shrink:0;font-weight:300;width:36px}
 .science-step-title{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:500;color:var(--text);margin-bottom:5px}
 .science-step-desc{font-size:16px;color:var(--text-mid);line-height:2.0;font-weight:300}
 
@@ -227,7 +221,7 @@ nav{
 .menu-card.featured .menu-name{color:white}
 .menu-desc{font-size:17px;color:var(--text-mid);margin-bottom:28px}
 .menu-card.featured .menu-desc{color:rgba(255,255,255,0.65)}
-.menu-price{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--moss);line-height:1;margin-bottom:4px}
+.menu-price{font-family:'Noto Serif JP',serif;font-size:40px;color:var(--moss);line-height:1;margin-bottom:4px}
 .menu-card.featured .menu-price{color:var(--gold)}
 .menu-unit{font-size:15px;color:var(--text-light);margin-bottom:28px}
 .menu-card.featured .menu-unit{color:rgba(255,255,255,0.65)}
@@ -281,7 +275,7 @@ nav{
 .sched-day{padding:22px 28px;border-left:3px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);transition:all 0.3s}
 .sched-day:hover{border-left-color:white;background:rgba(255,255,255,0.18);transform:translateX(6px)}
 .sched-day.hl{border-left-color:white;background:rgba(255,255,255,0.15)}
-.sched-label{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:0.2em;color:rgba(255,255,255,0.85);margin-bottom:5px}
+.sched-label{font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:0.2em;color:rgba(255,255,255,0.85);margin-bottom:5px}
 .sched-title{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:600;color:white;margin-bottom:6px}
 .sched-desc{font-size:15px;color:rgba(255,255,255,0.95);line-height:1.9;font-weight:300}
 
@@ -318,7 +312,7 @@ nav{
 }
 .therapist-card-body{padding:24px 28px 0}
 .therapist-name{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:400;color:var(--text);margin-bottom:4px}
-.therapist-yomi{font-size:13px;color:var(--text-mid);letter-spacing:0.12em;margin-bottom:18px}
+.therapist-yomi{font-size:15px;color:var(--text-mid);letter-spacing:0.12em;margin-bottom:18px}
 .therapist-kyoto-badge{
   display:inline-flex;align-items:center;gap:6px;
   background:var(--sage-light);color:var(--moss);
@@ -328,8 +322,8 @@ nav{
 .therapist-kyoto-badge::before{content:'🌿'}
 .therapist-role{font-size:14px;color:var(--text-mid);line-height:2;font-weight:300;padding-top:16px;border-top:1px solid rgba(184,154,106,0.2)}
 .therapist-nums{display:flex;gap:16px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(184,154,106,0.15)}
-.t-num-n{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--moss);display:block;line-height:1}
-.t-num-l{font-size:13px;color:var(--text-mid);margin-top:4px;display:block;letter-spacing:0.08em}
+.t-num-n{font-family:'Noto Serif JP',serif;font-size:24px;color:var(--moss);display:block;line-height:1}
+.t-num-l{font-size:15px;color:var(--text-mid);margin-top:4px;display:block;letter-spacing:0.08em}
 .therapist-text .section-title{font-size:clamp(20px,2.4vw,28px);margin-bottom:20px}
 .therapist-body{font-size:16px;line-height:2.3;color:var(--text-mid);margin-bottom:14px;font-weight:300}
 .therapist-kyoto-note{
@@ -346,7 +340,7 @@ nav{
   margin:24px 0;line-height:1.8;
 }
 .therapist-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.therapist-tag{padding:5px 14px;border:1px solid rgba(184,154,106,0.3);font-size:13px;color:var(--earth);letter-spacing:0.06em}
+.therapist-tag{padding:5px 14px;border:1px solid rgba(184,154,106,0.3);font-size:15px;color:var(--earth);letter-spacing:0.06em}
 
 /* PHOTO GALLERY */
 .therapist-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
@@ -360,7 +354,7 @@ nav{
 .gallery-placeholder{
   width:100%;height:100%;min-height:160px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:8px;font-size:11px;letter-spacing:0.08em;
+  gap:8px;font-size:13px;letter-spacing:0.08em;
   transition:opacity 0.3s;
 }
 .gallery-placeholder:hover{opacity:0.85}
@@ -388,14 +382,14 @@ nav{
 .photo-strip-placeholder{
   width:100%;height:280px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:10px;font-size:13px;color:var(--text-mid);letter-spacing:0.08em;
+  gap:10px;font-size:15px;color:var(--text-mid);letter-spacing:0.08em;
 }
 .photo-strip-placeholder-icon{font-size:28px;opacity:0.5}
 .photo-strip-caption{
   position:absolute;bottom:0;left:0;right:0;
   padding:10px 16px;
   background:linear-gradient(transparent,rgba(0,0,0,0.35));
-  font-size:13px;color:white;letter-spacing:0.1em;
+  font-size:15px;color:white;letter-spacing:0.1em;
 }
 /* 写真帯ごとの色 */
 .ps-kyoto1{background:linear-gradient(160deg,var(--sage-light),var(--warm))}
@@ -408,7 +402,7 @@ nav{
 .faq{padding:100px 60px;background:white}
 .faq-inner{max-width:700px;margin:0 auto}
 .faq-item{border-bottom:1px solid rgba(184,154,106,0.2);overflow:hidden}
-.faq-q{padding:22px 0;font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:22px 0;font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
 .faq-q::after{content:'+';font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);flex-shrink:0;transition:transform 0.3s}
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
 .faq-a{font-size:16px;line-height:2.2;color:var(--text-mid);padding:0 0 20px;font-weight:300;display:none}
@@ -442,7 +436,7 @@ nav{
 }
 .cta-card:hover{box-shadow:0 16px 48px rgba(61,102,57,0.12);transform:translateY(-4px);border-color:var(--sage)}
 .cta-card-name{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--text);font-weight:500;margin-bottom:8px}
-.cta-card-price{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--moss);margin-bottom:14px}
+.cta-card-price{font-family:'Noto Serif JP',serif;font-size:28px;color:var(--moss);margin-bottom:14px}
 .cta-card-act{font-size:14px;color:var(--text-mid);letter-spacing:0.12em}
 .cta-card-act::after{content:' →'}
 .cta-contact{font-size:16px;color:var(--text-mid);line-height:2.6;margin-bottom:8px}
@@ -541,7 +535,35 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 .hero-inner>*:nth-child(6){animation-delay:0.68s}
 .hero-inner>*:nth-child(7){animation-delay:0.78s}
 
-/* BACK TO TOP */
+/* HAMBURGER */
+.hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;background:none;border:none;cursor:pointer;
+  padding:6px;flex-shrink:0;
+}
+.hamburger span{
+  display:block;width:100%;height:1.5px;background:var(--moss);
+  transition:all 0.3s;transform-origin:center;
+}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-drawer{
+  display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99;
+  background:rgba(247,243,236,0.98);backdrop-filter:blur(16px);
+  flex-direction:column;align-items:center;justify-content:center;gap:0;
+  padding:100px 40px 40px;
+}
+.nav-drawer.open{display:flex}
+.nav-drawer a{
+  font-family:'Noto Serif JP',serif;font-size:20px;color:var(--text);
+  text-decoration:none;letter-spacing:0.12em;padding:18px 0;
+  width:100%;text-align:center;border-bottom:1px solid rgba(184,154,106,0.15);
+  transition:color 0.3s;
+}
+.nav-drawer a:last-child{border-bottom:none}
+.nav-drawer a:hover{color:var(--moss)}
+
 .back-to-top{
   position:fixed;bottom:32px;right:32px;z-index:200;
   width:48px;height:48px;background:var(--moss);color:white;
@@ -557,10 +579,34 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 .back-to-top:hover{background:var(--sage-dark);transform:translateY(-3px)}
 .back-to-top svg{width:16px;height:16px}
 
+/* B2B */
+.b2b{padding:120px 60px;background:var(--charcoal)}
+.b2b-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.b2b .section-tag{color:var(--gold)}
+.b2b .section-tag::before{background:var(--gold)}
+.b2b .section-title{color:white}
+.b2b-body{font-size:16px;line-height:2.2;color:rgba(255,255,255,0.7);margin-bottom:20px;font-weight:300}
+.b2b-features{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+.b2b-feature{display:flex;gap:20px;align-items:flex-start;padding:24px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1)}
+.b2b-feature-icon{font-family:'Noto Serif JP',serif;font-size:28px;color:var(--gold);line-height:1;flex-shrink:0;font-weight:300;width:32px}
+.b2b-feature-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:white;margin-bottom:6px}
+.b2b-feature-desc{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.9;font-weight:300}
+.b2b-form-wrap{background:white;padding:44px 40px;border-top:3px solid var(--gold)}
+.b2b-form-title{font-family:'Noto Serif JP',serif;font-size:20px;color:var(--text);font-weight:400;margin-bottom:8px}
+.b2b-form-sub{font-size:15px;color:var(--text-mid);margin-bottom:28px}
 @media(max-width:960px){
-  nav{padding:16px 24px}
+  .b2b{padding:80px 28px}
+  .b2b-inner{grid-template-columns:1fr;gap:48px}
+}
+
+@media(max-width:960px){
+  nav{padding:14px 20px}
+  .nav-logo svg{width:180px;height:72px}
+  .nav-cta{display:none}
   .nav-links{display:none}
-  .hero,.why,.science,.menu,.sanpo,.voices,.therapist,.faq,.cta{padding:80px 28px}
+  .hamburger{display:flex}
+  .hero{padding:130px 28px 80px}
+  .why,.science,.menu,.sanpo,.voices,.therapist,.faq,.cta{padding:80px 28px}
   .recog{padding:80px 28px}
   .recog-cards{grid-template-columns:1fr}
   .why-grid,.menu-cards{grid-template-columns:1fr}
@@ -576,6 +622,14 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
   .cta-cards{flex-direction:column;align-items:center}
   footer{padding:40px 28px;flex-direction:column;align-items:flex-start}
   .footer-info{text-align:left}
+  section[style*="padding:100px 60px"]{padding:80px 28px !important}
+  section[style*="padding:100px 60px"] > div > div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+  section[style*="padding:100px 60px"] > div > div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important}
+  /* インラインスタイルのセクション (SEROTONIN, BRIDGE) */
+  .science-serotonin-section{padding:80px 28px !important}
+  .science-serotonin-section .serotonin-grid{grid-template-columns:1fr !important}
+  .science-serotonin-section .serotonin-features{grid-template-columns:1fr !important}
+  .bridge-section{padding:60px 28px !important}
 }
 </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -583,39 +637,32 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 <body>
 
 <nav>
-  <a href="#" class="nav-logo" style="text-decoration:none;display:block;">
-    <svg width="280" height="112" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(36, 70)" opacity="0.65">
-        <line x1="0" y1="-28" x2="0" y2="-20" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="20" y1="-20" x2="14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="28" y1="0" x2="20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="-20" y1="-20" x2="-14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="-28" y1="0" x2="-20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="14" y1="20" x2="10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="-14" y1="20" x2="-10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
-      </g>
-      <g transform="translate(12, 64)">
-        <path d="M14,4 Q32,-28 20,-38 Q5,-22 14,4Z" fill="#5B8A5F"/>
-        <path d="M13,3 Q30,-24 20,-36" fill="none" stroke="#FFFFFF" stroke-width="1.1"/>
-        <path d="M14,4 Q-5,-26 -10,-36 Q2,-18 14,4Z" fill="#6B9E70"/>
-        <path d="M13,3 Q-4,-22 -8,-34" fill="none" stroke="#FFFFFF" stroke-width="1.0"/>
-        <path d="M14,4 Q36,10 40,-8 Q24,-2 14,4Z" fill="#5B8A5F" opacity="0.9"/>
-        <path d="M14,4 L14,32" stroke="#3E6B42" stroke-width="1.4" stroke-linecap="round"/>
-      </g>
-      <text x="72" y="52" font-family="serif" font-size="30" fill="#3E6B42" letter-spacing="1">和</text>
-      <text x="108" y="50" font-family="Georgia,serif" font-size="24" fill="#5B8A5F" font-style="italic" letter-spacing="0.5">nagomi</text>
-      <line x1="70" y1="62" x2="290" y2="62" stroke="#D4A853" stroke-width="0.7"/>
-      <text x="180" y="78" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#7A6A50" letter-spacing="3">PREMIUM WELLNESS · KYOTO</text>
-    </svg>
-  </a>
+  <a href="#" class="nav-logo" style="text-decoration:none;display:block;"></a>
   <ul class="nav-links">
-    <li><a href="#why">京都の歩き方</a></li>
-    <li><a href="#menu">メニュー</a></li>
+    <li><a href="#serotonin">眠れない理由</a></li>
     <li><a href="#sanpo">さんぽセッション</a></li>
+    <li><a href="#menu">メニュー</a></li>
     <li><a href="#voices">お客様の声</a></li>
+    <li><a href="#therapist">セラピスト</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="#b2b">ご提携の方へ</a></li>
   </ul>
   <a href="#cta" class="nav-cta">ご予約・お問い合わせ</a>
+  <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="navDrawer">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- モバイルドロワーメニュー -->
+<nav class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <a href="#serotonin" onclick="closeDrawer()">眠れない理由</a>
+  <a href="#sanpo" onclick="closeDrawer()">さんぽセッション</a>
+  <a href="#menu" onclick="closeDrawer()">メニュー</a>
+  <a href="#voices" onclick="closeDrawer()">お客様の声</a>
+  <a href="#therapist" onclick="closeDrawer()">セラピスト</a>
+  <a href="#faq" onclick="closeDrawer()">FAQ</a>
+  <a href="#b2b" onclick="closeDrawer()">ご提携の方へ</a>
+  <a href="#cta" onclick="closeDrawer()" style="margin-top:16px;background:var(--moss);color:white;padding:18px;">ご予約・お問い合わせ</a>
 </nav>
 
 <!-- HERO -->
@@ -623,49 +670,29 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
   <div class="hero-bg-text">至福</div>
   <div class="hero-inner">
     <div class="hero-eyebrow">KYOTO SLEEP TOURISM　｜　京都スリープツーリズム</div>
-    <p class="hero-headline">「眠れない」「疲れが取れない」——<br>その理由が、やっとわかりました。</p>
+    <p class="hero-headline">「眠れない」「疲れが取れない」——<br>原因は、脳疲労だとわかりました。</p>
     <h1 class="hero-main">
       京都で遊んで、<br><em>気づけば整ってました。</em>
     </h1>
-    <p class="hero-sub-copy">旅行、美食、上質な体験。その次は、「本当の回復」へ。</p>
+    <p class="hero-sub-copy">旅行、美食、上質な体験。その次は、『本当の回復』へ。</p>
     <p class="hero-desc">
       リフレッシュしても、また同じ疲れに戻っている。<br>
       どれだけ休んでも、<strong>眠りの質が変わらない。</strong><br>
       その原因は「脳が休めていない」ことでした。<br>
-      遊んでいるうちに、脳から整っていく、<strong>至福の時間。</strong><br>これが、快眠ウェルネスリトリートです。
+      遊んでいるうちに、脳から整っていく、<strong>至福の時間。</strong><br>これが、京都スリープツーリズム・快眠プログラムです。
     </p>
     <div class="hero-btns">
       <a href="#menu" class="btn-main">至福のメニューへ</a>
       <a href="#cta" class="btn-sub">まず相談する</a>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-n">90%+</span>
-        <span class="hero-stat-l">一回で睡眠の変化を実感</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-n">28年</span>
-        <span class="hero-stat-l">快眠専門セラピストの施術歴</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-n">8年</span>
-        <span class="hero-stat-l">リトリート継続実績</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-n">京都唯一</span>
-        <span class="hero-stat-l">このプログラム</span>
-      </div>
-    </div>
   </div>
 </section>
-
-<!-- RECOGNITION -->
 <section class="recog">
   <div class="recog-inner">
     <div class="recog-tag">DO YOU RECOGNIZE YOURSELF?</div>
     <h2 class="recog-title">
-      京都で遊んで、気づけば整ってました。<br>
-      <em>眠れない原因は、脳疲労だと、この旅でわかりました。</em>
+      以下のようなことを経験したことがあるなら、<br>
+      <em>眠れない原因は、脳疲労かもしれません。</em>
     </h2>
     <div class="recog-cards">
       <div class="recog-card">
@@ -690,32 +717,118 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
   </div>
 </section>
 
-<!-- WHY KYOTO -->
-<section class="why" id="why">
-  <div class="why-inner">
-    <div class="section-tag">THE KYOTO WAY</div>
-    <h2 class="section-title">京都を歩くほどに、脳が整っていく。</h2>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-num">01</div>
-        <h3 class="why-title">歩くことが、そのまま施術になる</h3>
-        <p class="why-body">リズム運動（歩行）はセロトニン分泌を促すことが科学的に確認されています。京都のまちや、お寺のお庭を一定のリズムで歩くだけで、脳が整い始めます。歩くこと自体が、そのまま施術になります。</p>
+<!-- SEROTONIN + SCIENCE (統合) -->
+<section class="science-serotonin-section" id="serotonin" style="padding:100px 60px;background:#F0F5EF;">
+  <div style="max-width:1060px;margin:0 auto;">
+    <div class="section-tag">THE KEY TO RECOVERY</div>
+    <h2 class="section-title">では、疲れた脳を<br>どうやって回復させるのか。</h2>
+    <div style="max-width:680px;margin-bottom:56px;">
+      <p style="font-size:19px;line-height:2.3;color:var(--text-mid);margin-bottom:20px;font-weight:300;">
+        カギは、「幸せホルモン」と呼ばれる<strong style="color:var(--text);font-weight:500;">セロトニン</strong>です。
+      </p>
+      <p style="font-size:17px;line-height:2.3;color:var(--text-mid);margin-bottom:20px;font-weight:300;">
+        セロトニンは、睡眠改善だけでなく、自律神経の調整・感情の安定・日中のパフォーマンス向上にも深く関わっています。そして夜の深い眠りを作る「メラトニン」の原料になる物質です。ストレスの多い現代生活では、このセロトニンが慢性的に少なくなっています。
+      </p>
+      <p style="font-size:17px;line-height:2.3;color:var(--text-mid);font-weight:300;">
+        そのセロトニンを、薬を使わず自然に活性化できるのが——<strong style="color:var(--moss);font-weight:500;">セロトニン活性療法</strong>です。
+      </p>
+    </div>
+
+    <!-- 機序フロー + マッサージとの違い -->
+    <div class="serotonin-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:64px;">
+      <div>
+        <div style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:500;color:var(--text);margin-bottom:20px;line-height:1.6;">普通のマッサージと、<br>何が違うのか。</div>
+        <p style="font-size:17px;line-height:2.3;color:var(--text-mid);margin-bottom:20px;font-weight:300;">
+          一般的なマッサージは筋肉や血行に働きかけます。でも、不眠や慢性疲労の根本は「脳の疲れ」です。筋肉をほぐしても、脳疲労は取れません。
+        </p>
+        <p style="font-size:17px;line-height:2.3;color:var(--text-mid);margin-bottom:20px;font-weight:300;">
+          セロトニン活性療法は、背中・頭・お顔などを優しくなでる・さする・ゆらすタッチケアで、セロトニンの活性を促します。強い圧は不要なので、どなたにでも安心して受けていただけます。
+        </p>
+        <div style="background:white;border-left:3px solid var(--sage);padding:20px 24px;margin:24px 0;font-family:'Noto Serif JP',serif;font-size:16px;line-height:1.9;color:var(--moss);">
+          たった5分で脳がゆるみ始める——筋肉ではなく脳そのものに働きかけ、α波優位の深いリラックス状態へ導きます。
+        </div>
+        <!-- 比較表 -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:32px;">
+          <div style="background:white;padding:20px 16px;border-top:2px solid var(--gold-light);">
+            <div style="font-size:13px;letter-spacing:0.1em;color:var(--text-light);margin-bottom:8px;">マッサージ</div>
+            <div style="font-size:15px;color:var(--text-mid);line-height:1.9;">筋肉・血行に働きかける。脳疲労には届かない。</div>
+          </div>
+          <div style="background:white;padding:20px 16px;border-top:2px solid var(--gold-light);">
+            <div style="font-size:13px;letter-spacing:0.1em;color:var(--text-light);margin-bottom:8px;">睡眠薬・サプリ</div>
+            <div style="font-size:15px;color:var(--text-mid);line-height:1.9;">無理やり眠らせる。セロトニンは増えない。</div>
+          </div>
+          <div style="background:var(--moss);padding:20px 16px;border-top:2px solid var(--gold);">
+            <div style="font-size:13px;letter-spacing:0.1em;color:rgba(255,255,255,0.7);margin-bottom:8px;">セロトニン活性療法</div>
+            <div style="font-size:15px;color:rgba(255,255,255,0.9);line-height:1.9;">セロトニンを増やす。自然な眠りを体の中から取り戻す。</div>
+          </div>
+        </div>
       </div>
-      <div class="why-card">
-        <div class="why-num">02</div>
-        <h3 class="why-title">「非日常」が脳のスイッチを切り替える</h3>
-        <p class="why-body">日常から切り離された京都の景色・空気・静けさが、頭の中でぐるぐると回り続けているストレスの回路を、自然にリセットしてくれます。環境が変わると、脳も変わります。</p>
-      </div>
-      <div class="why-card">
-        <div class="why-num">03</div>
-        <h3 class="why-title">楽しんでいるうちに、変わっている</h3>
-        <p class="why-body">「頑張って治す」のではなく、「遊んでいたらラクになっていた」という体験をデザインしています。楽しいことをしながら脳が整っていく——それがこのプログラムの核心です。</p>
+
+      <!-- セロトニン→メラトニン フロー -->
+      <div>
+        <div style="font-family:'Noto Sans JP',sans-serif;font-size:13px;letter-spacing:0.1em;color:var(--text-light);margin-bottom:20px;text-align:center;">セロトニンが睡眠を変えるしくみ</div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+
+          <div style="background:#FFF5F5;border:1px solid rgba(200,100,100,0.15);padding:20px 24px;">
+            <div style="font-size:13px;letter-spacing:0.15em;color:#C07070;margin-bottom:8px;">PROBLEM</div>
+            <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:var(--text);line-height:1.7;">ストレス・過緊張・現代生活</div>
+          </div>
+
+          <div style="display:flex;justify-content:center;padding:4px 0;">
+            <svg width="20" height="24" viewBox="0 0 20 24"><polyline points="5,4 10,20 15,4" fill="none" stroke="#C8A0A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <div style="background:#FFF5F5;border:1px solid rgba(200,100,100,0.15);padding:20px 24px;">
+            <div style="font-size:13px;letter-spacing:0.15em;color:#C07070;margin-bottom:8px;">RESULT</div>
+            <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:var(--text);line-height:1.7;">セロトニンの分泌が低下<br><span style="font-size:14px;font-weight:300;color:var(--text-mid);">→ 眠れない・疲れが取れない</span></div>
+          </div>
+
+          <div style="display:flex;justify-content:center;align-items:center;padding:12px 0;gap:10px;">
+            <div style="flex:1;height:1px;background:var(--sage-light);"></div>
+            <div style="font-size:15px;color:var(--moss);letter-spacing:0.12em;padding:5px 14px;border:1px solid var(--sage);background:white;white-space:nowrap;">セロトニン活性療法</div>
+            <div style="flex:1;height:1px;background:var(--sage-light);"></div>
+          </div>
+
+          <div style="background:white;border:1px solid rgba(122,158,118,0.3);padding:20px 24px;">
+            <div style="font-size:13px;letter-spacing:0.15em;color:var(--moss);margin-bottom:8px;">ACTIVATION</div>
+            <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:var(--text);line-height:1.7;">特別で優しいタッチケアが脳を活性化<br><span style="font-size:14px;font-weight:300;color:var(--text-mid);">→ セロトニンの分泌を促します</span></div>
+          </div>
+
+          <div style="display:flex;justify-content:center;padding:4px 0;">
+            <svg width="20" height="24" viewBox="0 0 20 24"><polyline points="5,4 10,20 15,4" fill="none" stroke="#A8C5A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <div style="background:linear-gradient(135deg,var(--sage-light),var(--blush));border:1px solid rgba(122,158,118,0.3);padding:20px 24px;">
+            <div style="font-size:13px;letter-spacing:0.15em;color:var(--moss);margin-bottom:8px;">SOLUTION</div>
+            <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:var(--text);line-height:1.7;">夜、メラトニンが自然に分泌<br><span style="font-size:14px;font-weight:300;color:var(--text-mid);">→ 深い眠りへ。翌朝スッキリ目覚める</span></div>
+          </div>
+
+        </div>
+        <p style="font-size:15px;color:var(--text-light);margin-top:16px;text-align:center;line-height:1.9;">セロトニンは日が落ちるとメラトニンに変換されます。<br>セロトニンを増やすことが、快眠への最短経路です。</p>
       </div>
     </div>
+
+    <!-- 施術を受けると -->
+    <div style="margin-top:48px;">
+      <div style="font-family:'Noto Serif JP',serif;font-size:17px;font-weight:500;color:var(--text);margin-bottom:20px;">施術を受けると、こんなことが起きます</div>
+      <div class="serotonin-features" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+        <div style="background:white;padding:28px 24px;border-bottom:2px solid var(--sage);">
+          <div style="font-family:'Noto Serif JP',serif;font-size:36px;color:rgba(91,138,95,0.25);margin-bottom:12px;">01</div>
+          <div style="font-family:'Noto Serif JP',serif;font-size:15px;font-weight:500;color:var(--text);margin-bottom:8px;">翌日から変化を実感</div>
+          <div style="font-size:14px;color:var(--text-mid);line-height:2;">90%以上<sup>※</sup>の方が一回で変化を実感。「昨日と同じ場所で寝てるのに、こんなに違うの？」という声をよくいただきます。</div>
+        </div>
+        <div style="background:white;padding:28px 24px;border-bottom:2px solid var(--sage);">
+          <div style="font-family:'Noto Serif JP',serif;font-size:36px;color:rgba(91,138,95,0.25);margin-bottom:12px;">02</div>
+          <div style="font-family:'Noto Serif JP',serif;font-size:15px;font-weight:500;color:var(--text);margin-bottom:8px;">これらの変化が、帰ってからも続く</div>
+          <div style="font-size:14px;color:var(--text-mid);line-height:2;">日常に戻ってからも「なんか調子いい」が続くのが特徴です。「帰ってから2週間ずっと調子いい」というお声もいただいています。</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--text-light);margin-top:16px;letter-spacing:0.04em;">※ 当サービス受講者アンケートに基づく（自社調べ）。個人差があります。</p>
   </div>
 </section>
 
-<!-- PHOTO STRIP 1: 京都の風景 -->
+<!-- PHOTO STRIP: 京都の風景 -->
 <div class="photo-strip cols-3">
   <div class="photo-strip-item">
     <img src="kyoto.jpg" alt="京都御所" style="width:100%;height:320px;object-fit:cover;display:block;object-position:center 80%;">
@@ -731,51 +844,99 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
   </div>
 </div>
 
-<!-- SCIENCE -->
-<section class="science" id="about">
-  <div class="science-inner">
-    <div>
-      <div class="section-tag">SEROTONIN ACTIVATION</div>
-      <h2 class="section-title">脳から整える。<br>それだけで、すべてが変わる。</h2>
-      <p class="science-body">疲れの本当の原因「脳疲労」を改善するのは、セロトニン活性ケア。背中・頭・お顔などを優しくなでる・さする・ゆらすタッチケアで、脳内の幸せホルモンと言われる「セロトニン」を活性化します。</p>
-      <p class="science-body">日が落ちると、脳内でセロトニンをもとに睡眠ホルモン「メラトニン」の合成が始まります。つまりセロトニンを増やすことが、質の高い睡眠への最短経路。この効果は学術的にも確認されています。</p>
-      <div class="science-quote">
-        強い圧や刺激は一切なし。<br>ただ、優しく触れるだけで、脳が深く休まっていきます。
-      </div>
-      <p class="science-body">一般的なマッサージやスパとは根本的に異なります。京都でこの施術を受けられるのは、現在このプログラムのみです。</p>
-    </div>
-    <div class="science-steps">
-      <div class="science-step">
-        <div class="science-step-n">01</div>
-        <div>
-          <div class="science-step-title">体への負担ゼロ</div>
-          <p class="science-step-desc">強い圧や刺激を一切使いません。優しいタッチのみで施術するため、どなたでも安心してお受けいただけます。</p>
-        </div>
-      </div>
-      <div class="science-step">
-        <div class="science-step-n">02</div>
-        <div>
-          <div class="science-step-title">たった5分で脳のリラックスが始まります</div>
-          <p class="science-step-desc">筋肉ではなく脳そのものを休ませα波優位の状態へ。終わった後のスッキリ感が全然違います。</p>
-        </div>
-      </div>
-      <div class="science-step">
-        <div class="science-step-n">03</div>
-        <div>
-          <div class="science-step-title">翌日から変化を実感</div>
-          <p class="science-step-desc">90%以上の方が一回で変化を感じています。「昨日と同じ場所で寝てるのに、こんなに違うの？」という声をよくいただきます。</p>
-        </div>
-      </div>
-      <div class="science-step">
-        <div class="science-step-n">04</div>
-        <div>
-          <div class="science-step-title">帰ってからも続く</div>
-          <p class="science-step-desc">施術が終わっても、セロトニンの効果は続きます。日常に戻ってからも「なんか調子いい」が続くのが、このプログラムの特徴です。</p>
-        </div>
+<!-- BRIDGE 前半: 施術 + さんぽ -->
+<section class="bridge-section" style="padding:80px 60px 48px;background:var(--cream);border-top:1px solid rgba(184,154,106,0.15);">
+  <div style="max-width:1060px;margin:0 auto;">
+    <div class="section-tag">TWO PATHS, ONE DESTINATION</div>
+    <h2 class="section-title">セロトニンを増やす方法は、<br>施術だけではありません。</h2>
+    <div style="max-width:600px;">
+      <div style="background:white;padding:40px 36px;border-top:3px solid var(--moss);">
+        <div style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:500;color:var(--text);margin-bottom:12px;">施術と、もう１つは「京都さんぽ」</div>
+        <div style="font-size:16px;color:var(--text-mid);line-height:2.2;">一定のリズムで歩くことも、セロトニン分泌を促すことが科学的に確認されています。つまり、京都を楽しく歩くこと自体が、そのまま施術になります。</div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- SANPO -->
+<section class="sanpo" id="sanpo">
+  <div class="sanpo-inner">
+    <div>
+      <div class="section-tag">KYOTO SANPO SESSION　｜　京都さんぽ</div>
+      <h2 class="section-title">楽しんでいるうちに、<br>気づいたら変わっていた。</h2>
+      <p class="sanpo-body">嵐山でも、金閣寺でも、御所でおしゃべりしながらでも。お客様がお選びになった京都の場所で、歩きながら呼吸・歩幅・リズムを整える「屋外歩行セラピー」です。</p>
+      <p class="sanpo-body">ただ歩くだけではありません。呼吸・歩幅・リズムのちょっとしたコツをお伝えしながら一緒に歩きます。それだけで、同じ京都の道が「脳を整える時間」に変わります。</p>
+      <p class="sanpo-body">また、日常から切り離された京都の景色・空気・静けさが、頭の中でぐるぐると回り続けているストレスの回路を、自然にリセットしてくれます。「頑張って治す」のではなく、「遊んでいたらラクになっていた」——それがこのセッションの核心です。</p>
+      <div class="sanpo-em">
+        京都さんぽで、遊んでいるうちに、脳が甦っていく。<br>歩くこと自体が、そのまま施術になる。
+      </div>
+      <div class="sanpo-notes">
+        <div class="sanpo-note">集合場所は、ご希望をお聞きしながらご相談の上、決めさせていただきます</div>
+        <div class="sanpo-note">雨天時は室内での代替プログラムをご用意します</div>
+      </div>
+    </div>
+    <div class="schedule">
+      <div class="sched-day">
+        <div class="sched-label">DAY 1</div>
+        <div class="sched-title">脳を、解きほぐす</div>
+        <div class="sched-desc">チェックイン後、客室にて90分の快眠セッション。その夜から眠りが変わり始めます。</div>
+      </div>
+      <div class="sched-day hl">
+        <div class="sched-label">DAY 2 🌸</div>
+        <div class="sched-title">歩いて、整える</div>
+        <div class="sched-desc">ご希望の京都スポットへ。歩きながら呼吸とリズムを整える「京都さんぽセッション」4時間。</div>
+      </div>
+      <div class="sched-day hl">
+        <div class="sched-label">DAY 3 🍃</div>
+        <div class="sched-title">深める</div>
+        <div class="sched-desc">2日目よりさらに深く。体が慣れてきて、変化を強く実感する日。</div>
+      </div>
+      <div class="sched-day">
+        <div class="sched-label">DAY 4</div>
+        <div class="sched-title">旅立ちの朝に</div>
+        <div class="sched-desc">チェックアウト前に最後のセッション。「帰ってからも続く」状態を整えてお送りいたします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- BRIDGE 後半: 話すこと + まとめ -->
+<section class="bridge-section" style="padding:48px 60px 80px;background:var(--cream);">
+  <div style="max-width:1060px;margin:0 auto;">
+    <div style="max-width:600px;margin-bottom:24px;">
+      <div style="background:white;padding:40px 36px;border-top:3px solid var(--gold);">
+        <div style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:500;color:var(--text);margin-bottom:16px;">そして、もう１つ。<br>「話すこと。」</div>
+        <p style="font-size:16px;color:var(--text-mid);line-height:2.3;margin-bottom:16px;">散歩しながら、施術の前後に、ただおしゃべりする時間があります。京都の景色を眺めながら、気の向くままに話してください。</p>
+        <p style="font-size:16px;color:var(--text-mid);line-height:2.3;margin-bottom:16px;">誰かと笑ったり、共感し合える会話は、それ自体がセロトニンを活性化します。「井戸端会議」がなぜか気持ちいいのは、科学的にも理由があるのです。</p>
+        <div style="border-left:3px solid var(--gold);padding:16px 20px;margin-top:20px;font-family:'Noto Serif JP',serif;font-size:16px;line-height:2;color:var(--text-mid);">
+          眠れない夜の裏には、たいてい何かあります。<br>
+          解決しなくていい。ただ話してもらえれば、それでいい。<br>
+          <strong style="color:var(--moss);">話すこと自体が、脳をほぐしていきます。</strong>
+        </div>
+        <p style="font-size:15px;color:var(--text-light);margin-top:20px;line-height:2;">どんな話でも、安心して話せる時間にします。</p>
+      </div>
+    </div>
+    <div style="margin-top:8px;background:var(--moss);padding:28px 40px;text-align:center;">
+      <div style="font-family:'Noto Serif JP',serif;font-size:18px;color:white;line-height:1.8;">施術・歩行・対話。この３つが、京都という非日常の中で重なる。<br>
+      <span style="font-size:15px;color:rgba(255,255,255,0.85);font-weight:300;">楽しんでいるうちに、脳が深く整っていく——ここだけの体験です。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP: さんぽセッション風景 -->
+<div class="photo-strip cols-3">
+  <div class="photo-strip-item">
+    <img src="kyoto-tera.jpg" alt="仁和寺" style="width:100%;height:400px;object-fit:cover;display:block;object-position:center 50%;">
+    <div class="photo-strip-caption">仁和寺</div>
+  </div>
+  <div class="photo-strip-item">
+    <img src="kyoto5.jpg" alt="五重塔（仁和寺）" style="width:100%;height:400px;object-fit:cover;display:block;object-position:center 30%;">
+    <div class="photo-strip-caption">五重塔（仁和寺）</div>
+  </div>
+  <div class="photo-strip-item">
+    <img src="takao.jpg" alt="高雄の新緑" style="width:100%;height:400px;object-fit:cover;display:block;object-position:center 40%;">
+    <div class="photo-strip-caption">高雄の新緑</div>
+  </div>
+</div>
 
 <!-- MENU -->
 <section class="menu" id="menu">
@@ -807,7 +968,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
       <div class="menu-card">
         <div class="menu-lbl">1DAY</div>
         <h3 class="menu-name">京都さんぽセッション</h3>
-        <div class="menu-desc">1日しかない方へ。京都を楽しみながら、脳機能を高めていきます。</div>
+        <div class="menu-desc">1日しかない方へ。京都を楽しみながら、脳から整えていきます。</div>
         <div class="menu-price">¥90,000</div>
         <div class="menu-unit">約4時間 / 税込　※交通費等別途</div>
         <ul class="menu-features">
@@ -896,63 +1057,41 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
   </div>
 </section>
 
-<!-- SANPO -->
-<section class="sanpo" id="sanpo">
-  <div class="sanpo-inner">
-    <div>
-      <div class="section-tag">KYOTO SANPO SESSION</div>
-      <h2 class="section-title">楽しんでいるうちに、<br>気づいたら変わっていた。</h2>
-      <p class="sanpo-body">嵐山でも、金閣寺でも、御所でおしゃべりしながらでも。お客様がお選びになった京都の場所で、歩きながら呼吸・歩幅・リズムを整える施術を行います——これは観光案内ではなく、歩くこと自体を脳の活性化に活用する「屋外歩行セラピー」です。</p>
-      <p class="sanpo-body">「頑張って治す」ではなく「楽しんでいたらラクになっていた」。その体験をデザインしたのが、京都さんぽセッションです。</p>
-      <div class="sanpo-em">
-        京都さんぽで、遊んでいるうちに、脳が甦っていく。<br>歩くこと自体が、そのまま施術になる。
-      </div>
-      <div class="sanpo-notes">
-        <div class="sanpo-note">現地集合になります。ご希望に合わせて柔軟に対応します</div>
-        <div class="sanpo-note">お客様ご自身がお選びになった場所で、歩行施術を行います</div>
-        <div class="sanpo-note">雨天時は室内での代替プログラムをご用意します</div>
+
+<!-- 睡眠以外にも整っていた -->
+<section style="padding:100px 60px;background:var(--cream);">
+  <div style="max-width:1060px;margin:0 auto;">
+    <div class="section-tag">UNEXPECTED CHANGES</div>
+    <h2 class="section-title">実は、眠れない以外にも<br>整っていた。</h2>
+    <div style="max-width:680px;margin-bottom:48px;">
+      <p style="font-size:17px;line-height:2.3;color:var(--text-mid);margin-bottom:20px;font-weight:300;">
+        「肩こりのことは何も言っていないのに、気づいたら30年来の辛さが消えていた。」<br>
+        「イライラしなくなった、と家族に言われた。」<br>
+        「ただ癒やされたくて来たのに、久しぶりにぐっすり眠れた。」
+      </p>
+      <p style="font-size:17px;line-height:2.3;color:var(--text-mid);font-weight:300;">
+        セロトニンが整うと、睡眠だけでなく体と心に連鎖的な変化が起きます。9割近くの方が、予想していなかった嬉しい変化を複合的に感じています。
+      </p>
+    </div>
+
+    <div style="background:white;padding:40px 48px;border-left:3px solid var(--sage);max-width:680px;">
+      <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:var(--text);margin-bottom:20px;">セロトニンの効果</div>
+      <div style="font-size:15px;color:var(--text-mid);line-height:2.6;">
+        ・自律神経の調整（内臓機能アップ）<br>
+        ・痛みの緩和（肩こり・腰痛・頭痛などの緩和）<br>
+        ・心の安定（イライラや不安感の軽減）<br>
+        ・姿勢を支える筋肉を整える（からだの歪み改善）<br>
+        ・集中力・記憶力の向上（仕事や家事のパフォーマンスアップ）
       </div>
     </div>
-    <div class="schedule">
-      <div class="sched-day">
-        <div class="sched-label">DAY 1</div>
-        <div class="sched-title">脳を、解きほぐす</div>
-        <div class="sched-desc">チェックイン後、客室にて90分の快眠セッション。その夜から眠りが変わり始めます。</div>
-      </div>
-      <div class="sched-day hl">
-        <div class="sched-label">DAY 2 🌸</div>
-        <div class="sched-title">歩いて、整える</div>
-        <div class="sched-desc">ご希望の京都スポットへ。歩きながら呼吸とリズムを整える「京都さんぽセッション」4時間。</div>
-      </div>
-      <div class="sched-day hl">
-        <div class="sched-label">DAY 3 🍃</div>
-        <div class="sched-title">深める</div>
-        <div class="sched-desc">2日目よりさらに深く。体が慣れてきて、変化を強く実感する日。</div>
-      </div>
-      <div class="sched-day">
-        <div class="sched-label">DAY 4</div>
-        <div class="sched-title">旅立ちの朝に</div>
-        <div class="sched-desc">チェックアウト前に最後のセッション。「帰ってからも続く」状態を整えてお送りいたします。</div>
-      </div>
+
+    <div style="margin-top:32px;padding:28px 36px;background:var(--moss);text-align:center;max-width:680px;">
+      <p style="font-family:'Noto Serif JP',serif;font-size:17px;color:white;line-height:1.9;">
+        眠れないことだけが悩みじゃなくても、ここに来る理由があるかもしれません。
+      </p>
     </div>
   </div>
 </section>
-
-<!-- PHOTO STRIP SANPO: さんぽセッション風景 -->
-<div class="photo-strip cols-3">
-  <div class="photo-strip-item">
-    <img src="kyoto-tera.jpg" alt="仁和寺" style="width:100%;height:400px;object-fit:cover;display:block;object-position:center 50%;">
-    <div class="photo-strip-caption">仁和寺</div>
-  </div>
-  <div class="photo-strip-item">
-    <img src="kyoto5.jpg" alt="五重塔（仁和寺）" style="width:100%;height:400px;object-fit:cover;display:block;object-position:center 30%;">
-    <div class="photo-strip-caption">五重塔（仁和寺）</div>
-  </div>
-  <div class="photo-strip-item">
-    <img src="takao.jpg" alt="高雄" style="width:100%;height:400px;object-fit:cover;display:block;object-position:center 40%;">
-    <div class="photo-strip-caption">高雄</div>
-  </div>
-</div>
 
 <!-- VOICES -->
 <section class="voices" id="voices">
@@ -1012,6 +1151,11 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
             和（nagomi）Premium Wellness<br>
             株式会社なごみ
           </div>
+          <div style="margin-top:14px;padding:12px 16px;background:var(--sage-light);font-size:15px;color:var(--sage-dark);line-height:2;">
+            <strong>セロトニン活性療法協会</strong><br>
+            ・セロトニン調律師<br>
+            ・初級インストラクター認定
+          </div>
           <div class="therapist-nums">
             <div><span class="t-num-n">28年</span><span class="t-num-l">施術歴</span></div>
             <div><span class="t-num-n">8年</span><span class="t-num-l">リトリート主宰</span></div>
@@ -1023,19 +1167,17 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
         <div class="section-tag">THERAPIST</div>
         <h2 class="section-title">京都人と、京都を歩く。</h2>
         <p class="therapist-body">生まれも育ちも京都です。観光客には見えない路地の奥も、季節ごとの光の変わり方も、地元の人だけが知っている朝の空気感——そんな私にとっての日常をお届けいたします。</p>
-        <p class="therapist-body">お客様がお選びになった京都の場所で、一緒に歩きながら施術を行う、京都人ならではのセッションです。</p>
+        <p class="therapist-body">ご一緒に決めた京都の場所で、一緒に歩きながら施術を行う、京都人ならではのセッションです。</p>
         <div class="therapist-kyoto-note">
           <div class="therapist-kyoto-note-icon">🌿</div>
           <div class="therapist-kyoto-note-text">
             このセッションは<strong>屋外で行う歩行セラピー（施術）</strong>です。<br>
-            観光案内ではなく、歩くこと自体を脳の活性化に活用します。<br>
-            行き先はお客様ご自身がお決めになります。
+            歩くこと自体が施術になる時間です。でも、気づけば京都の景色も楽しんでいた——そんな、一石二鳥の体験です。
           </div>
         </div>
         <p class="therapist-body">睡眠・自律神経ケアを専門に28年。沖縄・西表島での3泊4日リトリートを8年継続主宰してきた経験と、地元民の私が案内するといつも喜んでもらえるので、そんな京都を楽しんでいただきたいという思いが重なったのが、このプログラムです。</p>
         <div class="therapist-belief">
           ４日間を、思いっきり楽しく、自由に過ごす。<br>ただそれだけの時間をご一緒しませんか？
-
         </div>
         <div class="therapist-tags">
           <span class="therapist-tag">京都生まれ・育ち</span>
@@ -1058,16 +1200,16 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
     <h2 class="section-title">よくあるご質問</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">京都さんぽセッションの行き先は？</div>
-        <div class="faq-a">お客様ご自身がお選びになった場所で、歩行施術を行います。嵐山・哲学の道・御所・祇園など、どこでも対応可能です。このセッションは観光案内ではなく、歩くこと自体を施術として活用するプログラムです。</div>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">効果はどのくらい続きますか？</button>
+        <div class="faq-a" role="region">個人差がありますが、一回でも数日〜1週間ほど「調子の良さ」が続く方が多いです。3泊4日のリトリートで継続して受けることで、日常に戻ってからも効果が続きやすくなります。「帰ってから2週間ずっと調子いい」というお声もいただいています。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">初めてでも大丈夫ですか？</div>
-        <div class="faq-a">はじめての方がほとんどです。強い圧や刺激は一切使いませんので、ご安心ください。施術前に丁寧にヒアリングを行い、状態に合わせて進めます。</div>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">おすすめの季節はいつですか？</button>
+        <div class="faq-a" role="region">どの季節も魅力的ですが、地元目線では桜・紅葉以外の「静かな京都」が一番の狙い目です。観光客が少なく、しんとした空気の中での歩行セラピーは、脳を休めるには最高の環境です。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">予約はどうすればいいですか？</div>
-        <div class="faq-a">このページ下部のお問い合わせか、LINE「和（nagomi）Premium」からご連絡ください。日程・ご希望のプログラムをお知らせいただければ、折り返しご連絡いたします。</div>
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">予約はどうすればいいですか？</button>
+        <div class="faq-a" role="region">このページ下部のお問い合わせフォームか、LINE「和（nagomi）Premium」からご連絡ください。日程・ご希望のプログラムをお知らせいただければ、折り返しご連絡いたします。</div>
       </div>
     </div>
   </div>
@@ -1077,31 +1219,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 <section class="cta" id="cta">
   <div class="cta-inner">
     <div class="cta-eyebrow">RESERVATION & CONTACT</div>
-    <div style="display:flex;justify-content:center;margin-bottom:28px;opacity:0.45;">
-      <svg width="210" height="84" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(36, 70)" opacity="0.65">
-          <line x1="0" y1="-28" x2="0" y2="-20" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="20" y1="-20" x2="14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="28" y1="0" x2="20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="-20" y1="-20" x2="-14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="-28" y1="0" x2="-20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="14" y1="20" x2="10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="-14" y1="20" x2="-10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
-        </g>
-        <g transform="translate(12, 64)">
-          <path d="M14,4 Q32,-28 20,-38 Q5,-22 14,4Z" fill="#5B8A5F"/>
-          <path d="M13,3 Q30,-24 20,-36" fill="none" stroke="#FFFFFF" stroke-width="1.1"/>
-          <path d="M14,4 Q-5,-26 -10,-36 Q2,-18 14,4Z" fill="#6B9E70"/>
-          <path d="M13,3 Q-4,-22 -8,-34" fill="none" stroke="#FFFFFF" stroke-width="1.0"/>
-          <path d="M14,4 Q36,10 40,-8 Q24,-2 14,4Z" fill="#5B8A5F" opacity="0.9"/>
-          <path d="M14,4 L14,32" stroke="#3E6B42" stroke-width="1.4" stroke-linecap="round"/>
-        </g>
-        <text x="72" y="52" font-family="serif" font-size="30" fill="#3E6B42" letter-spacing="1">和</text>
-        <text x="108" y="50" font-family="Georgia,serif" font-size="24" fill="#5B8A5F" font-style="italic" letter-spacing="0.5">nagomi</text>
-        <line x1="70" y1="62" x2="290" y2="62" stroke="#D4A853" stroke-width="0.7"/>
-        <text x="180" y="78" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#7A6A50" letter-spacing="3">PREMIUM WELLNESS · KYOTO</text>
-      </svg>
-    </div>
+    <div class="cta-logo-placeholder" style="display:flex;justify-content:center;margin-bottom:28px;opacity:0.45;"></div>
     <h2 class="cta-title">
       <em>次の上質</em>を、<br>京都で体験しませんか。
     </h2>
@@ -1111,8 +1229,16 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
     <div class="inquiry-form">
       <h3>お問い合わせ・ご予約フォーム</h3>
       <p class="form-sub">内容を確認の上、2営業日以内にご連絡いたします。</p>
-      <form action="https://formspree.io/f/xkoqynvq" method="POST" onsubmit="handleSubmit(event)">
-        <input type="hidden" name="_subject" value="【和nagomi】お問い合わせが届きました">
+      <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="access_key" value="f0fe1e71-8456-4be6-bd21-32b35236ebde">
+        <input type="hidden" name="subject" value="【和nagomi】お問い合わせが届きました">
+        <input type="hidden" name="from_name" value="和nagomi Premium Wellness">
+        <input type="hidden" name="replyto" value="kyoto@nagomi.net">
+        <input type="hidden" name="redirect" value="false">
+        <!-- 自動返信設定 -->
+        <input type="hidden" name="autoresponse" value="true">
+        <input type="hidden" name="autoresponse_subject" value="【和nagomi】お問い合わせを受け付けました">
+        <input type="hidden" name="autoresponse_message" value="この度はお問い合わせいただき、ありがとうございます。&#10;&#10;内容を確認の上、2営業日以内にご連絡いたします。&#10;&#10;数日経っても返信がない場合は、メールが届いていない可能性がございます。大変お手数ですが、お電話にてご連絡いただけますと幸いです。&#10;&#10;TEL：070-8570-1320 / 0771-33-0029&#10;&#10;&#12288;&#10;和nagomi Premium Wellness&#10;紫藤 珠佑&#10;&#10;ご返信いただく場合は、kyoto@nagomi.net までご連絡ください。">
         <div class="form-group">
           <label>お名前 <span>必須</span></label>
           <input type="text" name="name" placeholder="例：山田 花子" required>
@@ -1132,11 +1258,12 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <label>ご希望のプログラム <span>必須</span></label>
           <select name="program" id="programSelect" required onchange="toggleRetreatNote()">
             <option value="">選択してください</option>
-            <option value="京都快眠リトリート 3泊4日 ¥250,000">京都快眠リトリート　3泊4日　¥250,000</option>
-            <option value="京都さんぽセッション ¥93,000">京都さんぽセッション　¥93,000</option>
-            <option value="快眠セッション ¥35,000">快眠セッション　¥35,000</option>
+            <option value="京都快眠リトリート 3泊4日 ¥230,000">京都快眠リトリート　3泊4日　¥230,000</option>
+            <option value="京都さんぽセッション ¥90,000">京都さんぽセッション　¥90,000</option>
+            <option value="京都さんぽ＋フェイシャルケア ¥105,000">京都さんぽ＋フェイシャルケア　¥105,000</option>
+            <option value="快眠セッション ¥25,000">快眠セッション　¥25,000</option>
+            <option value="ディープリカバリー ¥42,000">ディープリカバリー　¥42,000</option>
             <option value="小顔フェイシャルケア ¥18,000">小顔フェイシャルケア（オプション）　¥18,000</option>
-            <option value="ディープリカバリー ¥50,000">ディープリカバリー　¥50,000</option>
             <option value="未定・相談したい">未定・まず相談したい</option>
           </select>
           <p class="form-note" id="retreatNote" style="display:none;color:var(--moss);font-weight:500;">【3泊4日プランについて】お客様のご予定に合わせて個別に調整いたします。詳細は事前相談にて承ります。</p>
@@ -1158,24 +1285,135 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <textarea name="message" placeholder="ご質問・ご要望などお気軽にどうぞ。"></textarea>
         </div>
 
+        <div class="form-group" style="margin-top:8px;">
+          <label style="display:flex;align-items:flex-start;gap:10px;font-weight:400;cursor:pointer;">
+            <input type="checkbox" required style="width:auto;margin-top:4px;flex-shrink:0;">
+            <span style="font-size:15px;line-height:1.8;background:none;color:var(--text-mid);padding:0;">
+              <a href="/privacy.html" target="_blank" style="color:var(--moss);text-decoration:underline;">プライバシーポリシー</a>に同意の上、送信します
+              <span style="font-size:13px;color:white;background:var(--moss);padding:2px 8px;margin-left:6px;">必須</span>
+            </span>
+          </label>
+        </div>
         <button type="submit" class="form-submit">送信する</button>
-      </form>
-      <div class="form-success" id="formSuccess">
         お問い合わせありがとうございます。<br>
         内容を確認の上、2営業日以内にご連絡いたします。
       </div>
     </div>
 
-    <!-- LINE・メール・電話 -->
-    <div class="cta-line-wrap">
+    <!-- 電話番号 -->
+    <div style="margin-top:32px;padding:28px 32px;background:white;border-top:2px solid var(--sage-light);text-align:center;">
+      <p style="font-size:13px;letter-spacing:0.14em;color:var(--earth);margin-bottom:14px;font-weight:500;">TEL</p>
+      <p style="font-family:'Noto Serif JP',serif;font-size:26px;color:var(--moss);line-height:1.8;letter-spacing:0.06em;">
+        <a href="tel:07085701320" style="color:var(--moss);text-decoration:none;">070-8570-1320</a>
+        　／　
+        <a href="tel:0771330029" style="color:var(--moss);text-decoration:none;">0771-33-0029</a>
+      </p>
+      <p style="font-size:15px;color:var(--text-mid);margin-top:20px;line-height:2.1;">
+        フォーム送信後、数日経っても返信がない場合は、<br>
+        メールが届いていない可能性がございます。<br>
+        大変お手数ですが、お電話にてご連絡いただけますと幸いです。
+      </p>
+      <p style="font-size:13px;color:var(--text-light);margin-top:16px;line-height:2;padding:12px 16px;background:var(--cream);">
+        ※ 携帯電話でドメイン指定受信を設定されている場合は、<br>
+        「@nagomi.net」からのメールを受け取れるよう設定をお願いいたします。
+      </p>
+    </div>
+
+    <!-- LINE -->
+    <div class="cta-line-wrap" style="margin-top:32px;">
       <div style="text-align:center;">
         <a href="https://lin.ee/PJsxLNO">
           <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="44" border="0">
         </a>
-        <p style="font-size:13px;color:var(--text-mid);margin-top:6px;letter-spacing:0.08em;">和 nagomi Premium　LINE</p>
+        <p style="font-size:15px;color:var(--text-mid);margin-top:6px;letter-spacing:0.08em;">和 nagomi Premium　LINE</p>
       </div>
     </div>
     <p class="cta-note">フォームのほか、LINEでもお気軽にご連絡ください。</p>
+  </div>
+</section>
+
+
+
+<!-- B2B MONITOR SECTION -->
+<section class="b2b" id="b2b">
+  <div class="b2b-inner">
+    <div class="b2b-left">
+      <div class="section-tag">FOR PROFESSIONALS</div>
+      <h2 class="section-title" style="margin-bottom:24px;">ホテル・旅行会社の<br>ご担当者様へ</h2>
+      <p class="b2b-body">「スリープツーリズム」は、これからのラグジュアリー旅行において世界的に注目されているカテゴリーです。京都でこのプログラムを提供しているのは、現在このサービスのみです。</p>
+      <p class="b2b-body">現在、京都のホテル・旅行会社様を対象に、先行導入パートナーを募集しています。宿泊ゲストへの新しい付加価値として、ぜひご検討ください。</p>
+      <div class="b2b-features">
+        <div class="b2b-feature">
+          <div class="b2b-feature-icon">01</div>
+          <div>
+            <div class="b2b-feature-title">ホテルへの出張施術</div>
+            <p class="b2b-feature-desc">宿泊ゲストの客室で施術を実施。ホテル側の設備・スタッフの手間は一切不要です。</p>
+          </div>
+        </div>
+        <div class="b2b-feature">
+          <div class="b2b-feature-icon">02</div>
+          <div>
+            <div class="b2b-feature-title">旅行プランへの組み込み</div>
+            <p class="b2b-feature-desc">「京都スリープツーリズム」として旅行プランに組み込み、他にはない体験価値をご提案いただけます。</p>
+          </div>
+        </div>
+      </div>
+      <p class="b2b-body" style="margin-top:28px;font-size:15px;color:rgba(255,255,255,0.5);">先行導入の条件・価格はご相談ベースで対応いたします。まずはお気軽にご連絡ください。</p>
+    </div>
+    <div class="b2b-right">
+      <div class="b2b-form-wrap">
+        <h3 class="b2b-form-title">提携・導入のご相談</h3>
+        <p class="b2b-form-sub">内容を確認の上、2営業日以内にご連絡いたします。</p>
+        <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleB2BSubmit(event)">
+          <input type="hidden" name="access_key" value="f0fe1e71-8456-4be6-bd21-32b35236ebde">
+          <input type="hidden" name="subject" value="【和nagomi・業務提携】お問い合わせが届きました">
+          <input type="hidden" name="from_name" value="和nagomi Premium Wellness">
+          <input type="hidden" name="replyto" value="kyoto@nagomi.net">
+          <input type="hidden" name="redirect" value="false">
+          <input type="hidden" name="autoresponse" value="true">
+          <input type="hidden" name="autoresponse_subject" value="【和nagomi】お問い合わせを受け付けました">
+          <input type="hidden" name="autoresponse_message" value="この度はお問い合わせいただき、ありがとうございます。&#10;&#10;内容を確認の上、2営業日以内にご連絡いたします。&#10;&#10;数日経っても返信がない場合は、メールが届いていない可能性がございます。大変お手数ですが、お電話にてご連絡いただけますと幸いです。&#10;&#10;TEL：070-8570-1320 / 0771-33-0029&#10;&#10;&#12288;&#10;和nagomi Premium Wellness&#10;紫藤 珠佑&#10;&#10;ご返信いただく場合は、kyoto@nagomi.net までご連絡ください。">
+          <input type="hidden" name="type" value="業務提携・B2B">
+          <div class="form-group">
+            <label>会社名・ホテル名 <span>必須</span></label>
+            <input type="text" name="company" placeholder="例：○○ホテル、○○トラベル" required>
+          </div>
+          <div class="form-group">
+            <label>ご担当者名 <span>必須</span></label>
+            <input type="text" name="name" placeholder="例：山田 花子" required>
+          </div>
+          <div class="form-group">
+            <label>メールアドレス <span>必須</span></label>
+            <input type="email" name="email" placeholder="例：yamada@hotel.co.jp" required>
+          </div>
+          <div class="form-group">
+            <label>ご関心の内容 <span>必須</span></label>
+            <select name="b2b_type" required>
+              <option value="">選択してください</option>
+              <option value="ホテルへの出張施術について">ホテルへの出張施術について</option>
+              <option value="旅行プランへの組み込みについて">旅行プランへの組み込みについて</option>
+              <option value="まず話を聞きたい">まず話を聞きたい</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>メッセージ <span class="opt">任意</span></label>
+            <textarea name="message" placeholder="ご質問・ご要望などお気軽にどうぞ。"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:8px;">
+            <label style="display:flex;align-items:flex-start;gap:10px;font-weight:400;cursor:pointer;">
+              <input type="checkbox" required style="width:auto;margin-top:4px;flex-shrink:0;">
+              <span style="font-size:15px;line-height:1.8;background:none;color:var(--text-mid);padding:0;">
+                <a href="/privacy.html" target="_blank" style="color:var(--moss);text-decoration:underline;">プライバシーポリシー</a>に同意の上、送信します
+                <span style="font-size:13px;color:white;background:var(--moss);padding:2px 8px;margin-left:6px;">必須</span>
+              </span>
+            </label>
+          </div>
+          <button type="submit" class="form-submit">送信する</button>
+          お問い合わせありがとうございます。<br>
+          内容を確認の上、2営業日以内にご連絡いたします。
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1187,72 +1425,157 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 </button>
 
 <footer>
-  <div class="footer-logo">
-    <svg width="250" height="100" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(36, 70)" opacity="0.5">
-        <line x1="0" y1="-28" x2="0" y2="-20" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="20" y1="-20" x2="14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="28" y1="0" x2="20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="-20" y1="-20" x2="-14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="-28" y1="0" x2="-20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="14" y1="20" x2="10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="-14" y1="20" x2="-10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
-      </g>
-      <g transform="translate(12, 64)">
-        <path d="M14,4 Q32,-28 20,-38 Q5,-22 14,4Z" fill="rgba(255,255,255,0.45)"/>
-        <path d="M13,3 Q30,-24 20,-36" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.1"/>
-        <path d="M14,4 Q-5,-26 -10,-36 Q2,-18 14,4Z" fill="rgba(255,255,255,0.3)"/>
-        <path d="M13,3 Q-4,-22 -8,-34" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.0"/>
-        <path d="M14,4 Q36,10 40,-8 Q24,-2 14,4Z" fill="rgba(255,255,255,0.35)" opacity="0.9"/>
-        <path d="M14,4 L14,32" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
-      </g>
-      <text x="72" y="52" font-family="serif" font-size="30" fill="rgba(255,255,255,0.8)" letter-spacing="1">和</text>
-      <text x="108" y="50" font-family="Georgia,serif" font-size="24" fill="rgba(255,255,255,0.55)" font-style="italic" letter-spacing="0.5">nagomi</text>
-      <line x1="70" y1="62" x2="290" y2="62" stroke="rgba(212,168,83,0.4)" stroke-width="0.7"/>
-      <text x="180" y="78" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.3)" letter-spacing="3">PREMIUM WELLNESS · KYOTO</text>
-    </svg>
-  </div>
+  <div class="footer-logo" id="footerLogo"></div>
   <div class="footer-info">
-    © 2025 和 nagomi Premium Wellness / 株式会社なごみ<br>
-    京都府京都市
+    © 2026 和 nagomi Premium Wellness / 株式会社なごみ<br>
+    京都府亀岡市<br>
+    <span style="display:inline-flex;gap:20px;flex-wrap:wrap;margin-top:10px;">
+      <a href="/privacy.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:13px;letter-spacing:0.08em;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">プライバシーポリシー</a>
+      <a href="/tokusyouhou.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:13px;letter-spacing:0.08em;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">特定商取引法に基づく表記</a>
+    </span>
   </div>
 </footer>
+
 <script>
-window.addEventListener('scroll',function(){
-  const btn=document.getElementById('backToTop');
-  if(window.scrollY>400){btn.classList.add('visible')}
-  else{btn.classList.remove('visible')}
+/* ── SVGロゴ共通テンプレート ───────────────────────── */
+function buildLogo(w, h, textFill, subFill, leafFill1, leafFill2, lineFill, subTextFill, leafOpacity) {
+  return `<svg width="${w}" height="${h}" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(36,70)" opacity="${leafOpacity}">
+      <line x1="0" y1="-28" x2="0" y2="-20" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="-20" x2="14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="28" y1="0" x2="20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-20" y1="-20" x2="-14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-28" y1="0" x2="-20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="14" y1="20" x2="10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="-14" y1="20" x2="-10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(12,64)">
+      <path d="M14,4 Q32,-28 20,-38 Q5,-22 14,4Z" fill="${leafFill1}"/>
+      <path d="M13,3 Q30,-24 20,-36" fill="none" stroke="${subFill}" stroke-width="1.1"/>
+      <path d="M14,4 Q-5,-26 -10,-36 Q2,-18 14,4Z" fill="${leafFill2}"/>
+      <path d="M13,3 Q-4,-22 -8,-34" fill="none" stroke="${subFill}" stroke-width="1.0"/>
+      <path d="M14,4 Q36,10 40,-8 Q24,-2 14,4Z" fill="${leafFill1}" opacity="0.9"/>
+      <path d="M14,4 L14,32" stroke="${leafFill1}" stroke-width="1.4" stroke-linecap="round"/>
+    </g>
+    <text x="72" y="52" font-family="serif" font-size="30" fill="${textFill}" letter-spacing="1">和</text>
+    <text x="108" y="50" font-family="Georgia,serif" font-size="24" fill="${subFill}" font-style="italic" letter-spacing="0.5">nagomi</text>
+    <line x1="70" y1="62" x2="290" y2="62" stroke="${lineFill}" stroke-width="0.7"/>
+    <text x="180" y="78" text-anchor="middle" font-family="sans-serif" font-size="8" fill="${subTextFill}" letter-spacing="3">PREMIUM WELLNESS · KYOTO</text>
+  </svg>`;
+}
+
+// ロゴ注入（エラーがあっても他の処理を止めない）
+try {
+  var navLogo = document.querySelector('.nav-logo');
+  if(navLogo) navLogo.innerHTML =
+    buildLogo(280,112,'#3E6B42','#5B8A5F','#5B8A5F','#6B9E70','#D4A853','#7A6A50','0.65');
+} catch(e) {}
+
+try {
+  var ctaLogoWrap = document.querySelector('.cta-logo-placeholder');
+  if(ctaLogoWrap) ctaLogoWrap.innerHTML =
+    buildLogo(210,84,'#3E6B42','#5B8A5F','#5B8A5F','#6B9E70','#D4A853','#7A6A50','0.65');
+} catch(e) {}
+
+try {
+  var footerLogo = document.getElementById('footerLogo');
+  if(footerLogo) footerLogo.innerHTML =
+    buildLogo(250,100,'rgba(255,255,255,0.8)','rgba(255,255,255,0.55)','rgba(255,255,255,0.45)','rgba(255,255,255,0.3)','rgba(212,168,83,0.4)','rgba(255,255,255,0.3)','0.5');
+} catch(e) {}
+
+/* ── ハンバーガーメニュー ───────────────────────────── */
+var hamburger = document.getElementById('hamburger');
+var navDrawer = document.getElementById('navDrawer');
+
+function closeDrawer() {
+  if(!hamburger || !navDrawer) return;
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded','false');
+  navDrawer.classList.remove('open');
+  navDrawer.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+}
+
+if(hamburger && navDrawer) {
+  hamburger.addEventListener('click', function() {
+    var isOpen = navDrawer.classList.contains('open');
+    if (isOpen) {
+      closeDrawer();
+    } else {
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded','true');
+      navDrawer.classList.add('open');
+      navDrawer.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+}
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeDrawer();
 });
 
-function toggleRetreatNote() {
-  const select = document.getElementById('programSelect');
-  const note = document.getElementById('retreatNote');
-  if (select.value.includes('3泊4日')) {
-    note.style.display = 'block';
-  } else {
-    note.style.display = 'none';
+/* ── スクロール → トップボタン ─────────────────────── */
+window.addEventListener('scroll', function(){
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  if(window.scrollY > 400){ btn.classList.add('visible') }
+  else { btn.classList.remove('visible') }
+});
+
+/* ── FAQ アコーディオン ─────────────────────────────── */
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.faq-q').setAttribute('aria-expanded','false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
   }
 }
-function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
-  fetch('https://formspree.io/f/xkoqynvq', {
+
+/* ── プログラム選択 → リトリート注記 ─────────────────── */
+function toggleRetreatNote() {
+  var select = document.getElementById('programSelect');
+  var note = document.getElementById('retreatNote');
+  if(!select || !note) return;
+  note.style.display = select.value.includes('3泊4日') ? 'block' : 'none';
+}
+
+/* ── フォーム送信（共通） ───────────────────────────── */
+function submitForm(formEl, successId) {
+  var data = new FormData(formEl);
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     body: data,
     headers: { 'Accept': 'application/json' }
   })
-  .then(res => {
+  .then(function(res) {
     if (res.ok) {
-      form.style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      formEl.style.display = 'none';
+      document.getElementById(successId).style.display = 'block';
     } else {
       alert('送信に失敗しました。メールまたはLINEでご連絡ください。');
     }
   })
-  .catch(() => alert('送信に失敗しました。メールまたはLINEでご連絡ください。'));
+  .catch(function() {
+    alert('送信に失敗しました。メールまたはLINEでご連絡ください。');
+  });
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  submitForm(e.target, 'formSuccess');
+}
+function handleB2BSubmit(e) {
+  e.preventDefault();
+  submitForm(e.target, 'b2bFormSuccess');
 }
 </script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
+

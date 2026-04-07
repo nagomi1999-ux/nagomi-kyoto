@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>OGP画像生成</title>
+<style>
+  body{margin:0;background:#888;display:flex;flex-direction:column;align-items:center;padding:40px;gap:20px;font-family:sans-serif;}
+  canvas{display:block;box-shadow:0 4px 24px rgba(0,0,0,0.3);max-width:100%;}
+  button{padding:14px 40px;background:#5B8A5F;color:white;border:none;font-size:16px;cursor:pointer;letter-spacing:0.1em;border-radius:2px;}
+  button:hover{background:#3E6B42}
+  button:disabled{background:#999;cursor:default;}
+  p{color:white;font-size:14px;margin:0;text-align:center;}
+</style>
+</head>
+<body>
+<p>↓ 画像を確認して「ダウンロード」ボタンを押してください。<br>ファイル名は ogp.jpg にしてサーバーに置いてください。</p>
+<canvas id="ogp" width="1200" height="630"></canvas>
+<button id="dlBtn" disabled>読み込み中...</button>
+
+<script>
+const canvas = document.getElementById('ogp');
+const ctx = canvas.getContext('2d');
+const W = 1200, H = 630;
+
+const svgLogo = `<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(36, 52)" opacity="0.85">
+    <line x1="0" y1="-28" x2="0" y2="-20" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="20" y1="-20" x2="14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="28" y1="0" x2="20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-20" y1="-20" x2="-14" y2="-14" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-28" y1="0" x2="-20" y2="0" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="14" y1="20" x2="10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="-14" y1="20" x2="-10" y2="13" stroke="#D4A853" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(12, 50)">
+    <path d="M14,4 Q32,-28 20,-38 Q5,-22 14,4Z" fill="#5B8A5F"/>
+    <path d="M13,3 Q30,-24 20,-36" fill="none" stroke="#FFFFFF" stroke-width="1.1"/>
+    <path d="M14,4 Q-5,-26 -10,-36 Q2,-18 14,4Z" fill="#6B9E70"/>
+    <path d="M13,3 Q-4,-22 -8,-34" fill="none" stroke="#FFFFFF" stroke-width="1.0"/>
+    <path d="M14,4 Q36,10 40,-8 Q24,-2 14,4Z" fill="#5B8A5F" opacity="0.9"/>
+    <path d="M14,4 L14,22" stroke="#5B8A5F" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+  <text x="56" y="38" font-family="serif" font-size="26" fill="#3E6B42" letter-spacing="1">和</text>
+  <text x="84" y="36" font-family="Georgia,serif" font-size="21" fill="#5B8A5F" font-style="italic" letter-spacing="0.5">nagomi</text>
+  <line x1="54" y1="46" x2="196" y2="46" stroke="#D4A853" stroke-width="0.7"/>
+  <text x="125" y="60" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#7A6A50" letter-spacing="2.5">PREMIUM WELLNESS</text>
+  <text x="125" y="72" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#5B8A5F" letter-spacing="3">KYOTO</text>
+</svg>`;
+
+const logoImg = new Image();
+logoImg.onload = function() {
+  draw(logoImg);
+  const btn = document.getElementById('dlBtn');
+  btn.disabled = false;
+  btn.textContent = 'ogp.jpg をダウンロード';
+};
+logoImg.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgLogo);
+
+function draw(logo) {
+  // 背景
+  const bg = ctx.createLinearGradient(0, 0, W, H);
+  bg.addColorStop(0, '#F0F5EE');
+  bg.addColorStop(0.6, '#EFF5ED');
+  bg.addColorStop(1, '#E4EFE2');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // 左サイドの緑帯
+  const side = ctx.createLinearGradient(0, 0, 0, H);
+  side.addColorStop(0, '#3E6B42');
+  side.addColorStop(1, '#5B8A5F');
+  ctx.fillStyle = side;
+  ctx.fillRect(0, 0, 8, H);
+
+  // 上下の装飾ライン
+  ctx.strokeStyle = 'rgba(212,168,83,0.3)';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(80, 56); ctx.lineTo(W-80, 56); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(80, H-56); ctx.lineTo(W-80, H-56); ctx.stroke();
+
+  // 縦の区切り線
+  ctx.strokeStyle = 'rgba(212,168,83,0.22)';
+  ctx.beginPath(); ctx.moveTo(620, 72); ctx.lineTo(620, H-72); ctx.stroke();
+
+  // 背景透かし文字「眠」
+  ctx.save();
+  ctx.font = '300 400px serif';
+  ctx.fillStyle = 'rgba(91,138,95,0.04)';
+  ctx.textAlign = 'left';
+  ctx.fillText('眠', -10, H+10);
+  ctx.restore();
+
+  // ── 左側テキスト ──
+  ctx.textAlign = 'left';
+
+  // タグ
+  ctx.font = '500 17px sans-serif';
+  ctx.fillStyle = '#7A6A50';
+  ctx.fillText('KYOTO SLEEP TOURISM', 100, 118);
+
+  // ゴールドライン
+  ctx.strokeStyle = '#D4A853';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(100, 133); ctx.lineTo(350, 133); ctx.stroke();
+
+  // メインコピー
+  ctx.font = '300 62px serif';
+  ctx.fillStyle = '#1A1A16';
+  ctx.fillText('眠りを変える旅を、', 100, 244);
+
+  ctx.font = '400 62px serif';
+  ctx.fillStyle = '#3E6B42';
+  ctx.fillText('京都で。', 100, 322);
+
+  // サブコピー
+  ctx.font = '300 22px sans-serif';
+  ctx.fillStyle = '#5A5240';
+  ctx.fillText('快眠専門セラピスト・紫藤珠佑による', 100, 400);
+  ctx.fillText('スリープツーリズム', 100, 436);
+
+  // ── 右側：ロゴ ──
+  const logoW = 520, logoH = 260;
+  const logoX = 650;
+  const logoY = (H - logoH) / 2 - 20;
+  ctx.drawImage(logo, logoX, logoY, logoW, logoH);
+
+  // ロゴ下のキャッチコピー
+  ctx.font = '300 17px sans-serif';
+  ctx.fillStyle = 'rgba(62,107,66,0.75)';
+  ctx.textAlign = 'center';
+  ctx.fillText('遊んでいるうちに、脳が整っていく。', logoX + logoW/2, logoY + logoH + 40);
+
+  // URLバー
+  ctx.fillStyle = 'rgba(91,138,95,0.1)';
+  ctx.fillRect(0, H-44, W, 44);
+  ctx.font = '300 14px sans-serif';
+  ctx.fillStyle = '#5A5240';
+  ctx.textAlign = 'center';
+  ctx.fillText('nagomi-kyoto.net', W/2, H-16);
+}
+
+document.getElementById('dlBtn').addEventListener('click', function() {
+  const link = document.createElement('a');
+  link.download = 'ogp.jpg';
+  link.href = canvas.toDataURL('image/jpeg', 0.92);
+  link.click();
+});
+</script>
+</body>
+</html>
