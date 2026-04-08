@@ -1049,7 +1049,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <li>日程の詳細はご相談の上、決定させていただきます</li>
           <li>小顔フェイシャルケア付き</li>
         </ul>
-        <button class="menu-btn-combined" onclick="window.open('https://square.site/appointments/buyer/widget/powihd4lrdxh95/LG4R0KYMW7XNZ','_blank');return false;">
+        <button class="menu-btn-combined" onclick="openSquareModal();return false;">
           <span class="menu-btn-combined-main">空き日程を確認する</span>
           <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
         </button>
@@ -1068,7 +1068,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <li>　✦ カウンセリング 30分｜ヒアリング・アンケート／セロトニンの説明／睡眠改善・自律神経ケアのアドバイス<br>　　＋ 帰宅後も整い続けるセルフケアをお伝えします</li>
           <li>小顔フェイシャルケアのオプション追加可</li>
         </ul>
-        <button class="menu-btn-combined" onclick="window.open('https://square.site/appointments/buyer/widget/powihd4lrdxh95/LG4R0KYMW7XNZ','_blank');return false;">
+        <button class="menu-btn-combined" onclick="openSquareModal();return false;">
           <span class="menu-btn-combined-main">空き日程を確認する</span>
           <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
         </button>
@@ -1087,7 +1087,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <li>　✦ 小顔フェイシャルケア（施術）40分</li>
           <li>　✦ 睡眠改善・自律神経ケアのアドバイス<br>　　＋ 帰宅後も整い続けるセルフケアをお伝えします</li>
         </ul>
-        <button class="menu-btn-combined" onclick="window.open('https://square.site/appointments/buyer/widget/powihd4lrdxh95/LG4R0KYMW7XNZ','_blank');return false;">
+        <button class="menu-btn-combined" onclick="openSquareModal();return false;">
           <span class="menu-btn-combined-main">空き日程を確認する</span>
           <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
         </button>
@@ -1104,7 +1104,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <li>【カウンセリング 30分】ヒアリング・アンケート／セロトニンの説明／睡眠改善・自律神経ケアのアドバイス<br>＋ 帰宅後も整い続けるセルフケアをお伝えします</li>
           <li>客室内での完全プライベート施術</li>
         </ul>
-        <button class="menu-btn-combined" onclick="window.open('https://square.site/appointments/buyer/widget/powihd4lrdxh95/LG4R0KYMW7XNZ','_blank');return false;">
+        <button class="menu-btn-combined" onclick="openSquareModal();return false;">
           <span class="menu-btn-combined-main">空き日程を確認する</span>
           <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
         </button>
@@ -1136,7 +1136,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <li>【フェイシャル 40分】小顔フェイシャルケア</li>
           <li>客室内での完全プライベート施術</li>
         </ul>
-        <button class="menu-btn-combined" onclick="window.open('https://square.site/appointments/buyer/widget/powihd4lrdxh95/LG4R0KYMW7XNZ','_blank');return false;">
+        <button class="menu-btn-combined" onclick="openSquareModal();return false;">
           <span class="menu-btn-combined-main">空き日程を確認する</span>
           <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
         </button>
@@ -1319,11 +1319,11 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
       <p class="square-booking-step">STEP 1</p>
       <h3 class="square-booking-title">まず空き状況をご確認ください</h3>
       <p class="square-booking-sub">ご希望の日時に空きがあるかどうか、カレンダーでご確認いただけます。</p>
-      <a href="https://square.site/appointments/buyer/widget/powihd4lrdxh95/LG4R0KYMW7XNZ" target="_blank" rel="noopener" class="square-booking-btn">
+      <button onclick="openSquareModal()" class="square-booking-btn">
         空き状況を確認する
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;vertical-align:middle;"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </a>
-      <p class="square-booking-note">※ 別タブで開きます</p>
+      </button>
+      <p class="square-booking-note">※ カレンダーが表示されます</p>
       <div class="square-booking-divider">
         <span>ご希望の日時が空いていましたら</span>
       </div>
@@ -1571,6 +1571,27 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
   </div>
 </section>
 
+<!-- Square カレンダーモーダル -->
+<div id="squareModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9998;background:rgba(26,26,22,0.7);backdrop-filter:blur(4px);overflow-y:auto;padding:20px 16px;">
+  <div style="max-width:540px;margin:40px auto;background:white;position:relative;border-top:3px solid var(--sage);">
+    <div style="padding:24px 28px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(184,154,106,0.2);">
+      <div>
+        <p style="font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:0.2em;color:var(--moss);margin-bottom:4px;">STEP 1</p>
+        <p style="font-family:'Noto Serif JP',serif;font-size:17px;color:var(--text);font-weight:400;">空き状況をご確認ください</p>
+      </div>
+      <button onclick="closeSquareModal()" style="background:none;border:none;cursor:pointer;padding:8px;color:var(--text-mid);font-size:22px;line-height:1;" aria-label="閉じる">✕</button>
+    </div>
+    <div style="padding:20px 28px 12px;">
+      <p style="font-size:14px;color:var(--text-mid);line-height:1.9;margin-bottom:20px;">ご希望の日時をご確認いただけます。<br>正式なご予約はSTEP 2のフォームよりお願いします。</p>
+      <div id="squareWidgetContainer"></div>
+    </div>
+    <div style="padding:16px 28px 28px;background:var(--cream);border-top:1px solid rgba(184,154,106,0.15);text-align:center;">
+      <p style="font-size:14px;color:var(--text-mid);margin-bottom:14px;">ご希望の日程が決まりましたら</p>
+      <button onclick="closeSquareModal();document.getElementById('cta').scrollIntoView({behavior:'smooth'});" style="background:var(--moss);color:white;border:none;padding:14px 36px;font-size:14px;letter-spacing:0.1em;cursor:pointer;font-family:'Noto Sans JP',sans-serif;font-weight:500;">STEP 2 フォームへ進む</button>
+    </div>
+  </div>
+</div>
+
 <div id="sendingOverlay">
   <div class="sending-spinner"></div>
   <p class="sending-text">送信しています...</p>
@@ -1641,6 +1662,38 @@ try {
   if(footerLogo) footerLogo.innerHTML =
     buildLogo(250,100,'rgba(255,255,255,0.8)','rgba(255,255,255,0.55)','rgba(255,255,255,0.45)','rgba(255,255,255,0.3)','rgba(212,168,83,0.4)','rgba(255,255,255,0.3)','0.5');
 } catch(e) {}
+
+/* ── Square カレンダーモーダル ───────────────────── */
+function openSquareModal() {
+  var modal = document.getElementById('squareModal');
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+
+  // スクリプトをまだ読み込んでいなければ動的に追加
+  var container = document.getElementById('squareWidgetContainer');
+  if (!container.dataset.loaded) {
+    var script = document.createElement('script');
+    script.src = 'https://square.site/appointments/buyer/widget/powihd4lrdxh95/LG4R0KYMW7XNZ.js';
+    container.appendChild(script);
+    container.dataset.loaded = 'true';
+  }
+}
+
+function closeSquareModal() {
+  var modal = document.getElementById('squareModal');
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// 背景クリックで閉じる
+document.getElementById('squareModal').addEventListener('click', function(e) {
+  if (e.target === this) closeSquareModal();
+});
+
+// ESCキーで閉じる
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSquareModal();
+});
 
 /* ── ハンバーガーメニュー ───────────────────────────── */
 var hamburger = document.getElementById('hamburger');
