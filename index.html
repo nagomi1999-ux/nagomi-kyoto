@@ -1318,12 +1318,12 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
     <div class="square-booking-wrap">
       <p class="square-booking-step">STEP 1</p>
       <h3 class="square-booking-title">まず空き状況をご確認ください</h3>
-      <p class="square-booking-sub">ご希望の日時に空きがあるかどうか、カレンダーでご確認いただけます。</p>
+      <p class="square-booking-sub">ご希望の日時に空きがあるかどうかをご確認いただけます。<br>画面が開いたら、メニューを選んで「次へ」を押すと、空き日時の一覧が表示されます。</p>
       <button onclick="openSquareModal()" class="square-booking-btn">
         空き状況を確認する
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;vertical-align:middle;"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </button>
-      <p class="square-booking-note">※ カレンダーが表示されます</p>
+      <p class="square-booking-note">※ 空き日時の確認画面が開きます</p>
       <div class="square-booking-divider">
         <span>ご希望の日時が空いていましたら</span>
       </div>
@@ -1416,7 +1416,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
         <div class="form-group">
           <label>ご希望の時間帯 <span class="opt">任意</span></label>
           <input type="text" id="ftime" name="time" placeholder="例：14時ごろ、夕方希望　など">
-          <p class="form-note">※ 受付時間は14時〜20時です。ご希望の時間帯をお知らせください。時間帯によってはご相談させていただく場合がございます。</p>
+          <p class="form-note">※ さんぽセッション・リトリートは10時〜、快眠セッション等の室内メニューは14時〜20時の受付となります。ご希望の時間帯をお知らせください。時間帯によってはご相談させていただく場合がございます。</p>
         </div>
 
         <div class="form-group">
@@ -1566,6 +1566,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           お問い合わせありがとうございます。<br>
           内容を確認の上、2営業日以内にご連絡いたします。
         </div>
+        </form>
       </div>
     </div>
   </div>
@@ -1587,7 +1588,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
     </div>
     <div style="padding:16px 28px 28px;background:var(--cream);border-top:1px solid rgba(184,154,106,0.15);text-align:center;">
       <p style="font-size:14px;color:var(--text-mid);margin-bottom:14px;">ご希望の日程が決まりましたら</p>
-      <button onclick="closeSquareModal();document.getElementById('cta').scrollIntoView({behavior:'smooth'});" style="background:var(--moss);color:white;border:none;padding:14px 36px;font-size:14px;letter-spacing:0.1em;cursor:pointer;font-family:'Noto Sans JP',sans-serif;font-weight:500;">STEP 2 フォームへ進む</button>
+      <button type="button" onclick="closeSquareModal();document.getElementById('cta').scrollIntoView({behavior:'smooth'});" style="background:var(--moss);color:white;border:none;padding:14px 36px;font-size:14px;letter-spacing:0.1em;cursor:pointer;font-family:'Noto Sans JP',sans-serif;font-weight:500;">STEP 2 フォームへ進む</button>
     </div>
   </div>
 </div>
