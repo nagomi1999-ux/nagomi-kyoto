@@ -135,6 +135,18 @@ nav{
   font-weight:400;transition:all 0.3s;border:1px solid var(--gold-light);
 }
 .btn-sub:hover{border-color:var(--earth);background:rgba(139,111,90,0.06)}
+.hero-voice{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;color:var(--earth);
+  letter-spacing:0.06em;line-height:1.8;
+  padding-left:4px;
+}
+.hero-voice span{
+  display:block;font-size:13px;
+  color:var(--text-light);letter-spacing:0.1em;
+  margin-top:4px;
+}
+
 /* RECOGNITION */
 .recog{
   padding:120px 60px;background:var(--moss);
@@ -764,6 +776,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
       <a href="#menu" class="btn-main">至福のメニューへ</a>
       <a href="#cta" class="btn-sub">まず相談する</a>
     </div>
+    <p class="hero-voice">❝ ぐっすり眠れた、来た時より元気になっている ❞<span>— ご参加者の声</span></p>
   </div>
 </section>
 <section class="recog">
@@ -1362,13 +1375,13 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 
         <div class="form-group">
           <label>お名前 <span>必須</span></label>
-          <input type="text" id="fname" name="name" placeholder="例：山田 花子" required>
+          <input type="text" id="fname" name="name" placeholder="例：一条 京子" required>
           <p class="field-error" id="nameError">お名前をご入力ください</p>
         </div>
 
         <div class="form-group">
           <label>フリガナ <span>必須</span> <small style="font-size:11px;font-weight:300;color:var(--text-light);">（ローマ字可）</small></label>
-          <input type="text" id="kana" name="kana" placeholder="例：ヤマダ ハナコ / YAMADA Hanako" required>
+          <input type="text" id="kana" name="kana" placeholder="例：イチジョウ キョウコ / ICHIJO Kyoko" required>
           <p class="field-error" id="kanaError">フリガナをご入力ください</p>
         </div>
 
@@ -1396,7 +1409,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
             <option value="小顔フェイシャルケア（オプション） ¥18,000">小顔フェイシャルケア（オプション）　¥18,000</option>
             <option value="未定・宿泊プランも含めて相談したい">未定・宿泊プランも含めて相談したい</option>
           </select>
-          <p class="form-note" id="retreatNote" style="display:none;color:var(--moss);font-weight:500;">【3泊4日プランについて】お客様のご予定に合わせて個別に調整いたします。詳細は事前相談にて承ります。</p>
+          <p class="form-note" id="retreatNote" style="display:none;color:var(--moss);font-weight:500;">【3泊4日プランについて】お客様のご予定に合わせて個別に調整いたします。詳細は事前相談にて承ります。<br>「ご希望の日程」には滞在予定日を、ご相談のご希望日時は「メッセージ欄」にご入力ください。</p>
           <p class="field-error" id="programError">プログラムをお選びください</p>
         </div>
 
@@ -1425,8 +1438,6 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
             <option value="">選択してください</option>
             <option value="1名">1名</option>
             <option value="2名">2名</option>
-            <option value="3名">3名</option>
-            <option value="4名">4名</option>
           </select>
           <p class="field-error" id="guestsError">参加人数をお選びください</p>
         </div>
