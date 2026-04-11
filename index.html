@@ -137,14 +137,14 @@ nav{
 .btn-sub:hover{border-color:var(--earth);background:rgba(139,111,90,0.06)}
 .hero-voice{
   font-family:'Noto Serif JP',serif;
-  font-size:15px;color:var(--earth);
+  font-size:18px;color:var(--text-mid);
   letter-spacing:0.06em;line-height:1.8;
   padding-left:4px;
 }
 .hero-voice span{
-  display:block;font-size:13px;
-  color:var(--text-light);letter-spacing:0.1em;
-  margin-top:4px;
+  display:block;font-size:14px;
+  color:var(--earth);letter-spacing:0.12em;
+  margin-top:6px;font-weight:500;
 }
 
 /* RECOGNITION */
@@ -609,6 +609,54 @@ nav{
   .square-booking-divider span{font-size:13px;}
 }
 
+/* MENU DETAIL ACCORDION */
+.menu-detail-link{
+  display:block;font-size:15px;color:var(--moss);
+  letter-spacing:0.06em;text-decoration:none;
+  margin:8px 0 12px;transition:opacity 0.2s;
+}
+.menu-card.featured .menu-detail-link{color:rgba(255,255,255,0.9)}
+.menu-detail-link:hover{opacity:0.7}
+.menu-detail-wrap{
+  margin-top:48px;border-top:1px solid rgba(184,154,106,0.2);
+  padding-top:40px;
+}
+.menu-detail-heading{
+  font-family:'Noto Serif JP',serif;font-size:20px;
+  font-weight:400;color:var(--text);margin-bottom:24px;
+}
+.menu-detail-item{
+  border-bottom:1px solid rgba(184,154,106,0.2);
+}
+.menu-detail-q{
+  width:100%;text-align:left;background:none;border:none;
+  padding:20px 0;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Noto Serif JP',serif;font-size:17px;
+  color:var(--text);font-weight:400;letter-spacing:0.04em;
+}
+.menu-detail-q:hover{color:var(--moss)}
+.menu-detail-icon{
+  font-size:20px;color:var(--moss);flex-shrink:0;
+  transition:transform 0.3s;line-height:1;
+}
+.menu-detail-item.open .menu-detail-icon{transform:rotate(45deg)}
+.menu-detail-a{
+  display:none;padding:0 0 24px;
+}
+.menu-detail-item.open .menu-detail-a{display:block}
+.menu-detail-a p{
+  font-size:16px;line-height:2.2;color:var(--text-mid);
+  margin-bottom:16px;font-weight:300;
+}
+.menu-detail-more{
+  display:inline-block;font-size:14px;color:var(--moss);
+  text-decoration:none;letter-spacing:0.06em;
+  border-bottom:1px solid var(--sage-light);
+  padding-bottom:2px;transition:border-color 0.2s;
+}
+.menu-detail-more:hover{border-color:var(--moss)}
+
 /* FOOTER */
 footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.7);font-weight:300}
@@ -892,11 +940,11 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 
           <div style="background:linear-gradient(135deg,var(--sage-light),var(--blush));border:1px solid rgba(122,158,118,0.3);padding:20px 24px;">
             <div style="font-size:13px;letter-spacing:0.15em;color:var(--moss);margin-bottom:8px;">SOLUTION</div>
-            <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:var(--text);line-height:1.7;">夜、メラトニンが自然に分泌<br><span style="font-size:14px;font-weight:300;color:var(--text-mid);">→ 深い眠りへ。翌朝スッキリ目覚める</span></div>
+            <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:500;color:var(--text);line-height:1.7;">夜、睡眠ホルモン・メラトニンが自然に分泌<br><span style="font-size:14px;font-weight:300;color:var(--text-mid);">→ 深い眠りへ。翌朝スッキリ目覚める</span></div>
           </div>
 
         </div>
-        <p style="font-size:15px;color:var(--text-light);margin-top:16px;text-align:center;line-height:1.9;">セロトニンは日が落ちるとメラトニンに変換されます。<br>セロトニンを増やすことが、快眠への最短経路です。</p>
+        <p style="font-size:15px;color:var(--text-light);margin-top:16px;text-align:center;line-height:1.9;">日が落ちると、セロトニンをもとに、睡眠ホルモン・メラトニンの合成が始まります。<br>セロトニンを増やすことが、快眠への最短経路です。</p>
       </div>
     </div>
 
@@ -1044,115 +1092,115 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
     <p class="menu-lead">このプログラムは、3泊4日のリトリートで最も深く変わります。京都滞在のご予定に合わせて、あなたに合ったプログラムをお選びください。</p>
     <div class="menu-cards">
 
+      <!-- 3泊4日 -->
       <div class="menu-card featured">
         <div class="menu-lbl">MOST RECOMMENDED</div>
         <h3 class="menu-name">京都快眠リトリート<br>3泊4日</h3>
         <div class="menu-desc">最も深く、最も変わる。完全パーソナルプログラム</div>
         <div class="menu-price">¥230,000</div>
-        <div class="menu-unit">4日間 / 税込</div>
+        <div class="menu-unit">税込・小顔フェイシャルケア込み</div>
         <ul class="menu-features">
-          <li>【DAY 1】快眠セッション 90分（客室内）</li>
-          <li>　✦ 施術 30分｜セロトニン活性療法</li>
-          <li>　✦ カウンセリング 60分｜ヒアリング・アンケート／セロトニンの説明／睡眠改善・自律神経ケアのアドバイス<br>　　＋ 帰宅後も整い続けるセルフケアをお伝えします</li>
-          <li>　🌿 このコースだけの特別セッション「4日間のパーソナルプログラム」<br>　　お一人おひとりの状態に合わせて、4日間の流れを丁寧にご説明します。</li>
-          <li>【DAY 2・3】京都さんぽセッション 各約4時間（屋外＋客室）</li>
-          <li>　✦ STEP 1｜屋外歩行セラピー 約3時間（現地集合）<br>　　歩行リズムでセロトニン活性化／呼吸・リズムの調整</li>
-          <li>　✦ STEP 2｜客室内セッション 約1時間（客室解散）<br>　　セロトニン活性療法（施術）30分</li>
-          <li>【DAY 4】快眠セッション 60分</li>
+          <li>DAY 1　快眠セッション 90分</li>
+          <li>DAY 2　京都さんぽセッション 約4時間<br>　　　　＋ 小顔フェイシャルケア 40分</li>
+          <li>DAY 3　京都さんぽセッション 約4時間</li>
+          <li>DAY 4　お仕上げセッション 60分</li>
           <li>日程の詳細はご相談の上、決定させていただきます</li>
-          <li>小顔フェイシャルケア付き</li>
         </ul>
+        <a href="#menu-detail" class="menu-detail-link" onclick="openMenuDetail(event,'all')">各セッションの詳細はこちら →</a>
         <button class="menu-btn-combined" onclick="openSquareModal();return false;">
           <span class="menu-btn-combined-main">空き日程を確認する</span>
           <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
         </button>
       </div>
 
+      <!-- 2泊3日 -->
       <div class="menu-card">
-        <div class="menu-lbl">1DAY</div>
-        <h3 class="menu-name">京都さんぽセッション</h3>
-        <div class="menu-desc">1日しかない方へ。京都を楽しみながら、脳から整えていきます。</div>
-        <div class="menu-price">¥90,000</div>
-        <div class="menu-unit">約4時間 / 税込　※交通費等別途</div>
+        <div class="menu-lbl">2 NIGHTS</div>
+        <h3 class="menu-name">京都快眠リトリート<br>2泊3日</h3>
+        <div class="menu-desc">変化をしっかり感じたい方へ。さんぽ2回で深く整える。</div>
+        <div class="menu-price">¥205,000</div>
+        <div class="menu-unit">税込</div>
         <ul class="menu-features">
-          <li>【STEP 1】屋外歩行セラピー 約3時間（現地集合）<br>　　✦ 歩行リズムでセロトニン活性化／呼吸・リズムの調整</li>
-          <li>【STEP 2】客室内セッション 約1時間（客室解散）</li>
-          <li>　✦ 施術 30分｜セロトニン活性療法</li>
-          <li>　✦ カウンセリング 30分｜ヒアリング・アンケート／セロトニンの説明／睡眠改善・自律神経ケアのアドバイス<br>　　＋ 帰宅後も整い続けるセルフケアをお伝えします</li>
-          <li>小顔フェイシャルケアのオプション追加可</li>
+          <li>DAY 1　快眠セッション 90分</li>
+          <li>DAY 2　京都さんぽセッション 約4時間</li>
+          <li>DAY 3　京都さんぽセッション 約4時間</li>
+          <li>※ DAY 3をお仕上げセッションに変更可（¥50,000引き）</li>
+          <li>オプション　小顔フェイシャルケア +¥18,000</li>
         </ul>
+        <a href="#menu-detail" class="menu-detail-link" onclick="openMenuDetail(event,'all')">各セッションの詳細はこちら →</a>
         <button class="menu-btn-combined" onclick="openSquareModal();return false;">
           <span class="menu-btn-combined-main">空き日程を確認する</span>
           <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
         </button>
       </div>
 
+      <!-- 1泊2日 -->
       <div class="menu-card">
-        <div class="menu-lbl">1DAY + FACIAL</div>
-        <h3 class="menu-name">京都さんぽ＋フェイシャルケア</h3>
-        <div class="menu-desc">京都を楽しみながら、脳も顔も整える贅沢な1日。</div>
-        <div class="menu-price">¥105,000</div>
-        <div class="menu-unit">約4時間40分 / 税込　※交通費等別途</div>
+        <div class="menu-lbl">1 NIGHT</div>
+        <h3 class="menu-name">京都快眠リトリート<br>1泊2日</h3>
+        <div class="menu-desc">まず体験したい方へ。快眠セッション＋京都さんぽの1泊。</div>
+        <div class="menu-price">¥115,000</div>
+        <div class="menu-unit">税込</div>
         <ul class="menu-features">
-          <li>【STEP 1】屋外歩行セラピー 約3時間（現地集合）<br>　　✦ 歩行リズムでセロトニン活性化／呼吸・歩幅・リズムの調整</li>
-          <li>【STEP 2】客室内セッション 約1時間30分（客室解散）</li>
-          <li>　✦ セロトニン活性療法（施術）30分</li>
-          <li>　✦ 小顔フェイシャルケア（施術）40分</li>
-          <li>　✦ 睡眠改善・自律神経ケアのアドバイス<br>　　＋ 帰宅後も整い続けるセルフケアをお伝えします</li>
+          <li>DAY 1　快眠セッション 90分</li>
+          <li>DAY 2　京都さんぽセッション 約4時間</li>
+          <li>※ 1日目に京都さんぽセッション、2日目に快眠セッションでも大丈夫です。（所要時間は同じです）到着時刻やご帰宅のお時間に合わせて、お決めいただけますので、ご希望をお知らせくださいませ。</li>
+          <li>オプション　小顔フェイシャルケア +¥18,000</li>
         </ul>
+        <a href="#menu-detail" class="menu-detail-link" onclick="openMenuDetail(event,'all')">各セッションの詳細はこちら →</a>
         <button class="menu-btn-combined" onclick="openSquareModal();return false;">
           <span class="menu-btn-combined-main">空き日程を確認する</span>
           <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
         </button>
       </div>
 
-      <div class="menu-card">
-        <div class="menu-lbl">60MIN</div>
-        <h3 class="menu-name">快眠セッション</h3>
-        <div class="menu-desc">どうしても時間がない方へ。まずこの60分を。</div>
-        <div class="menu-price">¥25,000</div>
-        <div class="menu-unit">60分 / 税込</div>
-        <ul class="menu-features">
-          <li>【施術 30分】セロトニン活性療法</li>
-          <li>【カウンセリング 30分】ヒアリング・アンケート／セロトニンの説明／睡眠改善・自律神経ケアのアドバイス<br>＋ 帰宅後も整い続けるセルフケアをお伝えします</li>
-          <li>客室内での完全プライベート施術</li>
-        </ul>
-        <button class="menu-btn-combined" onclick="openSquareModal();return false;">
-          <span class="menu-btn-combined-main">空き日程を確認する</span>
-          <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
+    </div>
+
+    <!-- セッション詳細（折りたたみ） -->
+    <div id="menu-detail" class="menu-detail-wrap">
+      <h3 class="menu-detail-heading">各セッションについて</h3>
+
+      <div class="menu-detail-item" id="detail-kaisui">
+        <button class="menu-detail-q" onclick="toggleMenuDetail(this)" aria-expanded="false">
+          快眠セッション（90分）とは？
+          <span class="menu-detail-icon">＋</span>
         </button>
+        <div class="menu-detail-a">
+          <p>京都滞在中、客室でのプライベートな時間。セロトニン活性療法（30分の施術）と、カウンセリング60分で構成されます。カウンセリングでは、現在の睡眠・からだの状態をヒアリングし、セロトニンの仕組みや睡眠改善・自律神経ケアのアドバイスをお伝えします。帰宅後も整い続けるためのセルフケアも丁寧にご説明します。完全プライベートな空間で、ゆっくりお受けいただけます。</p>
+          <a href="#serotonin" class="menu-detail-more" onclick="this.closest('.menu-detail-a').style.display='none';document.getElementById('serotonin').scrollIntoView({behavior:'smooth'});return false;">→ セロトニン活性療法について詳しく見る</a>
+        </div>
       </div>
 
-      <div class="menu-card">
-        <div class="menu-lbl">OPTION</div>
-        <h3 class="menu-name">小顔フェイシャルケア</h3>
-        <div class="menu-desc">各セッションへのオプション追加が可能です。</div>
-        <div class="menu-price">¥18,000</div>
-        <div class="menu-unit">40分 / 税込</div>
-        <ul class="menu-features">
-          <li>顔・頭・首・肩のオイルケア</li>
-          <li>血行促進・深いリラックス</li>
-          <li>快眠セッション・さんぽセッションへの追加OK</li>
-        </ul>
-        <button class="menu-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">お問い合わせはこちら</button>
+      <div class="menu-detail-item" id="detail-sanpo">
+        <button class="menu-detail-q" onclick="toggleMenuDetail(this)" aria-expanded="false">
+          京都さんぽセッション（約4時間）とは？
+          <span class="menu-detail-icon">＋</span>
+        </button>
+        <div class="menu-detail-a">
+          <p>京都の街を一緒に歩く、屋外歩行セラピーです。宿泊先などを考慮し、おすすめの京都の場所をご一緒します。歩くリズム・呼吸・歩幅のちょっとしたコツをお伝えしながら歩くだけで、脳が自然に整っていきます。後半は客室に戻り、セロトニン活性療法（30分の施術）。「楽しく歩いていたら、気づけば変わっていた」そんな時間です。</p>
+          <a href="#sanpo" class="menu-detail-more" onclick="document.getElementById('sanpo').scrollIntoView({behavior:'smooth'});return false;">→ 京都さんぽについて詳しく見る</a>
+        </div>
       </div>
 
-      <div class="menu-card">
-        <div class="menu-lbl">DEEP RECOVERY</div>
-        <h3 class="menu-name">ディープリカバリー</h3>
-        <div class="menu-desc">快眠セッション＋小顔フェイシャルケアをセットで。</div>
-        <div class="menu-price">¥42,000</div>
-        <div class="menu-unit">100分 / 税込</div>
-        <ul class="menu-features">
-          <li>【施術 30分】セロトニン活性療法</li>
-          <li>【カウンセリング 30分】ヒアリング・アンケート／セロトニンの説明／睡眠改善・自律神経ケアのアドバイス<br>＋ 帰宅後も整い続けるセルフケアをお伝えします</li>
-          <li>【フェイシャル 40分】小顔フェイシャルケア</li>
-          <li>客室内での完全プライベート施術</li>
-        </ul>
-        <button class="menu-btn-combined" onclick="openSquareModal();return false;">
-          <span class="menu-btn-combined-main">空き日程を確認する</span>
-          <span class="menu-btn-combined-note">※ 空き確認のみです。正式なお申し込みはお問い合わせフォームよりお願いします。</span>
+      <div class="menu-detail-item" id="detail-shiage">
+        <button class="menu-detail-q" onclick="toggleMenuDetail(this)" aria-expanded="false">
+          お仕上げセッション（60分）とは？
+          <span class="menu-detail-icon">＋</span>
         </button>
+        <div class="menu-detail-a">
+          <p>リトリート最終日、チェックアウト前のプライベートな時間。「この数日間、いかがでしたか？」という振り返りから始まり、からだの変化を一緒に確認します。最後のセロトニン活性療法（30分の施術）の後に、ビフォーアフターの記念写真撮影、帰宅後のセルフケアの最終確認も行います。整った状態を日常に持ち帰るための、大切な締めくくりの時間です。</p>
+        </div>
+      </div>
+
+      <div class="menu-detail-item" id="detail-facial">
+        <button class="menu-detail-q" onclick="toggleMenuDetail(this)" aria-expanded="false">
+          小顔フェイシャルケア（40分）とは？
+          <span class="menu-detail-icon">＋</span>
+        </button>
+        <div class="menu-detail-a">
+          <p>高品質のホホバオイルを使用し、お顔のコリをほぐしていきます。フェイスラインも引き締まり、老廃物も流れ、スッキリ透明感のあるお肌へ。痛くないのにしっかりリフトアップし、頭や目の疲れも改善。デコルテ・首・肩のオイルトリートメントで肩こりも一緒に解消できます。ヘッドマッサージで頭もスッキリ！オールハンドの施術です。</p>
+          <p>3泊4日プランに含まれています。1泊2日・2泊3日プランはオプションでご追加いただけます（+¥18,000）。</p>
+        </div>
       </div>
 
     </div>
@@ -1674,6 +1722,27 @@ try {
   if(footerLogo) footerLogo.innerHTML =
     buildLogo(250,100,'rgba(255,255,255,0.8)','rgba(255,255,255,0.55)','rgba(255,255,255,0.45)','rgba(255,255,255,0.3)','rgba(212,168,83,0.4)','rgba(255,255,255,0.3)','0.5');
 } catch(e) {}
+
+/* ── メニュー詳細アコーディオン ─────────────────── */
+function toggleMenuDetail(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.menu-detail-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.menu-detail-q').setAttribute('aria-expanded','false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    item.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+}
+
+function openMenuDetail(e, target) {
+  e.preventDefault();
+  var wrap = document.getElementById('menu-detail');
+  wrap.scrollIntoView({behavior:'smooth'});
+}
 
 /* ── Square カレンダーモーダル ───────────────────── */
 function openSquareModal() {
