@@ -1610,50 +1610,44 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
       <div class="b2b-form-wrap">
         <h3 class="b2b-form-title">掲載・ご確認のご連絡</h3>
         <p class="b2b-form-sub">内容を確認の上、2営業日以内にご連絡いたします。</p>
-        <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleB2BSubmit(event)">
-          <input type="hidden" name="access_key" value="f0fe1e71-8456-4be6-bd21-32b35236ebde">
-          <input type="hidden" name="subject" value="【和nagomi・掲載ご連絡】お問い合わせが届きました">
-          <input type="hidden" name="from_name" value="和nagomi Premium Wellness">
-          <input type="checkbox" name="botcheck" style="display:none;">
-          <input type="hidden" name="type" value="掲載・B2B">
+        <form id="b2bForm" novalidate>
           <div class="form-group">
             <label>ホテル名 <span>必須</span></label>
-            <input type="text" name="company" placeholder="例：○○ホテル京都" required>
+            <input type="text" id="b2b_company" placeholder="例：○○ホテル京都" required>
           </div>
           <div class="form-group">
             <label>ご担当者名 <span>必須</span></label>
-            <input type="text" name="name" placeholder="例：山田 花子" required>
+            <input type="text" id="b2b_name" placeholder="例：山田 花子" required>
           </div>
           <div class="form-group">
             <label>メールアドレス <span>必須</span></label>
-            <input type="email" name="email" placeholder="例：yamada@hotel.co.jp" required>
+            <input type="email" id="b2b_email" placeholder="例：yamada@hotel.co.jp" required>
           </div>
           <div class="form-group">
             <label>ご連絡の内容 <span>必須</span></label>
-            <select name="b2b_type" required>
+            <select id="b2b_type" required>
               <option value="">選択してください</option>
-              <option value="サイトへの掲載について">サイトへの掲載について</option>
-              <option value="客室へのご入室確認について">客室へのご入室確認について</option>
-              <option value="まず詳しく話を聞きたい">まず詳しく話を聞きたい</option>
+              <option value="掲載について">掲載について</option>
+              <option value="その他・詳しく話を聞きたい">その他・詳しく話を聞きたい</option>
             </select>
           </div>
           <div class="form-group">
             <label>メッセージ <span class="opt">任意</span></label>
-            <textarea name="message" placeholder="ご質問・ご不明な点などお気軽にどうぞ。"></textarea>
+            <textarea id="b2b_message" placeholder="ご質問・ご不明な点などお気軽にどうぞ。"></textarea>
           </div>
           <div class="form-group" style="margin-top:8px;">
             <label style="display:flex;align-items:flex-start;gap:10px;font-weight:400;cursor:pointer;">
-              <input type="checkbox" required style="width:auto;margin-top:4px;flex-shrink:0;">
+              <input type="checkbox" id="b2b_privacy" style="width:auto;margin-top:4px;flex-shrink:0;">
               <span style="font-size:15px;line-height:1.8;background:none;color:var(--text-mid);padding:0;">
                 <a href="/privacy.html" target="_blank" style="color:var(--moss);text-decoration:underline;">プライバシーポリシー</a>に同意の上、送信します
                 <span style="font-size:13px;color:white;background:var(--moss);padding:2px 8px;margin-left:6px;">必須</span>
               </span>
             </label>
           </div>
-          <button type="submit" class="form-submit">送信する</button>
-          お問い合わせありがとうございます。<br>
-          内容を確認の上、2営業日以内にご連絡いたします。
-        </div>
+          <button type="button" id="b2bSubmitBtn" onclick="handleB2BSubmit()" class="form-submit">送信する</button>
+          <div id="b2bSuccess" style="display:none;text-align:center;padding:32px;font-size:16px;color:var(--moss);font-family:'Noto Serif JP',serif;line-height:2;">
+            お問い合わせありがとうございます。<br>内容を確認の上、2営業日以内にご連絡いたします。
+          </div>
         </form>
       </div>
     </div>
@@ -1973,6 +1967,55 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   el.addEventListener('input', function() { el.style.borderBottomColor = ''; });
   el.addEventListener('change', function() { el.style.borderBottomColor = ''; });
 });
+
+/* ── B2Bフォーム送信（GAS） ───────────────────────── */
+function handleB2BSubmit() {
+  var company = document.getElementById('b2b_company');
+  var name    = document.getElementById('b2b_name');
+  var email   = document.getElementById('b2b_email');
+  var type    = document.getElementById('b2b_type');
+  var message = document.getElementById('b2b_message');
+  var privacy = document.getElementById('b2b_privacy');
+  var ok = true;
+
+  [company, name, type].forEach(function(el) {
+    if (!el.value.trim()) { el.style.borderBottomColor = '#C0392B'; ok = false; }
+    else { el.style.borderBottomColor = ''; }
+  });
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+    email.style.borderBottomColor = '#C0392B'; ok = false;
+  } else { email.style.borderBottomColor = ''; }
+  if (!privacy.checked) { alert('プライバシーポリシーへの同意が必要です'); ok = false; }
+  if (!ok) return;
+
+  var btn = document.getElementById('b2bSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+
+  var B2B_GAS_URL = 'https://script.google.com/macros/s/AKfycby1Oqk4APFVX5G-7eSq91boSKa0pLCnidtl8LWv1BKegn4JLNRPyAQrpuuhVC_Ct4Up/exec';
+
+  fetch(B2B_GAS_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      company:  company.value.trim(),
+      name:     name.value.trim(),
+      email:    email.value.trim(),
+      b2b_type: type.value,
+      message:  message.value.trim()
+    })
+  })
+  .then(function() {
+    document.getElementById('b2bForm').style.display = 'none';
+    document.getElementById('b2bSuccess').style.display = 'block';
+  })
+  .catch(function() {
+    btn.disabled = false;
+    btn.textContent = '送信する';
+    alert('送信に失敗しました。お電話またはメールにてご連絡ください。');
+  });
+}
 </script>
 
 </body>
