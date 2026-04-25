@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff — nagomi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Lato:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2C2C2C;
+    --muted: #8C8279;
+    --accent: #7A9E7E;
+    --accent-light: #F4F0EA;
+    --border: #DDD8D0;
+    --bg: #FAF8F5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .page {
+    width: 100%;
+    max-width: 480px;
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
+  }
+  .logo em { font-style: italic; color: var(--accent); }
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 48px;
+  }
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    text-decoration: none;
+    display: block;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    border-color: var(--accent);
+  }
+  .card-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-family: 'Lato', sans-serif;
+  }
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .card-ja {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .card-arrow {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  .footer-note {
+    margin-top: 40px;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="logo">和 <em>nagomi</em></div>
+  <div class="subtitle">Staff Page</div>
+
+  <a class="card" href="/nagomi_form_final_updated.html">
+    <div class="card-label">Before Session</div>
+    <div class="card-title">Pre-Treatment Form</div>
+    <div class="card-ja">事前アンケート・施術同意書</div>
+    <div class="card-arrow">Open form →</div>
+  </a>
+
+  <a class="card" href="/nagomi_after_updated.html">
+    <div class="card-label">After Session</div>
+    <div class="card-title">Post-Treatment Form</div>
+    <div class="card-ja">施術後アンケート</div>
+    <div class="card-arrow">Open form →</div>
+  </a>
+
+  <div class="footer-note">This page is for staff use only · スタッフ専用ページ</div>
+</div>
+</body>
+</html>
