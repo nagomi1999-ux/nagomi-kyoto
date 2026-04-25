@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nagomi — Post-Treatment Check / 施術後チェック</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FFFFFF;
+    --ink: #1A1714;
+    --muted: #3D3530;
+    --accent: #8B6F47;
+    --accent-light: #EEE4D8;
+    --border: #C8BEB4;
+    --section-bg: #F2EDE6;
+    --green: #4A7C59;
+    --green-light: #E8F2EC;
+    --red-soft: #B03020;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 36px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 44px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .header h1 span {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .header-note {
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--muted);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* Section title */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 36px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Info grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .info-grid .full { grid-column: 1 / -1; }
+  .field { display: flex; flex-direction: column; gap: 5px; }
+  .field label {
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .field input[type="text"],
+  .field textarea {
+    border: none;
+    border-bottom: 1.5px solid var(--border);
+    background: transparent;
+    padding: 7px 0;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    color: var(--ink);
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s;
+  }
+  .field input:focus { border-bottom-color: var(--accent); }
+  .field textarea {
+    resize: vertical;
+    min-height: 80px;
+    border: 1.5px solid var(--border);
+    padding: 10px 12px;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  .field textarea:focus { border-color: var(--accent); }
+  ::placeholder { color: #B0A898; opacity: 1; }
+
+  /* Q block */
+  .q-block {
+    margin-bottom: 22px;
+    padding: 20px 22px;
+    background: var(--warm-white);
+    border-left: 3px solid var(--accent-light);
+    border-radius: 2px;
+  }
+  .q-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 3px;
+    line-height: 1.5;
+  }
+  .q-ja {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+
+  /* Mood tags */
+  .mood-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .mood-tag {
+    display: none;
+  }
+  .mood-label {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 24px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1.4;
+  }
+  .mood-label .ja {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12px;
+    display: block;
+    color: var(--muted);
+  }
+  .mood-tag:checked + .mood-label {
+    background: var(--green);
+    border-color: var(--green);
+    color: white;
+  }
+  .mood-tag:checked + .mood-label .ja {
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* Options */
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 3px;
+    transition: background 0.15s;
+  }
+  .opt:hover { background: var(--accent-light); }
+  .opt input[type="radio"],
+  .opt input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    accent-color: var(--accent);
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .opt-text { display: flex; flex-direction: column; gap: 2px; }
+  .opt-en { font-family: 'Lato', sans-serif; font-size: 16px; color: var(--ink); line-height: 1.5; }
+  .opt-ja { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--muted); line-height: 1.6; }
+
+  /* Scale */
+  .scale-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .scale-opt { display: none; }
+  .scale-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    transition: all 0.2s;
+    min-width: 52px;
+    text-align: center;
+  }
+  .scale-label small {
+    font-size: 11px;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .scale-opt:checked + .scale-label {
+    background: var(--green);
+    border-color: var(--green);
+    color: white;
+  }
+  .scale-opt:checked + .scale-label small { color: rgba(255,255,255,0.85); }
+
+  /* Before/After comparison block */
+  .compare-block {
+    background: var(--green-light);
+    border-left: 3px solid var(--green);
+    border-radius: 2px;
+    padding: 20px 22px;
+    margin-bottom: 22px;
+  }
+  .compare-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--green);
+    margin-bottom: 3px;
+  }
+  .compare-ja {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  /* Submit */
+  .submit-area {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+  .submit-note {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 22px;
+    line-height: 1.8;
+  }
+  .submit-note span {
+    font-family: 'Noto Serif JP', serif;
+    display: block;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .btn-submit {
+    display: inline-block;
+    padding: 15px 52px;
+    background: var(--green);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-submit:hover { background: #3A6347; }
+
+  /* Thank you message */
+  .thankyou {
+    display: none;
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .thankyou-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  .thankyou h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+  .thankyou p {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  /* Mood check table */
+  .mc-table { width: 100%; margin-top: 14px; }
+  .mc-head, .mc-row {
+    display: grid;
+    grid-template-columns: 1fr 90px 90px 90px;
+    gap: 4px;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--accent-light);
+  }
+  .mc-head {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+  }
+  .mc-head .mc-choice-score { display: block; font-weight: 400; color: var(--accent); font-size: 11px; margin-top: 1px; }
+  .mc-head .mc-cell-label { text-align: left; }
+  .mc-row:last-child { border-bottom: none; }
+  .mc-row:hover { background: var(--accent-light); border-radius: 3px; }
+  .mc-cell-label {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.5;
+    padding-right: 8px;
+  }
+  .mc-cell-label .mc-num { font-family: 'Lato', sans-serif; font-weight: 700; color: var(--accent); margin-right: 5px; }
+  .mc-cell-label .mc-en { font-family: 'Lato', sans-serif; font-size: 12px; color: var(--muted); display: block; margin-top: 1px; }
+  .mc-cell-opt { text-align: center; }
+  .mc-opt-label { display: flex; justify-content: center; cursor: pointer; padding: 4px; }
+  .mc-opt-label input[type="radio"] { width: 20px; height: 20px; accent-color: var(--accent); cursor: pointer; }
+
+  @media (max-width: 600px) {
+    .page { padding: 24px 18px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .scale-row { gap: 6px; }
+    .scale-label { min-width: 44px; padding: 8px 10px; }
+    .mc-head, .mc-row { grid-template-columns: 1fr 62px 62px 62px; }
+    .mc-cell-label { font-size: 14px; }
+    .mc-head { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-logo">Nagomi · 和 · Kyoto Sleep & Brain Wellness</div>
+    <h1>
+      How Are You Feeling?
+      <span>施術後　気分チェック</span>
+    </h1>
+    <div class="header-note">
+      Please take a moment to share how you feel right now.<br>
+      施術直後のお気持ちをお聞かせください。
+    </div>
+  </div>
+
+  <form action="https://formsubmit.co/nagomi1999@gmail.com" method="POST" id="afterForm">
+    <input type="hidden" name="_subject" value="【なごみ】施術後チェック / Post-Treatment Check">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://nagomi-kyoto.net/">
+
+    <!-- Basic info -->
+    <div class="section-title">01 &nbsp; Basic Info &nbsp;·&nbsp; 基本情報</div>
+    <div class="info-grid">
+      <div class="field full">
+        <label>Name / お名前　<small style="color:#B03020;font-size:12px;font-weight:700;">必須 / Required</small></label>
+        <input type="text" name="氏名 Name" placeholder="例：一条京子　Ichijo Kyoko" required>
+      </div>
+      <div class="field">
+        <label>Session Date / 施術日</label>
+        <input type="text" name="施術日 Session Date" placeholder="例：4月25日 / Apr 25">
+      </div>
+      <div class="field">
+        <label>Time / 時間</label>
+        <input type="text" name="時間 Time" placeholder="例：14:00">
+      </div>
+    </div>
+
+    <!-- 02 Mood Check 1-13 -->
+    <div class="section-title">02 &nbsp; Mood Check &nbsp;·&nbsp; 施術後 気分チェック</div>
+
+    <div class="q-block">
+      <div class="q-en">How are you feeling right now? Please select one for each item.</div>
+      <div class="q-ja">施術後の今の状態をお聞きします。それぞれ当てはまるものをひとつ選んでください。</div>
+      <div class="mc-table">
+        <div class="mc-head">
+          <div class="mc-cell-label"></div>
+          <div class="mc-cell-opt">ほとんどない<span class="mc-choice-score">Rarely (0)</span></div>
+          <div class="mc-cell-opt">時々ある<span class="mc-choice-score">Sometimes (1)</span></div>
+          <div class="mc-cell-opt">よくある<span class="mc-choice-score">Often (3)</span></div>
+        </div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">1.</span>イライラする<span class="mc-en">Irritable / easily annoyed</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後1 Irritable" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後1 Irritable" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後1 Irritable" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">2.</span>不安だ<span class="mc-en">Feeling anxious</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後2 Anxious" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後2 Anxious" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後2 Anxious" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">3.</span>落ち着かない<span class="mc-en">Restless / unsettled</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後3 Restless" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後3 Restless" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後3 Restless" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">4.</span>ゆううつだ<span class="mc-en">Feeling gloomy / low mood</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後4 Gloomy" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後4 Gloomy" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後4 Gloomy" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">5.</span>よく眠れない<span class="mc-en">Trouble sleeping</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後5 Sleep trouble" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後5 Sleep trouble" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後5 Sleep trouble" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">6.</span>体の調子が悪い<span class="mc-en">Body feels unwell</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後6 Body unwell" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後6 Body unwell" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後6 Body unwell" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">7.</span>物事に集中できない<span class="mc-en">Difficulty concentrating</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後7 Concentration" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後7 Concentration" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後7 Concentration" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">8.</span>することに間違いが多い<span class="mc-en">Making many mistakes</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後8 Mistakes" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後8 Mistakes" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後8 Mistakes" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">9.</span>仕事中、強い眠気に襲われる<span class="mc-en">Strong drowsiness during the day</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後9 Drowsiness" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後9 Drowsiness" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後9 Drowsiness" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">10.</span>やる気が出ない<span class="mc-en">Lack of motivation</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後10 Motivation" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後10 Motivation" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後10 Motivation" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">11.</span>へとへとだ（運動後を除く）<span class="mc-en">Exhausted (excl. after exercise)</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後11 Exhausted" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後11 Exhausted" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後11 Exhausted" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">12.</span>朝、起きた時、ぐったりした疲れを感じる<span class="mc-en">Wake up feeling deeply fatigued</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後12 Morning fatigue" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後12 Morning fatigue" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後12 Morning fatigue" value="よくある(3)"></label></div></div>
+        <div class="mc-row"><div class="mc-cell-label"><span class="mc-num">13.</span>以前とくらべて、疲れやすい<span class="mc-en">Tire more easily than before</span></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後13 Tires easily" value="ほとんどない(0)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後13 Tires easily" value="時々ある(1)"></label></div><div class="mc-cell-opt"><label class="mc-opt-label"><input type="radio" name="気分チェック後13 Tires easily" value="よくある(3)"></label></div></div>
+      </div>
+    </div>
+
+    <!-- 03 Current Mood -->
+    <div class="section-title">03 &nbsp; Current Mood &nbsp;·&nbsp; 今の気分</div>
+
+
+    <div class="q-block">
+      <div class="q-en">How do you feel right now? (select all that apply)</div>
+      <div class="q-ja">今の気分は？（当てはまるものすべて選んでください）</div>
+      <div class="mood-tags">
+        <input class="mood-tag" type="checkbox" name="気分" value="Refreshed / スッキリ" id="m1"><label class="mood-label" for="m1">Refreshed<span class="ja">スッキリ</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Invigorated / 爽快感" id="m2"><label class="mood-label" for="m2">Invigorated<span class="ja">爽快感</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Eyes wide open / 目がパッチリ" id="m3"><label class="mood-label" for="m3">Eyes wide open<span class="ja">目がパッチリ</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Vision expanded / 視野が広がる" id="m4"><label class="mood-label" for="m4">Vision expanded<span class="ja">視野が広がる</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Head feels light / 頭が軽い" id="m5"><label class="mood-label" for="m5">Head feels light<span class="ja">頭が軽い</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Floating / ぽわん～とする" id="m6"><label class="mood-label" for="m6">Floating<span class="ja">ぽわん～とする</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Like after a hot spring / 温泉上がり" id="m7"><label class="mood-label" for="m7">Like after a hot spring<span class="ja">温泉上がり</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Mind is clear / 頭がはっきりする" id="m8"><label class="mood-label" for="m8">Mind is clear<span class="ja">頭がはっきりする</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Warm & relaxed / 体が温かい" id="m9"><label class="mood-label" for="m9">Warm &amp; relaxed<span class="ja">体が温かい</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Body feels light / 体が軽い" id="m10"><label class="mood-label" for="m10">Body feels light<span class="ja">体が軽い</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Sleepy / 眠い" id="m11"><label class="mood-label" for="m11">Sleepy<span class="ja">眠い</span></label>
+        <input class="mood-tag" type="checkbox" name="気分" value="Deeply relaxed / どっしり落ち着く" id="m12"><label class="mood-label" for="m12">Deeply relaxed<span class="ja">どっしり落ち着く</span></label>
+      </div>
+      <div class="field">
+        <label>Other / その他</label>
+        <input type="text" name="気分その他 Other mood" placeholder="e.g. Tingling sensation… / 例：じんわりする感じ…">
+      </div>
+    </div>
+
+    <!-- Body sensation -->
+    <div class="q-block">
+      <div class="q-en">How does your body feel? (select all that apply)</div>
+      <div class="q-ja">体の感覚は？（当てはまるものすべて）</div>
+      <div class="mood-tags">
+        <input class="mood-tag" type="checkbox" name="体の感覚" value="Shoulders feel lighter / 肩が軽い" id="b1"><label class="mood-label" for="b1">Shoulders lighter<span class="ja">肩が軽い</span></label>
+        <input class="mood-tag" type="checkbox" name="体の感覚" value="Neck feels loose / 首がほぐれた" id="b2"><label class="mood-label" for="b2">Neck looser<span class="ja">首がほぐれた</span></label>
+        <input class="mood-tag" type="checkbox" name="体の感覚" value="Back feels easier / 背中が楽" id="b3"><label class="mood-label" for="b3">Back easier<span class="ja">背中が楽</span></label>
+        <input class="mood-tag" type="checkbox" name="体の感覚" value="Warmth spreading / ぽかぽかする" id="b4"><label class="mood-label" for="b4">Warmth spreading<span class="ja">ぽかぽかする</span></label>
+        <input class="mood-tag" type="checkbox" name="体の感覚" value="Hands & feet warm / 手足が温かい" id="b5"><label class="mood-label" for="b5">Hands &amp; feet warm<span class="ja">手足が温かい</span></label>
+        <input class="mood-tag" type="checkbox" name="体の感覚" value="Breathing deeper / 呼吸が深くなった" id="b6"><label class="mood-label" for="b6">Breathing deeper<span class="ja">呼吸が深い</span></label>
+        <input class="mood-tag" type="checkbox" name="体の感覚" value="Whole body relaxed / 全身ゆるんだ" id="b7"><label class="mood-label" for="b7">Whole body relaxed<span class="ja">全身ゆるんだ</span></label>
+      </div>
+    </div>
+
+    <!-- Before / After comparison -->
+    <div class="section-title">04 &nbsp; Before vs After &nbsp;·&nbsp; 施術前との比較</div>
+
+    <div class="compare-block">
+      <div class="compare-title">Overall, how do you feel compared to before the session?</div>
+      <div class="compare-ja">施術前と比べて、全体的にいかがですか？</div>
+      <div class="scale-row">
+        <input class="scale-opt" type="radio" name="比較 Comparison" value="Much better / とても良くなった" id="c1"><label class="scale-label" for="c1">😄<small>Much better<br>とても良い</small></label>
+        <input class="scale-opt" type="radio" name="比較 Comparison" value="Better / 良くなった" id="c2"><label class="scale-label" for="c2">🙂<small>Better<br>良くなった</small></label>
+        <input class="scale-opt" type="radio" name="比較 Comparison" value="Slightly better / 少し良い" id="c3"><label class="scale-label" for="c3">😌<small>A little<br>少し良い</small></label>
+        <input class="scale-opt" type="radio" name="比較 Comparison" value="Same / 変わらない" id="c4"><label class="scale-label" for="c4">😐<small>Same<br>変わらない</small></label>
+        <input class="scale-opt" type="radio" name="比較 Comparison" value="Unsure / わからない" id="c5"><label class="scale-label" for="c5">🤔<small>Unsure<br>わからない</small></label>
+      </div>
+    </div>
+
+    <!-- Next session -->
+    <div class="section-title">05 &nbsp; Next Session &nbsp;·&nbsp; 次回について</div>
+
+    <div class="q-block">
+      <div class="q-en">Would you like to receive this treatment again?</div>
+      <div class="q-ja">また施術を受けたいと思いますか？</div>
+      <div class="options">
+        <label class="opt"><input type="radio" name="次回 Next session" value="ぜひ受けたい / Definitely yes"><div class="opt-text"><span class="opt-en">Definitely yes</span><span class="opt-ja">ぜひまた受けたい！</span></div></label>
+        <label class="opt"><input type="radio" name="次回 Next session" value="受けたいと思う / Yes, I think so"><div class="opt-text"><span class="opt-en">Yes, I think so</span><span class="opt-ja">受けたいと思う</span></div></label>
+        <label class="opt"><input type="radio" name="次回 Next session" value="まだわからない / Not sure yet"><div class="opt-text"><span class="opt-en">Not sure yet</span><span class="opt-ja">まだわからない</span></div></label>
+        <label class="opt"><input type="radio" name="次回 Next session" value="今回だけでいい / Just this once"><div class="opt-text"><span class="opt-en">Just this once is enough</span><span class="opt-ja">今回だけでいい</span></div></label>
+      </div>
+    </div>
+
+    <!-- Comment -->
+    <div class="section-title">06 &nbsp; Your Thoughts &nbsp;·&nbsp; ひとことコメント</div>
+
+    <div class="q-block">
+      <div class="q-en">We would love to hear your overall impressions, any changes you noticed, or a message for your therapist.</div>
+      <div class="q-ja">全体を通しての感想、気づいたこと、セラピストへのメッセージなどありましたら、ご記入いただけますと嬉しいです😊</div>
+      <div class="field" style="margin-top:8px;">
+        <textarea name="コメント Comment" placeholder="e.g. I didn't expect to feel this relaxed — my shoulders feel completely different!&#10;例：こんなに変わると思わなかった！肩の感じが全然違う…"></textarea>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="submit-area">
+      <div class="submit-note">
+        Thank you so much for your time today.
+        <span>本日はありがとうございました。またのお越しをお待ちしています。</span>
+      </div>
+      <button type="submit" class="btn-submit">Submit &amp; Send　／　送信する</button>
+    </div>
+
+  </form>
+</div>
+</body>
+</html>
