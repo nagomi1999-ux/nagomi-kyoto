@@ -480,13 +480,9 @@
     </div>
   </div>
 
-  <form action="https://formsubmit.co/nagomi1999@gmail.com" method="POST">
+  <form id="nagomiForm">
 
-    <!-- FormSubmit settings -->
     <input type="hidden" name="_subject" value="【なごみ】新しいアンケート回答 / New Questionnaire Response">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://nagomi-kyoto.net/">
 
     <!-- 01 Personal Info -->
     <div class="section-title">01 &nbsp; Personal Information &nbsp;·&nbsp; お客様情報</div>
@@ -966,5 +962,41 @@
 
   </form>
 </div>
+<script>
+  document.getElementById('nagomiForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = {};
+    var inputs = form.querySelectorAll('input, textarea, select');
+    inputs.forEach(function(el) {
+      if (!el.name || el.name.startsWith('_')) return;
+      if ((el.type === 'checkbox' || el.type === 'radio') && !el.checked) return;
+      if (data[el.name]) {
+        data[el.name] += ', ' + el.value;
+      } else {
+        data[el.name] = el.value;
+      }
+    });
+
+    var btn = form.querySelector('.btn-submit');
+    btn.disabled = true;
+    btn.textContent = '送信中... / Sending...';
+
+    fetch('https://script.google.com/macros/s/AKfycby2-arV2KbzuZIVJaId__9HSiHTYHFP3IjCc74yG5aH9tdRKIwsa8mQuLh4UmI0sf5v0g/exec', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(function(res) { return res.json(); })
+    .then(function() {
+      window.location.href = 'https://nagomi-kyoto.net/';
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Submit & Send　／　送信する';
+      alert('送信に失敗しました。もう一度お試しください。');
+    });
+  });
+</script>
 </body>
 </html>
