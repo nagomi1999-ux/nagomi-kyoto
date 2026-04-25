@@ -556,10 +556,10 @@
 
     fetch('https://script.google.com/macros/s/AKfycbxtr2G6fWWjHHRr2tFSns3h9wvaaqACA9BMQZqF968GQ5S06nc6xHm5HFJK36LCfU3Qzg/exec', {
       method: 'POST',
+      mode: 'no-cors',
       body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'text/plain' }
     })
-    .then(function(res) { return res.json(); })
     .then(function() {
       window.location.href = 'https://nagomi-kyoto.net/';
     })
