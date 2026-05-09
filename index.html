@@ -105,8 +105,8 @@ nav{
 }
 .hero-main{
   font-family:'Noto Serif JP',serif;
-  font-size:clamp(46px,6.5vw,80px);
-  font-weight:300;line-height:1.25;
+  font-size:clamp(28px,4.2vw,58px);
+  font-weight:300;line-height:1.35;
   color:var(--text);margin-bottom:12px;letter-spacing:0.02em;
 }
 .hero-main em{font-style:normal;color:#3E6B42}
@@ -122,6 +122,31 @@ nav{
   border-left:2px solid var(--gold);padding-left:24px;
 }
 .hero-desc strong{color:var(--moss);font-weight:500}
+.hero-targets{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  max-width:600px;margin-bottom:52px;
+}
+.hero-target-a,.hero-target-b{
+  padding:18px 18px;border-radius:4px;
+}
+.hero-target-a{
+  border:1px solid var(--sage);background:rgba(74,124,89,0.06);
+}
+.hero-target-b{
+  border:1px solid var(--gold-light);background:rgba(184,150,62,0.06);
+}
+.hero-target-badge{
+  display:inline-block;font-size:13px;padding:4px 12px;
+  border-radius:99px;margin-bottom:12px;font-weight:500;
+  background:rgba(255,255,255,0.7);color:var(--text-mid);
+  letter-spacing:0.02em;
+}
+.hero-target-head{
+  font-size:17px;font-weight:600;line-height:1.65;margin-bottom:10px;color:var(--text);
+}
+.hero-target-body{
+  font-size:15px;color:var(--text-mid);line-height:1.9;font-weight:300;
+}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:60px}
 .btn-main{
   background:var(--moss);color:white;padding:18px 52px;
@@ -160,9 +185,19 @@ nav{
 .recog-tag{font-family:'Noto Sans JP',sans-serif;font-size:16px;letter-spacing:0.2em;color:rgba(255,255,255,0.9);margin-bottom:32px;text-transform:uppercase;font-weight:500}
 .recog-title{
   font-family:'Noto Serif JP',serif;font-size:clamp(22px,3.2vw,38px);
-  color:white;font-weight:300;line-height:1.7;margin-bottom:56px;
+  color:white;font-weight:300;line-height:1.7;margin-bottom:32px;
 }
 .recog-title em{font-style:normal;color:white;font-weight:500}
+.recog-tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.recog-tab{
+  flex:1;min-width:200px;padding:14px 20px;
+  border:1.5px solid rgba(255,255,255,0.4);border-radius:4px;
+  background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);
+  font-size:15px;font-family:'Noto Sans JP',sans-serif;
+  cursor:pointer;transition:all 0.25s;letter-spacing:0.02em;
+}
+.recog-tab:hover{background:rgba(255,255,255,0.2);color:white}
+.recog-tab.active{background:white;color:var(--moss);border-color:white;font-weight:500}
 .recog-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:rgba(255,255,255,0.15)}
 .recog-card{background:rgba(255,255,255,0.92);padding:44px 36px;transition:background 0.3s}
 .recog-card:hover{background:white}
@@ -809,18 +844,29 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 <section class="hero">
   <div class="hero-bg-text">至福</div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">KYOTO SLEEP TOURISM　｜　京都スリープツーリズム</div>
-    <p class="hero-headline">「眠れない」「疲れが取れない」——<br>原因は、脳疲労だとわかりました。</p>
+    <div class="hero-eyebrow">京都スリープツーリズム　｜　KYOTO SLEEP TOURISM</div>
     <h1 class="hero-main">
-      京都で遊んで、<br><em>気づけば整ってました。</em>
+      京都を楽しんでいたら、<br><em>いつのまにか整ってました。</em>
     </h1>
-    <p class="hero-sub-copy">旅行、美食、上質な体験。その次は、『本当の回復』へ。</p>
     <p class="hero-desc">
-      リフレッシュしても、また同じ疲れに戻っている。<br>
-      どれだけ休んでも、<strong>眠りの質が変わらない。</strong><br>
-      その原因は「脳が休めていない」ことでした。<br>
-      遊んでいるうちに、脳から整っていく、<strong>至福の時間。</strong><br>毎日、脳活性エステを続けられる贅沢。<br>これが、京都スリープツーリズム・快眠プログラムです。
+      遊んで、歩いて、話していたら——<br>
+      <strong>セロトニン</strong>という「幸せホルモン」が、<br>
+      脳の深いところを静かに整えていきます。<br>
+      観光の疲れが回復に変わり、来た時より元気になって帰る。<br>
+      そんな体験を、京都でお届けしています。
     </p>
+    <div class="hero-targets">
+      <div class="hero-target-a">
+        <span class="hero-target-badge">眠れない・疲れが取れない方</span>
+        <p class="hero-target-head">頑張って治すのではなく、<br>気づいたら整っていた体験を。</p>
+        <p class="hero-target-body">マッサージでは届かなかった根本の疲れに、ようやく届きます。</p>
+      </div>
+      <div class="hero-target-b">
+        <span class="hero-target-badge">旅をしながら特別な体験をしてみたい方</span>
+        <p class="hero-target-head">観光しながら、<br>脳まで整う。</p>
+        <p class="hero-target-body">京都を満喫しつつ、脳も一緒に整っていく。旅の楽しさと深い回復が同時に叶う、一石二鳥な体験を。</p>
+      </div>
+    </div>
     <div class="hero-btns">
       <a href="#menu" class="btn-main">至福のメニューへ</a>
       <a href="#cta" class="btn-sub">まず相談する</a>
@@ -830,29 +876,58 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 </section>
 <section class="recog">
   <div class="recog-inner">
-    <div class="recog-tag">DO YOU RECOGNIZE YOURSELF?</div>
-    <h2 class="recog-title">
-      以下のようなことを経験したことがあるなら、<br>
-      <em>眠れない原因は、脳疲労かもしれません。</em>
-    </h2>
-    <div class="recog-cards">
+    <div class="recog-tag">DO YOU RECOGNIZE YOURSELF?　｜　どちらが気になりますか？</div>
+
+    <!-- タブボタン -->
+    <div class="recog-tabs">
+      <button class="recog-tab active" onclick="switchTab('a', this)">
+        😔　眠れない・疲れが取れない方
+      </button>
+      <button class="recog-tab" onclick="switchTab('b', this)">
+        ✨　特別な体験をしてみたい方
+      </button>
+    </div>
+
+    <!-- Aタイプ：悩み系 -->
+    <div class="recog-cards" id="recog-a">
       <div class="recog-card">
         <p class="recog-card-q">ご褒美旅行から帰って、<br>1日で元に戻ってしまう。</p>
-        <p class="recog-card-a">あの解放感、あの美味しさ、あの眠り。なのに月曜日には、また同じ重さが戻ってくる。リセットしたはずなのに、どこかリセットできていない感覚。</p>
+        <p class="recog-card-a">あの解放感、あの眠り。なのに月曜日には、また同じ重さが戻ってくる。リセットしたはずなのに、どこかリセットできていない感覚。</p>
       </div>
       <div class="recog-card">
         <p class="recog-card-q">高級ホテルに泊まっても、<br>深く眠れない。</p>
-        <p class="recog-card-a">ベッドは最高。環境は完璧。それでもぐっすり眠れなかった。思考が止まらない。仕事のこと、明日のこと……からだは休んでいるのに、脳だけが全速力で動いている感じ。</p>
+        <p class="recog-card-a">ベッドは最高。環境は完璧。それでもぐっすり眠れなかった。からだは休んでいるのに、脳だけが全速力で動いている感じ。</p>
       </div>
       <div class="recog-card">
-        <p class="recog-card-q">癒やしは知っている。<br>でも、まだもっと何かを期待している。</p>
-        <p class="recog-card-a">マッサージも、アロマも、瞑想も。いいものは全部試した。それでも「本当に癒やされた」という感覚が、どこかいつも遠い。</p>
+        <p class="recog-card-q">マッサージに行っても、<br>翌日にはまた同じ状態。</p>
+        <p class="recog-card-a">その場では気持ちいい。でも根本は変わらない。「なんでいつもこうなんやろ」とため息をついたことがある。</p>
       </div>
     </div>
+
+    <!-- Bタイプ：体験したい系 -->
+    <div class="recog-cards" id="recog-b" style="display:none">
+      <div class="recog-card">
+        <p class="recog-card-q">旅行もスパも行き尽くした。<br>次に試すものが見つからない。</p>
+        <p class="recog-card-a">いいものは全部知っている。でもどこかいつも「もう一歩先」を探している。まだ出会っていない何かがある気がして。</p>
+      </div>
+      <div class="recog-card">
+        <p class="recog-card-q">まだ誰も知らない体験に、<br>興味がある。</p>
+        <p class="recog-card-a">感度は高いほうだと思う。流行りを追うより、本物を先に知りたい。「これ知ってる？」と人に話せるような体験をしてみたい。</p>
+      </div>
+      <div class="recog-card">
+        <p class="recog-card-q">自分へのご褒美に、<br>本物を探している。</p>
+        <p class="recog-card-a">モノより体験。でも、ありきたりなスパや旅行では物足りなくなってきた。脳から変わるような、本当の意味での贅沢がしたい。</p>
+      </div>
+    </div>
+
     <div class="recog-answer">
-      <p class="recog-answer-text">
+      <p class="recog-answer-text" id="recog-answer-a">
         それは、<strong>「脳が疲れ果てている」</strong>サインです。<br>
-        どれだけ上質な時間を重ねても、脳が疲れたままでは<br>本当の回復は訪れません。
+        マッサージや旅行では届かない場所に、セロトニン活性療法（脳活性エステ）は届きます。
+      </p>
+      <p class="recog-answer-text" id="recog-answer-b" style="display:none">
+        その感覚、正しいです。<strong>「脳が整う体験」</strong>は、まだほとんどの人が知りません。<br>
+        楽しんでいたら、いつのまにか変わっていた——そんな体験が、京都にあります。
       </p>
     </div>
   </div>
@@ -1328,7 +1403,12 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
         </div>
         <p class="therapist-body">施術歴28年。エステ・リラクゼーションを経て、8年前にセロトニン活性療法（脳活性エステ）と出会い、快眠・自律神経ケアの専門家として活動しています。沖縄・西表島での3泊4日リトリートを8年継続主宰してきた経験と、地元民の私が案内するといつも喜んでもらえるので、そんな京都を楽しんでいただきたいという思いが重なったのが、このプログラムです。</p>
         <div class="therapist-belief">
-          ４日間を、思いっきり楽しく、自由に過ごす。<br>ただそれだけの時間をご一緒しませんか？
+          セロトニンの底力は、知れば知るほど「ほんまに凄い」と感動します。<br>
+          だからこそ、もっと多くの人に届いてほしい。<br>
+          できれば、共通語になるくらい。<br><br>
+          この４日間を一緒に過ごすうちに、<br>
+          「幸せホルモン」セロトニンが、きっと身近になっています。<br><br>
+          楽しく、自由に——そんな時間を、ご一緒しませんか？
         </div>
         <div class="therapist-tags">
           <span class="therapist-tag">京都生まれ・育ち</span>
@@ -2015,6 +2095,18 @@ function handleB2BSubmit() {
     btn.textContent = '送信する';
     alert('送信に失敗しました。お電話またはメールにてご連絡ください。');
   });
+}
+
+function switchTab(type, el) {
+  // タブボタンの切り替え
+  document.querySelectorAll('.recog-tab').forEach(function(t){ t.classList.remove('active'); });
+  el.classList.add('active');
+  // カードの切り替え
+  document.getElementById('recog-a').style.display = type === 'a' ? 'grid' : 'none';
+  document.getElementById('recog-b').style.display = type === 'b' ? 'grid' : 'none';
+  // 回答テキストの切り替え
+  document.getElementById('recog-answer-a').style.display = type === 'a' ? 'block' : 'none';
+  document.getElementById('recog-answer-b').style.display = type === 'b' ? 'block' : 'none';
 }
 </script>
 
