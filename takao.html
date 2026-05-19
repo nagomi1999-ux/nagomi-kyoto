@@ -33,7 +33,8 @@
   }
 
   .flyer {
-    width: 794px;
+    width: 100%;
+    max-width: 794px;
     background: var(--ivory);
     box-shadow: 0 6px 48px rgba(60,90,40,0.15);
     overflow: hidden;
@@ -559,6 +560,74 @@
   @media print {
     body { background: white; padding: 0; }
     .flyer { box-shadow: none; width: 100%; }
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 600px) {
+    body { padding: 0; background: var(--ivory); }
+    .flyer { box-shadow: none; }
+
+    /* HERO */
+    .hero { padding: 32px 20px 28px; }
+    .hero-title { font-size: 24px; }
+    .hero-sub { font-size: 16px; }
+    .hero-collab { flex-direction: column; gap: 8px; }
+
+    /* セクション共通パディング */
+    .concept, .flow-section, .plan-section,
+    .sero, .kawadoko, .footer { padding-left: 20px; padding-right: 20px; }
+    .main-plan { padding: 24px 20px 20px; }
+
+    /* コンセプト */
+    .concept { flex-direction: column; gap: 20px; }
+    .concept-badge { width: 90px; height: 90px; }
+
+    /* 3ピラー → 1列 */
+    .pillars { grid-template-columns: 1fr; }
+    .pillar { border-right: none; border-bottom: 1px solid rgba(91,138,95,0.12); }
+    .pillar:last-child { border-bottom: none; }
+
+    /* DAYカード → 1列 */
+    .days { grid-template-columns: 1fr; }
+
+    /* 3ポイント → 1列 */
+    .points { grid-template-columns: 1fr; }
+    .pt { border-right: none; border-bottom: 1px solid var(--pale); }
+    .pt:last-child { border-bottom: none; }
+
+    /* セロトニン → 1列 */
+    .sero-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* フッター */
+    .footer { grid-template-columns: 1fr; gap: 16px; }
+    .footer-contact { text-align: left; }
+
+    /* 価格テーブル */
+    table { display: block; }
+    tbody { display: block; }
+    tr { display: block; margin-bottom: 12px; }
+    td { display: block; width: 100% !important; border: none !important;
+         border-bottom: 1px solid var(--fresh) !important; }
+
+    /* 写真グリッド */
+    .photo-grid, [style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* kawadoko */
+    .kawa-title { font-size: 20px; }
+    .kawa-tags { gap: 6px; }
+
+    /* ギフトセクション */
+    [style*="grid-template-columns:auto 1fr"] {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
+    }
+    [style*="width:160px"] { width: 100% !important; max-width: 220px; }
+
+    /* hero-eyebrow の長い英語 */
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.15em; }
   }
 </style>
 </head>
