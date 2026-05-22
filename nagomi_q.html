@@ -109,8 +109,7 @@ body{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
   ══════════════════════════════════════════════
 -->
 <script>
-  const FORMSPREE_URL = 'https://formspree.io/f/mwvzogad';
-  const IS_SETUP_DONE = true;
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzDB0TQxoXanBKltCKg_ozfVtopy4gya3codaeAAtFf1cPeawfb7YN9yprKRPTd4gKX/exec';
 
 function toggleSonotaBox(el) {
   const box = document.getElementById('sonota-box');
@@ -338,7 +337,8 @@ const answers = { name:'', lineName:'', tel:'', q1:[], q2:'', q3:[], q4:'', q5:'
 const progressMap = {0:0, 1:0, 2:20, 3:40, 4:60, 5:80, 6:100, 7:100, 8:100};
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (IS_SETUP_DONE) document.getElementById('setupBanner').style.display = 'none';
+  const banner = document.getElementById('setupBanner');
+  if (banner) banner.style.display = 'none';
 });
 
 function showStep(n) {
@@ -393,29 +393,24 @@ function toggleMulti(el, key, val) {
 async function submitForm() {
   if (!validate(6)) return;
   currentStep = 7; showStep(7);
-  const body = {
-    '_subject': '【なごみ】モニター体験 応募がありました',
-    'email': answers.name + ' <kyoto@nagomi.net>',
-    'お名前': answers.name,
-    'LINEの表示名': answers.lineName,
-    '電話番号': answers.tel,
-    'Q1_お悩み': answers.q1.join('、'),
-    'Q2_期間': answers.q2,
-    'Q3_経験': answers.q3.join('、'),
-    'Q4_ペース': answers.q4,
-    'Q5_なりたい自分': answers.q5
+  const data = {
+    name:    answers.name,
+    lineName: answers.lineName,
+    tel:     answers.tel,
+    q1:      answers.q1.join('、'),
+    q2:      answers.q2,
+    q3:      answers.q3.join('、'),
+    q4:      answers.q4,
+    q5:      answers.q5
   };
-  if (!IS_SETUP_DONE) {
-    await new Promise(r => setTimeout(r, 1500));
-  } else {
-    try {
-      await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(body)
-      });
-    } catch(e) {}
-  }
+  try {
+    await fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  } catch(e) {}
   currentStep = 8; showStep(8);
 }
 
