@@ -1651,11 +1651,8 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <select id="programSelect" name="program" required onchange="toggleRetreatNote()">
             <option value="">選択してください</option>
             <option value="京都快眠リトリート 3泊4日 ¥230,000">京都快眠リトリート　3泊4日　¥230,000</option>
-            <option value="京都さんぽセッション ¥90,000">京都さんぽセッション　¥90,000</option>
-            <option value="京都さんぽ＋フェイシャルケア ¥105,000">京都さんぽ＋フェイシャルケア　¥105,000</option>
-            <option value="快眠セッション ¥25,000">快眠セッション　¥25,000</option>
-            <option value="ディープリカバリー ¥42,000">ディープリカバリー　¥42,000</option>
-            <option value="小顔フェイシャルケア（オプション） ¥18,000">小顔フェイシャルケア（オプション）　¥18,000</option>
+            <option value="京都快眠リトリート 2泊3日 ¥155,000・¥205,000">京都快眠リトリート　2泊3日　¥155,000・¥205,000</option>
+            <option value="京都快眠リトリート 1泊2日 ¥115,000">京都快眠リトリート　1泊2日　¥115,000</option>
             <option value="未定・宿泊プランも含めて相談したい">未定・宿泊プランも含めて相談したい</option>
           </select>
           <p class="form-note" id="retreatNote" style="display:none;color:var(--moss);font-weight:500;">【3泊4日プランについて】お客様のご予定に合わせて個別に調整いたします。詳細は事前相談にて承ります。<br>「ご希望の日程」には滞在予定日を、ご相談のご希望日時は「メッセージ欄」にご入力ください。</p>
@@ -1673,12 +1670,6 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <input type="text" id="fhotel" name="hotel" placeholder="例：○○ホテル京都、まだ未定　など" required>
           <p class="form-note">※ まだ決まっていない場合は「未定」とご記入ください。ご宿泊先をもとに集合場所などをご提案いたします。</p>
           <p class="field-error" id="hotelError">ご宿泊先をご入力ください</p>
-        </div>
-
-        <div class="form-group">
-          <label>ご希望の時間帯 <span class="opt">任意</span></label>
-          <input type="text" id="ftime" name="time" placeholder="例：14時ごろ、夕方希望　など">
-          <p class="form-note">※ さんぽセッション・リトリートは10時〜、快眠セッション等の室内メニューは14時〜20時の受付となります。ご希望の時間帯をお知らせください。時間帯によってはご相談させていただく場合がございます。</p>
         </div>
 
         <div class="form-group">
@@ -2058,7 +2049,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     program: program.value,
     hotel:   fhotel.value.trim(),
     date:    fdate.value.trim(),
-    time:    document.getElementById('ftime').value.trim(),
     guests:  fguests.value,
     message: document.querySelector('#contactForm textarea').value.trim()
   };
