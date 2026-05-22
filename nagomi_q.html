@@ -218,7 +218,10 @@ function copyAnswers() {
       <div class="option multi" onclick="toggleMulti(this,'q1','肌荒れ・くすみ・たるみ')"><div class="option-check"></div>肌荒れ・くすみ・たるみ</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','まぶたのたるみ・顔のゆるみ')"><div class="option-check"></div>まぶたのたるみ・顔のゆるみ</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','冷え・生理痛・婦人科系')"><div class="option-check"></div>冷え・生理痛・婦人科系</div>
-      <div class="option multi" onclick="toggleMulti(this,'q1','その他')"><div class="option-check"></div>その他</div>
+      <div class="option multi" onclick="toggleMulti(this,'q1','その他');toggleSonotaBox(this)"><div class="option-check"></div>その他</div>
+    </div>
+    <div id="sonota-box" style="display:none;margin-top:8px">
+      <input class="q-input" type="text" id="sonota-input" placeholder="例：花粉症、耳鳴り、など" oninput="updateSonota(this.value)">
     </div>
     <div class="err-msg" id="err-2">少なくとも1つ選んでください</div>
     <div class="btn-row">
