@@ -20,11 +20,11 @@ body{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
 
 .header{width:100%;background:var(--white);border-bottom:1px solid var(--cream-dark);display:flex;flex-direction:column;align-items:center;padding:20px 24px 16px;position:sticky;top:0;z-index:10}
 .brand{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:400;letter-spacing:.12em;color:var(--sage-dark)}
-.brand-sub{font-size:11px;letter-spacing:.18em;color:var(--text-light);margin-top:2px}
+.brand-sub{font-size:15px;letter-spacing:.18em;color:var(--text-light);margin-top:2px}
 .progress-wrap{width:100%;max-width:400px;margin-top:14px}
 .progress-bar-bg{width:100%;height:3px;background:var(--cream-dark);border-radius:2px;overflow:hidden}
 .progress-bar-fill{height:100%;background:var(--sage);border-radius:2px;transition:width .4s ease}
-.progress-label{text-align:right;font-size:11px;color:var(--text-light);margin-top:5px}
+.progress-label{text-align:right;font-size:15px;color:var(--text-light);margin-top:5px}
 
 .card{width:100%;max-width:440px;margin:32px auto 0;padding:0 20px}
 .step{display:none;animation:fadeUp .4s ease both}
@@ -34,64 +34,64 @@ body{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
 /* welcome */
 .welcome-icon{width:64px;height:64px;background:var(--sage-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px}
 .welcome-title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:400;text-align:center;line-height:1.7}
-.welcome-body{font-size:14px;line-height:2;color:var(--text-mid);text-align:center;margin-top:16px}
-.welcome-note{font-size:12px;color:var(--text-light);text-align:center;margin-top:12px}
+.welcome-body{font-size:16px;line-height:2;color:var(--text-mid);text-align:center;margin-top:16px}
+.welcome-note{font-size:16px;color:var(--text-light);text-align:center;margin-top:12px}
 .divider{width:40px;height:1px;background:var(--cream-dark);margin:20px auto}
 
 /* question */
-.q-num{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--sage);background:var(--sage-light);padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.q-num{display:inline-block;font-size:15px;font-weight:500;letter-spacing:.12em;color:var(--sage);background:var(--sage-light);padding:3px 10px;border-radius:20px;margin-bottom:10px}
 .q-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:400;line-height:1.7;margin-bottom:6px}
-.q-hint{font-size:12px;color:var(--text-light);margin-bottom:20px}
+.q-hint{font-size:16px;color:var(--text-light);margin-bottom:20px}
 
 /* text input */
 .input-group{margin-bottom:16px}
-.input-label{font-size:13px;color:var(--text-mid);margin-bottom:6px;display:flex;align-items:center;gap:6px}
-.required{font-size:10px;background:#C0392B;color:white;padding:1px 6px;border-radius:3px}
-.optional{font-size:10px;background:var(--cream-dark);color:var(--text-light);padding:1px 6px;border-radius:3px}
-.q-input{width:100%;padding:13px 16px;border:1.5px solid var(--cream-dark);border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:14px;color:var(--text);background:var(--white);transition:border-color .2s}
+.input-label{font-size:15px;color:var(--text-mid);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.required{font-size:15px;background:#C0392B;color:white;padding:1px 6px;border-radius:3px}
+.optional{font-size:15px;background:var(--cream-dark);color:var(--text-light);padding:1px 6px;border-radius:3px}
+.q-input{width:100%;padding:13px 16px;border:1.5px solid var(--cream-dark);border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:16px;color:var(--text);background:var(--white);transition:border-color .2s}
 .q-input:focus{outline:none;border-color:var(--sage)}
 .q-input::placeholder{color:var(--text-light)}
-.input-note{font-size:11px;color:var(--text-light);margin-top:5px}
+.input-note{font-size:15px;color:var(--text-light);margin-top:5px}
 
 /* options */
 .options{display:flex;flex-direction:column;gap:10px}
-.option{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--white);border:1.5px solid var(--cream-dark);border-radius:var(--radius);cursor:pointer;transition:all .2s;font-size:14px;color:var(--text-mid);line-height:1.5;-webkit-tap-highlight-color:transparent}
+.option{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--white);border:1.5px solid var(--cream-dark);border-radius:var(--radius);cursor:pointer;transition:all .2s;font-size:16px;color:var(--text-mid);line-height:1.5;-webkit-tap-highlight-color:transparent}
 .option:hover,.option.selected{border-color:var(--sage);background:var(--sage-light);color:var(--sage-dark)}
-.option-check{width:20px;height:20px;border:1.5px solid var(--cream-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:11px;font-weight:700;color:white}
+.option-check{width:20px;height:20px;border:1.5px solid var(--cream-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:15px;font-weight:700;color:white}
 .option.selected .option-check{background:var(--sage);border-color:var(--sage)}
 .option.radio .option-check{border-radius:50%}
 .option.radio.selected .option-check::after{content:'';width:6px;height:6px;border-radius:50%;background:white;display:block}
 .option.multi .option-check{border-radius:5px}
 .option.multi.selected .option-check::before{content:'✓'}
 
-.q-textarea{width:100%;min-height:120px;padding:14px 16px;border:1.5px solid var(--cream-dark);border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:14px;color:var(--text);background:var(--white);resize:vertical;transition:border-color .2s;line-height:1.8}
+.q-textarea{width:100%;min-height:120px;padding:14px 16px;border:1.5px solid var(--cream-dark);border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:16px;color:var(--text);background:var(--white);resize:vertical;transition:border-color .2s;line-height:1.8}
 .q-textarea:focus{outline:none;border-color:var(--sage)}
 .q-textarea::placeholder{color:var(--text-light)}
 
 /* complete */
 .complete-icon{width:72px;height:72px;background:var(--sage-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:32px}
 .complete-title{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:400;text-align:center;color:var(--sage-dark);line-height:1.7}
-.complete-body{font-size:14px;line-height:2;color:var(--text-mid);text-align:center;margin-top:12px}
+.complete-body{font-size:16px;line-height:2;color:var(--text-mid);text-align:center;margin-top:12px}
 .summary{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius);padding:20px;margin-top:24px}
-.summary-title{font-size:11px;letter-spacing:.12em;color:var(--text-light);margin-bottom:14px}
+.summary-title{font-size:15px;letter-spacing:.12em;color:var(--text-light);margin-bottom:14px}
 .summary-item{margin-bottom:12px}
-.summary-q{font-size:11px;color:var(--sage);font-weight:500;margin-bottom:2px}
-.summary-a{font-size:13px;color:var(--text);line-height:1.7}
+.summary-q{font-size:15px;color:var(--sage);font-weight:500;margin-bottom:2px}
+.summary-a{font-size:15px;color:var(--text);line-height:1.7}
 
 /* buttons */
 .btn-row{display:flex;gap:10px;margin-top:28px}
-.btn{flex:1;padding:15px;border:none;border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;letter-spacing:.05em;-webkit-tap-highlight-color:transparent}
+.btn{flex:1;padding:15px;border:none;border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:500;cursor:pointer;transition:all .2s;letter-spacing:.05em;-webkit-tap-highlight-color:transparent}
 .btn-primary{background:var(--sage);color:white}
 .btn-primary:hover{background:var(--sage-dark)}
 .btn-secondary{background:var(--white);color:var(--text-mid);border:1.5px solid var(--cream-dark);flex:0 0 auto;width:80px}
 .btn-secondary:hover{border-color:var(--sage);color:var(--sage-dark)}
 
-.err-msg{font-size:12px;color:#C0392B;margin-top:8px;display:none}
+.err-msg{font-size:16px;color:#C0392B;margin-top:8px;display:none}
 
 .spinner{width:36px;height:36px;border:3px solid var(--cream-dark);border-top-color:var(--sage);border-radius:50%;animation:spin .8s linear infinite;margin:40px auto 16px}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-.setup-banner{background:#FFF8E1;border:1px solid #FFD54F;border-radius:10px;padding:14px 16px;font-size:12px;color:#5D4037;line-height:1.8;margin-bottom:20px}
+.setup-banner{background:#FFF8E1;border:1px solid #FFD54F;border-radius:10px;padding:14px 16px;font-size:16px;color:#5D4037;line-height:1.8;margin-bottom:20px}
 .setup-banner strong{color:#BF360C}
 </style>
 </head>
@@ -111,6 +111,19 @@ body{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
 <script>
   const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID';
   const IS_SETUP_DONE = !FORMSPREE_URL.includes('YOUR_FORM_ID');
+
+function toggleSonotaBox(el) {
+  const box = document.getElementById('sonota-box');
+  box.style.display = el.classList.contains('selected') ? 'block' : 'none';
+  if (!el.classList.contains('selected')) {
+    document.getElementById('sonota-input').value = '';
+    answers.q1 = answers.q1.filter(v => !v.startsWith('その他'));
+  }
+}
+function updateSonota(val) {
+  answers.q1 = answers.q1.filter(v => !v.startsWith('その他'));
+  if (val.trim()) answers.q1.push('その他：' + val.trim());
+}
 function copyAnswers() {
   const items = [
     ['お名前', answers.name],
@@ -144,10 +157,6 @@ function copyAnswers() {
 
   <!-- STEP 0: WELCOME -->
   <div class="step active" id="step-0">
-    <div class="setup-banner" id="setupBanner">
-      <strong>【管理者へ】メール受信の設定が未完了です</strong><br>
-      formspree.io で無料アカウントを作成し、発行されたURLを<code>FORMSPREE_URL</code>に貼り付けてください。完了後このバナーを削除してください。
-    </div>
     <div class="welcome-icon">🌿</div>
     <div class="welcome-title">モニター体験に<br>ご興味をお持ちいただき<br>ありがとうございます</div>
     <div class="divider"></div>
@@ -201,6 +210,7 @@ function copyAnswers() {
     <div class="q-title">今いちばん気になっている<br>お悩みを教えてください</div>
     <div class="q-hint">複数選んでいただいてもOKです</div>
     <div class="options" id="q1-options">
+      <div class="option multi" onclick="toggleMulti(this,'q1','なんとなくしんどいが続いている')"><div class="option-check"></div>なんとなくしんどいが続いている</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','眠れない・眠りが浅い')"><div class="option-check"></div>眠れない・眠りが浅い</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','疲れが取れない・だるい')"><div class="option-check"></div>疲れが取れない・だるい</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','イライラ・気分の落ち込み')"><div class="option-check"></div>イライラ・気分の落ち込み</div>
@@ -290,7 +300,7 @@ function copyAnswers() {
   <div class="step" id="step-7">
     <div style="text-align:center;padding:20px 0">
       <div class="spinner"></div>
-      <div style="font-size:14px;color:var(--text-mid)">送信しています…</div>
+      <div style="font-size:16px;color:var(--text-mid)">送信しています…</div>
     </div>
   </div>
 
@@ -305,14 +315,10 @@ function copyAnswers() {
       <div class="summary-title">＜ ご回答内容 ＞</div>
       <div id="summary-content"></div>
     </div>
-    <div style="margin-top:20px"><button onclick="copyAnswers()" id="copyBtn" style="width:100%;padding:13px;background:var(--white);border:1.5px solid var(--cream-dark);border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--text-mid);cursor:pointer;transition:all .2s" onmouseover="this.style.borderColor='var(--sage)'" onmouseout="this.style.borderColor='var(--cream-dark)'">📋 回答内容をコピーする</button><div id="copy-ok" style="text-align:center;font-size:12px;color:var(--sage);margin-top:6px;display:none">コピーしました！メモアプリやLINEのノートに貼り付けて保存できます</div><div style="font-size:11px;color:var(--text-light);text-align:center;margin-top:4px">※ 保存が必要な方はご利用ください</div></div>
-    <div style="margin-top:20px">
-      <button onclick="copyAnswers()" style="width:100%;padding:13px;background:var(--white);border:1.5px solid var(--cream-dark);border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--text-mid);cursor:pointer;transition:all .2s" onmouseover="this.style.borderColor='var(--sage)'" onmouseout="this.style.borderColor='var(--cream-dark)'">📋 回答内容をコピーする</button>
-      <div id="copy-ok" style="text-align:center;font-size:12px;color:var(--sage);margin-top:6px;display:none">コピーしました！メモアプリやLINEのノートに貼り付けて保存できます</div>
-      <div style="font-size:11px;color:var(--text-light);text-align:center;margin-top:4px">※ 保存が必要な方はご利用ください</div>
-    </div>
+    <div style="margin-top:20px"><button onclick="copyAnswers()" id="copyBtn" style="width:100%;padding:13px;background:var(--white);border:1.5px solid var(--cream-dark);border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:15px;color:var(--text-mid);cursor:pointer;transition:all .2s" onmouseover="this.style.borderColor='var(--sage)'" onmouseout="this.style.borderColor='var(--cream-dark)'">📋 回答内容をコピーする</button><div id="copy-ok" style="text-align:center;font-size:16px;color:var(--sage);margin-top:6px;display:none">コピーしました！メモアプリやLINEのノートに貼り付けて保存できます</div><div style="font-size:15px;color:var(--text-light);text-align:center;margin-top:4px">※ 保存が必要な方はご利用ください</div></div>
+    
 
-    <div style="margin-top:24px;padding:16px;background:var(--sage-light);border-radius:var(--radius);font-size:13px;color:var(--sage-dark);line-height:1.9;text-align:center">
+    <div style="margin-top:24px;padding:16px;background:var(--sage-light);border-radius:var(--radius);font-size:15px;color:var(--sage-dark);line-height:1.9;text-align:center">
       🌿 <strong>なごみ セロトニン活性療法</strong><br>
       京都府亀岡市 千代川駅 徒歩3分
     </div>
@@ -386,6 +392,7 @@ async function submitForm() {
   currentStep = 7; showStep(7);
   const body = {
     '_subject': '【なごみ】モニター体験 応募がありました',
+    'email': answers.name + ' <kyoto@nagomi.net>',
     'お名前': answers.name,
     'LINEの表示名': answers.lineName,
     '電話番号': answers.tel,
@@ -400,7 +407,8 @@ async function submitForm() {
   } else {
     try {
       await fetch(FORMSPREE_URL, {
-        method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(body)
       });
     } catch(e) {}
