@@ -114,9 +114,10 @@ body{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
 
 function toggleSonotaBox(el) {
   const box = document.getElementById('sonota-box');
+  if(!box) return;
   box.style.display = el.classList.contains('selected') ? 'block' : 'none';
   if (!el.classList.contains('selected')) {
-    document.getElementById('sonota-input').value = '';
+    const si = document.getElementById('sonota-input'); if(si) si.value = '';
     answers.q1 = answers.q1.filter(v => !v.startsWith('その他'));
   }
 }
@@ -360,7 +361,7 @@ const answers = { name:'', lineName:'', tel:'', q1:[], q2:'', q3:[], q4:'', q5:'
 const progressMap = {0:0, 1:0, 2:20, 3:40, 4:60, 5:80, 6:100, 7:100, 8:100};
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (IS_SETUP_DONE) document.getElementById('setupBanner').style.display = 'none';
+  // setup done
 });
 
 function showStep(n) {
@@ -432,10 +433,11 @@ async function submitForm() {
     await new Promise(r => setTimeout(r, 1500));
   } else {
     try {
+      const formData = new FormData();
+      Object.entries(body).forEach(([k, v]) => formData.append(k, v));
       await fetch(FORM_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(body)
+        body: formData
       });
     } catch(e) {}
   }
