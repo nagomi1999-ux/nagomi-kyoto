@@ -109,7 +109,7 @@ body{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
   ══════════════════════════════════════════════
 -->
 <script>
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzSIeHwj_WERliGM5_tpt7DPCt5lFKIh2jxwdF7mdmWaZLFAyxnARqjMCzh5Q1ES_a5hA/exec';
+  const FORM_URL = 'https://script.google.com/macros/s/AKfycbzSIeHwj_WERliGM5_tpt7DPCt5lFKIh2jxwdF7mdmWaZLFAyxnARqjMCzh5Q1ES_a5hA/exec';
   const IS_SETUP_DONE = true;
 
 function toggleSonotaBox(el) {
@@ -432,7 +432,7 @@ async function submitForm() {
     await new Promise(r => setTimeout(r, 1500));
   } else {
     try {
-      await fetch(GAS_URL, {
+      await fetch(FORM_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(body)
