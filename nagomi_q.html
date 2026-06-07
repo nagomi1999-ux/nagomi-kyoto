@@ -109,8 +109,8 @@ body{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
   ══════════════════════════════════════════════
 -->
 <script>
-  const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID';
-  const IS_SETUP_DONE = !FORMSPREE_URL.includes('YOUR_FORM_ID');
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzSIeHwj_WERliGM5_tpt7DPCt5lFKIh2jxwdF7mdmWaZLFAyxnARqjMCzh5Q1ES_a5hA/exec';
+  const IS_SETUP_DONE = true;
 
 function toggleSonotaBox(el) {
   const box = document.getElementById('sonota-box');
@@ -432,7 +432,7 @@ async function submitForm() {
     await new Promise(r => setTimeout(r, 1500));
   } else {
     try {
-      await fetch(FORMSPREE_URL, {
+      await fetch(GAS_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(body)
