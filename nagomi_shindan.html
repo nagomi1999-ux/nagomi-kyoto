@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>幸せを感じる力チェック｜なごみ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink:       #F2A7B8;
+  --pink-light: #FDF0F3;
+  --pink-mid:   #FAD9E2;
+  --pink-dark:  #C4607A;
+  --rose:       #E8849A;
+  --cream:      #FDFAF7;
+  --gold:       #C4956A;
+  --text:       #3D2B2B;
+  --text-mid:   #6B4A4A;
+  --text-light: #A88888;
+  --sage:       #8FAE8B;
+  --radius:     18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+
+/* ── 全体レイアウト ── */
+.page{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
+
+/* ── ヘッダー ── */
+.header{width:100%;background:linear-gradient(135deg,#FDE8EE 0%,#FFF0F5 50%,#FDE8EE 100%);padding:32px 24px 28px;text-align:center;position:relative;overflow:hidden}
+.header::before{content:'🌸';position:absolute;top:8px;left:5%;font-size:52px;opacity:0.35;transform:rotate(-15deg)}
+.header::after{content:'🌸';position:absolute;bottom:8px;right:5%;font-size:46px;opacity:0.30;transform:rotate(12deg)}
+.header-brand{font-size:16px;letter-spacing:0.25em;color:var(--text-light);margin-bottom:6px}
+.header-title{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:400;color:var(--pink-dark);line-height:1.6;letter-spacing:0.05em}
+.header-sub{font-size:16px;color:var(--text-mid);margin-top:8px;line-height:1.8}
+.header-badge{display:inline-block;background:white;color:var(--pink-dark);font-size:14px;padding:6px 18px;border-radius:20px;margin-top:10px;letter-spacing:0.08em;border:1.5px solid var(--pink)font-weight:600;}
+
+/* ── プログレス ── */
+.progress-wrap{width:100%;max-width:480px;padding:16px 24px 0}
+.progress-bar-bg{width:100%;height:4px;background:var(--pink-mid);border-radius:2px;overflow:hidden}
+.progress-bar-fill{height:100%;background:linear-gradient(to right,var(--pink),var(--rose));border-radius:2px;transition:width 0.5s ease}
+.progress-label{font-size:15px;color:var(--text-light);margin-top:5px;text-align:right}
+
+/* ── カード ── */
+.card{width:100%;max-width:480px;margin:20px auto 0;padding:0 20px}
+.step{display:none;animation:fadeUp 0.4s ease both}
+.step.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── ウェルカム ── */
+.welcome-flower{font-size:48px;text-align:center;margin-bottom:16px;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.welcome-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:400;text-align:center;line-height:1.8;color:var(--text)}
+.welcome-body{font-size:17px;line-height:2.1;color:var(--text-mid);text-align:center;margin-top:14px}
+.check-list{background:var(--pink-light);border-radius:14px;padding:16px 20px;margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.check-item{font-size:17px;color:var(--text-mid);display:flex;align-items:center;gap:8px}
+.check-item::before{content:'✓';color:var(--rose);font-weight:500;flex-shrink:0}
+.welcome-note{font-size:15px;color:var(--text-light);text-align:center;margin-top:14px;line-height:1.8}
+.divider{display:flex;align-items:center;gap:10px;margin:16px 0}
+.divider::before,.divider::after{content:'';flex:1;height:0.5px;background:var(--pink-mid)}
+.divider-text{font-size:14px;color:var(--text-light);letter-spacing:0.1em;white-space:nowrap}
+
+/* ── 質問 ── */
+.q-label{display:inline-block;background:var(--pink-light);color:var(--rose);font-size:14px;font-weight:500;padding:3px 12px;border-radius:20px;letter-spacing:0.1em;margin-bottom:10px}
+.q-title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:400;line-height:1.8;color:var(--text);margin-bottom:20px}
+.options{display:flex;flex-direction:column;gap:10px}
+.option{padding:14px 18px;background:white;border:1.5px solid var(--pink-mid);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;font-size:17px;color:var(--text-mid);text-align:center;-webkit-tap-highlight-color:transparent}
+.option:hover,.option.selected{border-color:var(--rose);background:var(--pink-light);color:var(--pink-dark)}
+.option.selected{border-color:var(--pink);background:var(--pink-mid)}
+
+/* ── ボタン ── */
+.btn-row{display:flex;gap:10px;margin-top:28px}
+.btn{flex:1;padding:15px;border:none;border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:17px;font-weight:500;cursor:pointer;transition:all 0.2s;-webkit-tap-highlight-color:transparent}
+.btn-primary{background:linear-gradient(135deg,var(--pink),var(--rose));color:white;box-shadow:0 4px 16px rgba(242,167,184,0.4)}
+.btn-primary:hover{box-shadow:0 6px 20px rgba(242,167,184,0.5);transform:translateY(-1px)}
+.btn-secondary{background:white;color:var(--text-mid);border:1.5px solid var(--pink-mid);flex:0 0 auto;width:76px}
+.err-msg{font-size:15px;color:#C0392B;margin-top:8px;display:none}
+
+/* ── 結果 ── */
+.result-header{background:linear-gradient(135deg,#FDE8EE,#FFF0F5);border-radius:20px;padding:24px 20px;text-align:center;margin-bottom:20px}
+.result-icon{font-size:44px;margin-bottom:10px}
+.result-type{font-size:15px;letter-spacing:0.2em;color:var(--rose);margin-bottom:6px}
+.result-title{font-family:'Noto Serif JP',serif;font-size:23px;font-weight:400;color:var(--text);line-height:1.6}
+.result-body{font-size:17px;line-height:2.1;color:var(--text-mid);margin-top:12px}
+
+.offer-card{background:white;border:1.5px solid var(--pink-mid);border-radius:var(--radius);padding:20px;margin-top:20px;text-align:center}
+.offer-title{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--text);margin-bottom:12px}
+.offer-price-wrap{display:flex;flex-direction:column;gap:4px;align-items:center}
+.offer-original{font-size:16px;color:var(--text-light);text-decoration:line-through}
+.offer-price{font-family:'Noto Serif JP',serif;font-size:30px;font-weight:500;color:var(--rose)}
+.offer-price span{font-size:18px;font-weight:400}
+.offer-gift{font-size:16px;color:var(--sage);margin-top:6px;padding-top:10px;border-top:1px solid var(--pink-mid)}
+.offer-total{font-size:15px;color:var(--text-light);margin-top:3px}
+.offer-limit{background:var(--gold);color:white;font-size:15px;padding:4px 14px;border-radius:20px;display:inline-block;margin-top:10px}
+
+.line-section{margin-top:20px;padding:20px;background:var(--pink-light);border-radius:var(--radius);text-align:center}
+.line-text{font-size:17px;color:var(--text-mid);line-height:1.9;margin-bottom:14px}
+.line-keyword{font-weight:500;color:var(--pink-dark)}
+.btn-line{width:100%;padding:16px;background:#00B900;color:white;border:none;border-radius:var(--radius);font-size:18px;font-weight:500;cursor:pointer;transition:all 0.2s;font-family:'Noto Sans JP',sans-serif}
+.btn-line:hover{background:#00A000;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,185,0,0.3)}
+.result-note{font-size:15px;color:var(--text-light);text-align:center;margin-top:12px;line-height:1.8}
+
+/* ── フッター ── */
+.footer{margin-top:40px;text-align:center;font-size:15px;color:var(--text-light);line-height:2}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="header">
+  <div class="header-brand">脳活性エステ　なごみ</div>
+  <div class="header-title">何か楽しいことないかな〜🤍<br>幸せを感じる出来事ないかな〜🤍</div>
+  <div class="header-sub">そう思っているあなたへ</div>
+  <span class="header-badge">「幸せを感じる力」チェック｜無料・約2分</span>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div>
+  <div class="progress-label" id="progressLabel"></div>
+</div>
+
+<div class="card">
+
+  <!-- STEP 0: WELCOME -->
+  <div class="step active" id="step-0">
+    <div class="welcome-flower">💐</div>
+    <div class="check-list">
+      <div class="check-item">特別不幸じゃないのに満たされない</div>
+      <div class="check-item">人の幸せが少し羨ましい</div>
+      <div class="check-item">人には言えない寂しさがある</div>
+      <div class="check-item">何かを変えたいけど何を変えたらいいかわからない</div>
+    </div>
+    <div class="welcome-body" style="margin-top:16px">
+      それ、性格のせいでも<br>年齢のせいでもないかもしれません。<br><br>
+      <strong>「幸せを感じる力」</strong>が<br>少し弱っているサインかも。
+    </div>
+    <div class="divider"><span class="divider-text">10問でチェックしてみましょう</span></div>
+        <div class="btn-row"><button class="btn btn-primary" onclick="goNext()">チェックをはじめる 🌸</button></div>
+  </div>
+
+  <!-- Q1〜Q10 -->
+  <div class="step" id="step-1">
+    <div class="q-label">Q 1 / 10</div>
+    <div class="q-title">朝起きても、疲れが<br>残っていることが多い</div>
+    <div class="options" id="opt-1">
+      <div class="option" onclick="selectAnswer(this,1,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,1,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,1,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-1">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="goNext()">次へ →</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-2">
+    <div class="q-label">Q 2 / 10</div>
+    <div class="q-title">理由もなく、不安になる<br>ことがある</div>
+    <div class="options" id="opt-2">
+      <div class="option" onclick="selectAnswer(this,2,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,2,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,2,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-2">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="goNext()">次へ →</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-3">
+    <div class="q-label">Q 3 / 10</div>
+    <div class="q-title">眠りが浅い、または<br>夜中に目が覚める</div>
+    <div class="options" id="opt-3">
+      <div class="option" onclick="selectAnswer(this,3,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,3,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,3,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-3">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="goNext()">次へ →</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-4">
+    <div class="q-label">Q 4 / 10</div>
+    <div class="q-title">イライラすることが<br>増えた気がする</div>
+    <div class="options" id="opt-4">
+      <div class="option" onclick="selectAnswer(this,4,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,4,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,4,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-4">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="goNext()">次へ →</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-5">
+    <div class="q-label">Q 5 / 10</div>
+    <div class="q-title">頑張っているのに<br>報われない気がする</div>
+    <div class="options" id="opt-5">
+      <div class="option" onclick="selectAnswer(this,5,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,5,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,5,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-5">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="goNext()">次へ →</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-6">
+    <div class="q-label">Q 6 / 10</div>
+    <div class="q-title">自分を後回しにして<br>しまうことが多い</div>
+    <div class="options" id="opt-6">
+      <div class="option" onclick="selectAnswer(this,6,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,6,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,6,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-6">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="goNext()">次へ →</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-7">
+    <div class="q-label">Q 7 / 10</div>
+    <div class="q-title">最近、ワクワクしたり<br>感動することが少ない</div>
+    <div class="options" id="opt-7">
+      <div class="option" onclick="selectAnswer(this,7,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,7,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,7,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-7">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="goNext()">次へ →</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-8">
+    <div class="q-label">Q 8 / 10</div>
+    <div class="q-title">肩こりや頭痛など<br>体の不調が続いている</div>
+    <div class="options" id="opt-8">
+      <div class="option" onclick="selectAnswer(this,8,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,8,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,8,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-8">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="goNext()">次へ →</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-9">
+    <div class="q-label">Q 9 / 10</div>
+    <div class="q-title">このままでいいのかな、と<br>ふと思うことがある</div>
+    <div class="options" id="opt-9">
+      <div class="option" onclick="selectAnswer(this,9,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,9,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,9,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-9">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="goNext()">次へ →</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-10">
+    <div class="q-label">Q 10 / 10</div>
+    <div class="q-title">人生を少し変えたい、<br>もっと楽になりたいと思う</div>
+    <div class="options" id="opt-10">
+      <div class="option" onclick="selectAnswer(this,10,'よくある')">よくある</div>
+      <div class="option" onclick="selectAnswer(this,10,'たまにある')">たまにある</div>
+      <div class="option" onclick="selectAnswer(this,10,'ほとんどない')">ほとんどない</div>
+    </div>
+    <div class="err-msg" id="err-10">選択してください</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
+      <button class="btn btn-primary" onclick="showResult()">結果を見る 🌸</button>
+    </div>
+  </div>
+
+  <!-- 結果 -->
+  <div class="step" id="step-result">
+    <div class="result-header" id="result-header">
+      <div class="result-icon" id="result-icon"></div>
+      <div class="result-type" id="result-type"></div>
+      <div class="result-title" id="result-title"></div>
+      <div class="result-body" id="result-body"></div>
+    </div>
+
+    <div style="background:var(--pink-light);border-radius:var(--radius);padding:20px;margin-top:0;margin-bottom:20px;text-align:center;font-size:17px;color:var(--text-mid);line-height:2">
+      なごみでは、幸せホルモン<strong>「セロトニン」</strong>を活性化する施術で<br>
+      幸せを感じる力と、本来持っている心身の自然なバランスを取り戻すお手伝いをしています。<br><br>
+      体験された方からは<br>
+      「ほんまにすごい！」<br>
+      「なんか毎日が変わった」<br>
+      という声をいただいています。
+    </div>
+
+    <div style="text-align:center;padding:20px 4px;font-size:17px;color:var(--text-mid);line-height:2.2;font-family:'Noto Serif JP',serif;">
+      不思議なんですが、セロトニンが整うと、<br>
+      幸せな出来事が舞い込んでくるようになるんです。<br><br>
+      セロトニンを活性化すると、何が変わるのか。<br>
+      <span style="color:var(--pink-dark);font-weight:500">試してみたいな、と思ったあなたへ。</span>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-title">🌿 27周年感謝 特別体験</div>
+      <div class="offer-price-wrap">
+        <div class="offer-original">通常 11,000円</div>
+        <div class="offer-price">5,500円 <span>（半額）</span></div>
+        <div class="offer-gift">さらに よもぎ蒸し（5,500円相当）プレゼント</div>
+        <div class="offer-total">合計 17,000円分を 5,500円でご体験いただけます</div>
+        <div class="offer-limit">女性限定・5名様</div>
+        <div style="font-size:15px;color:var(--rose);margin-top:8px;font-weight:500">📅 6月30日まで　埋まり次第終了</div>
+      </div>
+    </div>
+
+    <div class="line-section">
+      <div class="line-text">
+        ご希望の方は、なごみの公式LINEを追加して<br>
+        <span class="line-keyword">「なごみ体験希望」</span>と送ってください。<br>
+        アンケートをお送りします。<br>
+        お悩みをお聞きした上でご連絡いたします。
+      </div>
+      <button class="btn-line" onclick="openLine()">LINEで体験を申し込む 🌸</button>
+      <div class="result-note">
+        ※ 詳細はLINEにてご案内いたします
+      </div>
+    </div>
+
+    <div class="footer">
+      脳活性エステ なごみ<br>
+      京都府亀岡市 千代川駅 徒歩3分
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+// ★ ここになごみのLINE友だち追加URLを入れてください ★
+const LINE_URL = 'https://lin.ee/6I4mkia';
+
+let currentStep = 0;
+const answers = {};
+const TOTAL_Q = 10;
+
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-' + (n === 'result' ? 'result' : n)).classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+  if (n === 'result') {
+    document.getElementById('progressBar').style.width = '100%';
+    document.getElementById('progressLabel').textContent = '完了 🌸';
+    return;
+  }
+  const pct = n === 0 ? 0 : Math.round(((n-1) / TOTAL_Q) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = n === 0 ? '' : `${n} / ${TOTAL_Q}`;
+}
+
+function goNext() {
+  if (currentStep >= 1) {
+    if (!answers[currentStep]) {
+      document.getElementById('err-' + currentStep).style.display = 'block';
+      return;
+    }
+    document.getElementById('err-' + currentStep).style.display = 'none';
+  }
+  currentStep++;
+  showStep(currentStep);
+}
+function goPrev() {
+  if (currentStep > 0) { currentStep--; showStep(currentStep); }
+}
+
+function selectAnswer(el, q, val) {
+  document.querySelectorAll('#opt-' + q + ' .option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  answers[q] = val;
+  document.getElementById('err-' + q).style.display = 'none';
+}
+
+function calcScore() {
+  let score = 0;
+  for (let i = 1; i <= TOTAL_Q; i++) {
+    if (answers[i] === 'よくある') score += 2;
+    else if (answers[i] === 'たまにある') score += 1;
+  }
+  return score;
+}
+
+const results = [
+  {
+    min:0, max:6,
+    icon:'🌷',
+    type:'チェック結果',
+    title:'今は比較的バランスが取れています',
+    body:'今は心と体のバランスが保たれているようです。ただ、日々のストレスは知らず知らずのうちに蓄積します。定期的なケアを取り入れることで、今の状態をさらに高めることができます。'
+  },
+  {
+    min:7, max:12,
+    icon:'🌸',
+    type:'チェック結果',
+    title:'幸せを感じる力が\n少し弱っているかも',
+    body:'頑張っているのに、なんとなく満たされない感覚がありませんか？それは性格のせいではありません。\n\nもしかすると、幸せホルモン（セロトニン）が少し不足気味になっているかもしれません。\nセロトニンは心と体のバランスを整える大切なホルモン。不足すると、満たされない感覚や不安感、疲れやすさなどが続くことがあります。\n\n少しずつケアしてあげましょう。'
+  },
+  {
+    min:13, max:20,
+    icon:'💐',
+    type:'チェック結果',
+    title:'幸せを感じる力が\nかなり弱っています',
+    body:'毎日頑張っているのに、なんとなくしんどい。そんな状態が続いていませんか？あなたの心と体は、本当のケアを必要としています。一人で抱え込まないで、ぜひ一度ご相談ください。\n\n幸せホルモン（セロトニン）が不足している可能性が高いです。\nセロトニンは心と体のバランスを整える大切なホルモン。不足すると、満たされない感覚や不安感、疲れやすさなどが続きます。\n\n一度、しっかりとケアしてあげましょう。'
+  }
+];
+
+function showResult() {
+  if (!answers[TOTAL_Q]) {
+    document.getElementById('err-' + TOTAL_Q).style.display = 'block';
+    return;
+  }
+  const score = calcScore();
+  const r = results.find(x => score >= x.min && score <= x.max) || results[2];
+  document.getElementById('result-icon').textContent = r.icon;
+  document.getElementById('result-type').textContent = r.type;
+  document.getElementById('result-title').style.whiteSpace = 'pre-line';
+  document.getElementById('result-title').textContent = r.title;
+  document.getElementById('result-body').innerHTML = r.body.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+  showStep('result');
+}
+
+function openLine() {
+  window.open(LINE_URL, '_blank');
+}
+</script>
+</body>
+</html>
