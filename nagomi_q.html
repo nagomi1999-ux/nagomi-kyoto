@@ -236,15 +236,17 @@ function copyAnswers() {
     <div class="q-hint">複数選んでいただいてもOKです</div>
     <div class="options" id="q1-options">
       <div class="option multi" onclick="toggleMulti(this,'q1','なんとなくしんどいが続いている')"><div class="option-check"></div>なんとなくしんどいが続いている</div>
+      <div class="option multi" onclick="toggleMulti(this,'q1','特別不幸じゃないのに満たされない')"><div class="option-check"></div>特別不幸じゃないのに満たされない</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','眠れない・眠りが浅い')"><div class="option-check"></div>眠れない・眠りが浅い</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','疲れが取れない・だるい')"><div class="option-check"></div>疲れが取れない・だるい</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','イライラ・気分の落ち込み')"><div class="option-check"></div>イライラ・気分の落ち込み</div>
+      <div class="option multi" onclick="toggleMulti(this,'q1','人には言えない寂しさがある')"><div class="option-check"></div>人には言えない寂しさがある</div>
+      <div class="option multi" onclick="toggleMulti(this,'q1','何かを変えたいけど何を変えたらいいかわからない')"><div class="option-check"></div>何かを変えたいけど何を変えたらいいかわからない</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','肩こり・頭痛・腰痛')"><div class="option-check"></div>肩こり・頭痛・腰痛</div>
-      <div class="option multi" onclick="toggleMulti(this,'q1','肌荒れ・くすみ・たるみ')"><div class="option-check"></div>肌荒れ・くすみ・たるみ</div>
-      <div class="option multi" onclick="toggleMulti(this,'q1','まぶたのたるみ・顔のゆるみ')"><div class="option-check"></div>まぶたのたるみ・顔のゆるみ</div>
       <div class="option multi" onclick="toggleMulti(this,'q1','冷え・生理痛・婦人科系')"><div class="option-check"></div>冷え・生理痛・婦人科系</div>
-      <div class="option multi" onclick="toggleMulti(this,'q1','その他')"><div class="option-check"></div>その他</div>
-    </div>
+      <div class="option multi" onclick="toggleMulti(this,'q1','肌荒れ・くすみ・まぶたのたるみ')"><div class="option-check"></div>肌荒れ・くすみ・まぶたのたるみ</div>
+      <div class="option multi" onclick="toggleMulti(this,'q1','その他');toggleSonotaBox(this)"><div class="option-check"></div>その他</div>
+    </div
     <div class="err-msg" id="err-2">少なくとも1つ選んでください</div>
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="goPrev()">← 戻る</button>
