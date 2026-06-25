@@ -6,6 +6,16 @@
 <title>幸せを感じる力チェック｜なごみ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ6M3QGF92"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QJ6M3QGF92');
+</script>
+
 <style>
 :root {
   --pink:       #F2A7B8;
@@ -23,45 +33,36 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
-
-/* ── 全体レイアウト ── */
 .page{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
 
-/* ── ヘッダー ── */
 .header{width:100%;background:linear-gradient(135deg,#FDE8EE 0%,#FFF0F5 50%,#FDE8EE 100%);padding:32px 24px 28px;text-align:center;position:relative;overflow:hidden}
 .header::before{content:'🌸';position:absolute;top:8px;left:5%;font-size:52px;opacity:0.35;transform:rotate(-15deg)}
 .header::after{content:'🌸';position:absolute;bottom:8px;right:5%;font-size:46px;opacity:0.30;transform:rotate(12deg)}
-.header-brand{font-size:16px;letter-spacing:0.25em;color:var(--text-light);margin-bottom:6px}
-.header-title{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:400;color:var(--pink-dark);line-height:1.6;letter-spacing:0.05em}
-.header-sub{font-size:16px;color:var(--text-mid);margin-top:8px;line-height:1.8}
-.header-badge{display:inline-block;background:white;color:var(--pink-dark);font-size:14px;padding:6px 18px;border-radius:20px;margin-top:10px;letter-spacing:0.08em;border:1.5px solid var(--pink)font-weight:600;}
+.header-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:400;color:var(--pink-dark);line-height:1.6;letter-spacing:0.05em}
+.header-sub{font-size:17px;color:var(--text-mid);margin-top:8px;line-height:1.8}
+.header-badge{display:inline-block;background:white;color:var(--pink-dark);font-size:14px;padding:6px 18px;border-radius:20px;margin-top:10px;letter-spacing:0.08em;border:1.5px solid var(--pink);font-weight:600;}
 
-/* ── プログレス ── */
 .progress-wrap{width:100%;max-width:480px;padding:16px 24px 0}
 .progress-bar-bg{width:100%;height:4px;background:var(--pink-mid);border-radius:2px;overflow:hidden}
 .progress-bar-fill{height:100%;background:linear-gradient(to right,var(--pink),var(--rose));border-radius:2px;transition:width 0.5s ease}
-.progress-label{font-size:15px;color:var(--text-light);margin-top:5px;text-align:right}
+.progress-label{font-size:14px;color:var(--text-light);margin-top:5px;text-align:right}
 
-/* ── カード ── */
 .card{width:100%;max-width:480px;margin:20px auto 0;padding:0 20px}
 .step{display:none;animation:fadeUp 0.4s ease both}
 .step.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── ウェルカム ── */
 .welcome-flower{font-size:48px;text-align:center;margin-bottom:16px;animation:float 3s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.welcome-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:400;text-align:center;line-height:1.8;color:var(--text)}
-.welcome-body{font-size:17px;line-height:2.1;color:var(--text-mid);text-align:center;margin-top:14px}
+.welcome-body{font-size:18px;line-height:2.1;color:var(--text-mid);text-align:center;margin-top:14px}
 .check-list{background:var(--pink-light);border-radius:14px;padding:16px 20px;margin-top:16px;display:flex;flex-direction:column;gap:8px}
 .check-item{font-size:17px;color:var(--text-mid);display:flex;align-items:center;gap:8px}
 .check-item::before{content:'✓';color:var(--rose);font-weight:500;flex-shrink:0}
-.welcome-note{font-size:15px;color:var(--text-light);text-align:center;margin-top:14px;line-height:1.8}
+.welcome-note{font-size:14px;color:var(--text-light);text-align:center;margin-top:14px;line-height:1.8}
 .divider{display:flex;align-items:center;gap:10px;margin:16px 0}
 .divider::before,.divider::after{content:'';flex:1;height:0.5px;background:var(--pink-mid)}
 .divider-text{font-size:14px;color:var(--text-light);letter-spacing:0.1em;white-space:nowrap}
 
-/* ── 質問 ── */
 .q-label{display:inline-block;background:var(--pink-light);color:var(--rose);font-size:14px;font-weight:500;padding:3px 12px;border-radius:20px;letter-spacing:0.1em;margin-bottom:10px}
 .q-title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:400;line-height:1.8;color:var(--text);margin-bottom:20px}
 .options{display:flex;flex-direction:column;gap:10px}
@@ -69,55 +70,46 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 .option:hover,.option.selected{border-color:var(--rose);background:var(--pink-light);color:var(--pink-dark)}
 .option.selected{border-color:var(--pink);background:var(--pink-mid)}
 
-/* ── ボタン ── */
 .btn-row{display:flex;gap:10px;margin-top:28px}
 .btn{flex:1;padding:15px;border:none;border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:17px;font-weight:500;cursor:pointer;transition:all 0.2s;-webkit-tap-highlight-color:transparent}
 .btn-primary{background:linear-gradient(135deg,var(--pink),var(--rose));color:white;box-shadow:0 4px 16px rgba(242,167,184,0.4)}
 .btn-primary:hover{box-shadow:0 6px 20px rgba(242,167,184,0.5);transform:translateY(-1px)}
 .btn-secondary{background:white;color:var(--text-mid);border:1.5px solid var(--pink-mid);flex:0 0 auto;width:76px}
-.err-msg{font-size:15px;color:#C0392B;margin-top:8px;display:none}
+.err-msg{font-size:14px;color:#C0392B;margin-top:8px;display:none}
 
-/* ── 結果 ── */
-.result-header{background:linear-gradient(135deg,#FDE8EE,#FFF0F5);border-radius:20px;padding:24px 20px;text-align:center;margin-bottom:20px}
-.result-icon{font-size:44px;margin-bottom:10px}
-.result-type{font-size:15px;letter-spacing:0.2em;color:var(--rose);margin-bottom:6px}
-.result-title{font-family:'Noto Serif JP',serif;font-size:23px;font-weight:400;color:var(--text);line-height:1.6}
-.result-body{font-size:17px;line-height:2.4;color:var(--text-mid);margin-top:16px;text-align:center}
+.result-header{background:linear-gradient(135deg,#FDE8EE,#FFF0F5);border-radius:20px;padding:28px 20px;text-align:center;margin-bottom:20px}
+.result-type-badge{display:inline-block;background:white;color:var(--pink-dark);font-family:'Noto Serif JP',serif;font-size:24px;font-weight:500;width:56px;height:56px;line-height:56px;border-radius:50%;border:2px solid var(--pink);margin-bottom:10px}
+.result-type{font-size:14px;letter-spacing:0.15em;color:var(--rose);margin-bottom:4px}
+.result-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:400;color:var(--text);line-height:1.6;white-space:pre-line}
+.result-body{font-size:17px;line-height:2.4;color:var(--text-mid);margin-top:16px;text-align:center;white-space:pre-line}
 
-.offer-card{background:white;border:1.5px solid var(--pink-mid);border-radius:var(--radius);padding:20px;margin-top:20px;text-align:center}
-.offer-title{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--text);margin-bottom:12px}
-.offer-price-wrap{display:flex;flex-direction:column;gap:4px;align-items:center}
-.offer-original{font-size:16px;color:var(--text-light);text-decoration:line-through}
-.offer-price{font-family:'Noto Serif JP',serif;font-size:30px;font-weight:500;color:var(--rose)}
-.offer-price span{font-size:18px;font-weight:400}
-.offer-gift{font-size:16px;color:var(--sage);margin-top:6px;padding-top:10px;border-top:1px solid var(--pink-mid)}
-.offer-total{font-size:15px;color:var(--text-light);margin-top:3px}
-.offer-limit{background:var(--gold);color:white;font-size:15px;padding:4px 14px;border-radius:20px;display:inline-block;margin-top:10px}
+.bridge-text{text-align:center;padding:20px 4px;font-size:17px;color:var(--text-mid);line-height:2.2;font-family:'Noto Serif JP',serif;}
 
-.line-section{margin-top:20px;padding:20px;background:var(--pink-light);border-radius:var(--radius);text-align:center}
-.line-text{font-size:17px;color:var(--text-mid);line-height:1.9;margin-bottom:14px}
-.line-keyword{font-weight:500;color:var(--pink-dark)}
-.btn-line{width:100%;padding:16px;background:#00B900;color:white;border:none;border-radius:var(--radius);font-size:18px;font-weight:500;cursor:pointer;transition:all 0.2s;font-family:'Noto Sans JP',sans-serif}
+.line-cta-box{margin-top:20px;padding:22px 20px;background:white;border:2px solid var(--pink);border-radius:var(--radius);text-align:center}
+.line-cta-title{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--pink-dark);margin-bottom:10px;}
+.line-cta-text{font-size:16px;color:var(--text-mid);line-height:1.9;margin-bottom:6px}
+.line-keyword-box{background:var(--pink-light);border-radius:14px;padding:14px;margin:14px 0;font-size:19px;color:var(--pink-dark);font-weight:600;font-family:'Noto Serif JP',serif;}
+.btn-line{width:100%;padding:16px;background:#00B900;color:white;border:none;border-radius:var(--radius);font-size:16px;font-weight:500;cursor:pointer;transition:all 0.2s;font-family:'Noto Sans JP',sans-serif;margin-top:8px;}
 .btn-line:hover{background:#00A000;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,185,0,0.3)}
-.result-note{font-size:15px;color:var(--text-light);text-align:center;margin-top:12px;line-height:1.8}
 
-/* ── フッター ── */
-.footer{margin-top:40px;text-align:center;font-size:15px;color:var(--text-light);line-height:2}
+.offer-card{background:linear-gradient(135deg,#FDE8EE,#FFF0F5);border:1.5px solid var(--pink-mid);border-radius:var(--radius);padding:20px;margin-top:20px;text-align:center}
+.offer-title{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--text);margin-bottom:12px}
+.offer-original{font-size:14px;color:var(--text-light);text-decoration:line-through}
+.offer-price{font-family:'Noto Serif JP',serif;font-size:30px;font-weight:500;color:var(--rose)}
+.offer-price span{font-size:15px;font-weight:400}
+.offer-gift{font-size:14px;color:var(--sage);margin-top:6px;padding-top:10px;border-top:1px solid var(--pink-mid)}
+.offer-total{font-size:13px;color:var(--text-light);margin-top:3px}
+.offer-limit{background:var(--gold);color:white;font-size:14px;padding:4px 14px;border-radius:20px;display:inline-block;margin-top:10px}
+.offer-date{font-size:15px;color:var(--rose);margin-top:8px;font-weight:500}
+
+.result-note{font-size:14px;color:var(--text-light);text-align:center;margin-top:12px;line-height:1.8}
+.footer{margin-top:40px;text-align:center;font-size:13px;color:var(--text-light);line-height:2}
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ6M3QGF92"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QJ6M3QGF92');
-</script>
 </head>
 <body>
 <div class="page">
 
 <div class="header">
-  <div class="header-brand">脳活性エステ　なごみ</div>
   <div class="header-title">何か楽しいことないかな〜🤍<br>幸せを感じる出来事ないかな〜🤍</div>
   <div class="header-sub">そう思っているあなたへ</div>
   <span class="header-badge">「幸せを感じる力」チェック｜無料・約2分</span>
@@ -144,7 +136,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
       <strong>「幸せを感じる力」</strong>が<br>少し弱っているサインかも。
     </div>
     <div class="divider"><span class="divider-text">10問でチェックしてみましょう</span></div>
-        <div class="btn-row"><button class="btn btn-primary" onclick="goNext()">チェックをはじめる 🌸</button></div>
+    <div class="btn-row"><button class="btn btn-primary" onclick="goNext()">チェックをはじめる 🌸</button></div>
   </div>
 
   <!-- Q1〜Q10 -->
@@ -300,53 +292,35 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <!-- 結果 -->
   <div class="step" id="step-result">
-    <div class="result-header" id="result-header">
-      <div class="result-icon" id="result-icon"></div>
-      <div class="result-type" id="result-type"></div>
+    <div class="result-header">
+      <div class="result-type-badge" id="result-type-badge"></div>
+      <div class="result-type">チェック結果</div>
       <div class="result-title" id="result-title"></div>
       <div class="result-body" id="result-body"></div>
     </div>
 
-    <div style="background:var(--pink-light);border-radius:var(--radius);padding:20px;margin-top:0;margin-bottom:20px;text-align:center;font-size:17px;color:var(--text-mid);line-height:2">
-      なごみでは、幸せホルモン<strong>「セロトニン」</strong>を活性化する施術で<br>
-      幸せを感じる力と、本来持っている心身の自然なバランスを取り戻すお手伝いをしています。<br><br>
-      体験された方からは<br>
-      「ほんまにすごい！」<br>
-      「なんか毎日が変わった」<br>
-      という声をいただいています。
-    </div>
-
-    <div style="text-align:center;padding:20px 4px;font-size:17px;color:var(--text-mid);line-height:2.2;font-family:'Noto Serif JP',serif;">
+    <div class="bridge-text">
       不思議なんですが、セロトニンが整うと、<br>
-      幸せな出来事が舞い込んでくるようになるんです。<br><br>
+      幸せな出来事が舞い込んでくるようになるんです。<br>
       セロトニンを活性化すると、何が変わるのか。<br>
-      <span style="color:var(--pink-dark);font-weight:500">試してみたいな、と思ったあなたへ。</span>
+      <span style="color:var(--pink-dark);font-weight:600">試してみたいな、と思ったあなたへ。</span>
     </div>
 
-    <div class="offer-card">
-      <div class="offer-title">🌿 27周年感謝 特別体験</div>
-      <div class="offer-price-wrap">
-        <div class="offer-original">通常 11,000円（90分）</div>
-        <div class="offer-price">5,500円 <span>（90分・半額）</span></div>
-        <div class="offer-gift">さらに よもぎ蒸し 40分（5,500円相当）プレゼント</div>
-        <div class="offer-total">合計 17,000円分を 5,500円でご体験いただけます</div>
-        <div class="offer-limit">女性限定・5名様</div>
-        <div style="font-size:15px;color:var(--rose);margin-top:8px;font-weight:500">📅 6月30日まで　埋まり次第終了</div>
+    <div class="line-cta-box">
+      <div class="line-cta-title">🌸 詳しい結果を受け取る</div>
+      <div class="line-cta-text">
+        あなたのタイプ別に、<br>
+        「幸せを感じる力」をもっと良くするための<br>
+        ヒントをLINEでお届けします。
       </div>
+      <div class="line-keyword-box" id="line-keyword-display"></div>
+      <div class="line-cta-text" style="font-size:14px;">
+        ↑ をLINEにそのまま送ってください
+      </div>
+      <button class="btn-line" onclick="openLine()">LINEで詳しい結果を受け取る</button>
     </div>
 
-    <div class="line-section">
-      <div class="line-text">
-        ご希望の方は、なごみの公式LINEを追加して<br>
-        <span class="line-keyword">「なごみ体験希望」</span>と送ってください。<br>
-        アンケートをお送りします。<br>
-        お悩みをお聞きした上でご連絡いたします。
-      </div>
-      <button class="btn-line" onclick="openLine()">LINEで体験を申し込む 🌸</button>
-      <div class="result-note">
-        ※ 詳細はLINEにてご案内いたします
-      </div>
-    </div>
+    <div class="result-note" style="margin-top:16px">※ あなたのタイプ別の詳しい解説をLINEでお届けします</div>
 
     <div class="footer">
       脳活性エステ なごみ<br>
@@ -358,7 +332,6 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 </div>
 
 <script>
-// ★ ここになごみのLINE友だち追加URLを入れてください ★
 const LINE_URL = 'https://lin.ee/6I4mkia';
 
 let currentStep = 0;
@@ -413,26 +386,28 @@ function calcScore() {
 const results = [
   {
     min:0, max:6,
+    type:'A',
     icon:'🌷',
-    type:'チェック結果',
-    title:'今は比較的バランスが取れています',
-    body:'今は心と体のバランスが保たれているようです。ただ、日々のストレスは知らず知らずのうちに蓄積します。定期的なケアを取り入れることで、今の状態をさらに高めることができます。'
+    title:'幸せを感じる力が\n比較的安定しているタイプ',
+    body:'今は心と体のバランスが保たれているようです。\nただ、日々のストレスは知らず知らずのうちに蓄積します。\n\n今のうちにケアを取り入れることで、もっと毎日が軽くなります。'
   },
   {
     min:7, max:12,
+    type:'B',
     icon:'🌸',
-    type:'チェック結果',
-    title:'幸せを感じる力が\n少し弱っているかも',
-    body:'頑張っているのに、なんとなく満たされない。\nそれは性格のせいではありません。\n\nもしかすると、幸せホルモン（セロトニン）が\n少し不足気味になっているかもしれません。\n\nセロトニンは心と体のバランスを整える大切なホルモン。\n不足すると、満たされない感覚や不安感、\n疲れやすさなどが続くことがあります。\n\n少しずつ、ケアしてあげましょう。'
+    title:'幸せを感じる力が\n少し弱っているタイプ',
+    body:'頑張っているのに、なんとなく満たされない。\nそれは性格のせいではありません。\n\nもしかすると、幸せホルモン（セロトニン）が\n少し不足気味になっているかもしれません。'
   },
   {
     min:13, max:20,
+    type:'C',
     icon:'💐',
-    type:'チェック結果',
-    title:'幸せを感じる力が\nかなり弱っています',
-    body:'毎日頑張っているのに、なんとなくしんどい。\nそんな状態が続いていませんか？\n\nあなたの心と体は、本当のケアを必要としています。\n一人で抱え込まないで、ぜひ一度ご相談ください。\n\n幸せホルモン（セロトニン）が\n不足している可能性が高いです。\n\nセロトニンは心と体のバランスを整える大切なホルモン。\n不足すると、満たされない感覚や不安感、\n疲れやすさなどが続きます。\n\n一度、しっかりとケアしてあげましょう。'
+    title:'幸せを感じる力が\nかなり弱っているタイプ',
+    body:'毎日頑張っているのに、なんとなくしんどい。\nそんな状態が続いていませんか？\n\n幸せホルモン（セロトニン）が\n不足している可能性が高いです。\n一人で抱え込まないで、ご相談ください。'
   }
 ];
+
+let currentResultType = '';
 
 function showResult() {
   if (!answers[TOTAL_Q]) {
@@ -441,11 +416,13 @@ function showResult() {
   }
   const score = calcScore();
   const r = results.find(x => score >= x.min && score <= x.max) || results[2];
-  document.getElementById('result-icon').textContent = r.icon;
-  document.getElementById('result-type').textContent = r.type;
-  document.getElementById('result-title').style.whiteSpace = 'pre-line';
-  document.getElementById('result-title').textContent = r.title;
-  document.getElementById('result-body').innerHTML = r.body.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+  currentResultType = r.type;
+
+  document.getElementById('result-type-badge').textContent = r.type;
+  document.getElementById('result-title').textContent = r.icon + '\n' + r.title;
+  document.getElementById('result-body').textContent = r.body;
+  document.getElementById('line-keyword-display').textContent = '「' + r.type + 'タイプでした」';
+
   showStep('result');
 }
 
