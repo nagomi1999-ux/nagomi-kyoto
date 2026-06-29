@@ -96,11 +96,19 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 .bridge-text{text-align:center;padding:20px 4px;font-size:17px;color:var(--text-mid);line-height:2.2;font-family:'Noto Serif JP',serif;}
 
 .line-cta-box{margin-top:20px;padding:22px 20px;background:white;border:2px solid var(--pink);border-radius:var(--radius);text-align:center}
-.line-cta-title{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--pink-dark);margin-bottom:10px;}
+.line-cta-badge{display:inline-block;background:var(--gold);color:white;font-size:14px;font-weight:600;padding:5px 16px;border-radius:20px;margin-bottom:12px;letter-spacing:0.05em;}
+.line-cta-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:600;color:var(--pink-dark);margin-bottom:10px;line-height:1.5;}
 .line-cta-text{font-size:16px;color:var(--text-mid);line-height:1.9;margin-bottom:6px}
-.line-keyword-box{background:var(--pink-light);border-radius:14px;padding:14px;margin:14px 0;font-size:19px;color:var(--pink-dark);font-weight:600;font-family:'Noto Serif JP',serif;}
+.line-gift-box{background:var(--pink-light);border:1.5px dashed var(--pink);border-radius:14px;padding:16px 18px;margin:14px 0;text-align:left;}
+.line-gift-item{font-size:16px;color:var(--text);line-height:1.9;font-weight:500;}
+.line-gift-item:not(:last-child){margin-bottom:10px;}
+.line-keyword-box{background:white;border:2px solid var(--pink);border-radius:14px;padding:14px;margin:14px 0;font-size:20px;color:var(--pink-dark);font-weight:700;font-family:'Noto Serif JP',serif;}
 .btn-line{width:100%;padding:16px;background:#00B900;color:white;border:none;border-radius:var(--radius);font-size:16px;font-weight:500;cursor:pointer;transition:all 0.2s;font-family:'Noto Sans JP',sans-serif;margin-top:8px;}
 .btn-line:hover{background:#00A000;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,185,0,0.3)}
+.addon-divider{display:flex;align-items:center;gap:8px;margin:16px 0 10px}
+.addon-divider::before,.addon-divider::after{content:'';flex:1;height:0.5px;background:var(--pink-mid)}
+.addon-divider-text{font-size:13px;color:var(--text-light)}
+.addon-text{font-size:14px;color:var(--text-light);line-height:1.8;text-align:center}
 
 .offer-card{background:linear-gradient(135deg,#FDE8EE,#FFF0F5);border:1.5px solid var(--pink-mid);border-radius:var(--radius);padding:20px;margin-top:20px;text-align:center}
 .offer-title{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--text);margin-bottom:12px}
@@ -317,20 +325,24 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
     </div>
 
     <div class="line-cta-box">
-      <div class="line-cta-title">🌸 詳しい結果を受け取る</div>
+      <div class="line-cta-badge">🎁 無料プレゼント</div>
+      <div class="line-cta-title">あなただけの結果、<br>受け取りませんか？</div>
       <div class="line-cta-text">
-        LINEにご登録いただくと、<br><br>
-        ・あなたのタイプ別の詳しい結果<br>
-        ・幸せホルモンを「自力」で増やしながら<br>
-        「幸せを感じる力をパワーアップする<br>
-        七つの習慣」<br><br>
-        をプレゼントします🌿
+        LINEにご登録いただくと、<br>
+        今すぐこの2つをお届けします。
+      </div>
+      <div class="line-gift-box">
+        <div class="line-gift-item">✓ あなたのタイプ別の詳しい結果</div>
+        <div class="line-gift-item">✓ 幸せホルモンを「自力」で増やす<br>「幸せを感じる力をパワーアップする<br>七つの習慣」</div>
+      </div>
+      <div class="line-cta-text" style="margin-top:14px;">
+        下のキーワードをコピーして、<br>そのままLINEに送るだけ🌸
       </div>
       <div class="line-keyword-box" id="line-keyword-display"></div>
-      <div class="line-cta-text" style="font-size:14px;">
-        ↑ をLINEにそのまま送ってください
-      </div>
-      <button class="btn-line" onclick="openLine()">LINEで詳しい結果を受け取る</button>
+      <button class="btn-line" onclick="openLine()">🌸 今すぐ無料で受け取る</button>
+
+      <div class="addon-divider"><span class="addon-divider-text">+ もうひとつ</span></div>
+      <div class="addon-text">もし1人で進めるのが不安な方は、<br>ご希望に応じて30分の無料カウンセリングもご利用いただけます<br>（LINE登録後にご案内します）</div>
     </div>
 
     <div class="result-note" style="margin-top:16px">※ あなたのタイプ別の詳しい解説をLINEでお届けします</div>
