@@ -107,8 +107,8 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 .btn-line:hover{background:#00A000;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,185,0,0.3)}
 .addon-divider{display:flex;align-items:center;gap:8px;margin:16px 0 10px}
 .addon-divider::before,.addon-divider::after{content:'';flex:1;height:0.5px;background:var(--pink-mid)}
-.addon-divider-text{font-size:13px;color:var(--text-light)}
-.addon-text{font-size:14px;color:var(--text-light);line-height:1.8;text-align:center}
+.addon-divider-text{font-size:15px;color:var(--text-mid);font-weight:600;white-space:nowrap}
+.addon-text{font-size:16px;color:var(--text-mid);line-height:1.9;text-align:center;font-weight:500}
 
 .offer-card{background:linear-gradient(135deg,#FDE8EE,#FFF0F5);border:1.5px solid var(--pink-mid);border-radius:var(--radius);padding:20px;margin-top:20px;text-align:center}
 .offer-title{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--text);margin-bottom:12px}
@@ -120,8 +120,8 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 .offer-limit{background:var(--gold);color:white;font-size:14px;padding:4px 14px;border-radius:20px;display:inline-block;margin-top:10px}
 .offer-date{font-size:15px;color:var(--rose);margin-top:8px;font-weight:500}
 
-.result-note{font-size:14px;color:var(--text-light);text-align:center;margin-top:12px;line-height:1.8}
-.footer{margin-top:40px;text-align:center;font-size:13px;color:var(--text-light);line-height:2}
+.result-note{font-size:16px;color:var(--text-mid);text-align:center;margin-top:12px;line-height:1.8;font-weight:500}
+.footer{margin-top:40px;text-align:center;font-size:15px;color:var(--text-mid);line-height:2.1}
 </style>
 </head>
 <body>
@@ -332,8 +332,8 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
         今すぐこの2つをお届けします。
       </div>
       <div class="line-gift-box">
-        <div class="line-gift-item">✓ あなたのタイプ別の詳しい結果</div>
-        <div class="line-gift-item">✓ 幸せホルモンを「自力」で増やす<br>「幸せを感じる力をパワーアップする<br>七つの習慣」</div>
+        <div class="line-gift-item">🌸 あなたのタイプ別の詳しい結果</div>
+        <div class="line-gift-item">🌷 <strong>7日間連続</strong>でお届け<br>「幸せホルモンを自力で増やす<br>七つの習慣」<br><span style="font-size:15px;color:var(--text-mid);font-weight:400">（例：①朝日を浴びる ②リズム運動を取り入れる…など、今日からできる小さな習慣を毎日1枚ずつ）</span></div>
       </div>
       <div class="line-cta-text" style="margin-top:14px;">
         下のキーワードをコピーして、<br>そのままLINEに送るだけ🌸
@@ -342,7 +342,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
       <button class="btn-line" onclick="openLine()">🌸 今すぐ無料で受け取る</button>
 
       <div class="addon-divider"><span class="addon-divider-text">+ もうひとつ</span></div>
-      <div class="addon-text">もし1人で進めるのが不安な方は、<br>ご希望に応じて30分の無料カウンセリングもご利用いただけます<br>（LINE登録後にご案内します）</div>
+      <div class="addon-text">今の状況を誰かに話してみたい、<br>本当に変われるのか聞いてみたい——<br>そんな方には、30分の無料カウンセリングもご利用いただけます<br>（LINE登録後にご案内します）</div>
     </div>
 
     <div class="result-note" style="margin-top:16px">※ あなたのタイプ別の詳しい解説をLINEでお届けします</div>
@@ -352,8 +352,8 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
       京都府亀岡市 千代川駅 徒歩3分
     </div>
 
-    <div style="text-align:center;margin-top:14px;font-size:12px;color:#A88888">
-      <a href="serotonin.html" style="color:#A88888;text-decoration:underline">もっと知りたい方は脳活性エステのページもご覧ください</a>
+    <div style="text-align:center;margin-top:20px">
+      <a href="serotonin.html" style="display:inline-block;font-size:15px;color:#C4607A;background:#FDF0F3;border:1.5px solid #F2A7B8;border-radius:20px;padding:10px 22px;text-decoration:none;font-weight:500">🌿 脳活性エステについてもっと詳しく見る</a>
     </div>
   </div>
 
@@ -458,6 +458,23 @@ function showResult() {
 function openLine() {
   window.open(LINE_URL, '_blank');
 }
+
+// ?test=A / ?test=B / ?test=C をURLに付けると、その結果画面に直接ジャンプできる（確認用）
+(function checkTestParam(){
+  const params = new URLSearchParams(window.location.search);
+  const t = params.get('test');
+  if (t) {
+    const r = results.find(x => x.type === t.toUpperCase());
+    if (r) {
+      currentResultType = r.type;
+      document.getElementById('result-type-badge').textContent = r.type;
+      document.getElementById('result-title').textContent = r.icon + '\n' + r.title;
+      document.getElementById('result-body').textContent = r.body;
+      document.getElementById('line-keyword-display').textContent = '「' + r.type + 'タイプでした」';
+      showStep('result');
+    }
+  }
+})();
 </script>
 </body>
 </html>
