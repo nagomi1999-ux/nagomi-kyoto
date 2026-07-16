@@ -367,8 +367,6 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 </div>
 
 <script>
-const LINE_URL = 'https://lin.ee/6I4mkia';
-
 let currentStep = 0;
 const answers = {};
 const TOTAL_Q = 10;
@@ -461,14 +459,14 @@ function showResult() {
   const pcLinks = document.getElementById('pc-line-links');
   if (pcLinks) {
     const label = r.type + 'タイプでした';
-    pcLinks.innerHTML = `<a href="https://lin.ee/6I4mkia" target="_blank" style="display:block;background:white;border:1.5px solid #F2A7B8;border-radius:14px;padding:12px 16px;color:#C4607A;font-size:15px;font-weight:600;text-decoration:none;text-align:center;">🌿 LINEを開いて「${label}」と送る</a>`;
+    pcLinks.innerHTML = `<a href="https://line.me/R/oaMessage/@078ikxqn/?${encodeURIComponent(label)}" target="_blank" style="display:block;background:white;border:1.5px solid #F2A7B8;border-radius:14px;padding:12px 16px;color:#C4607A;font-size:15px;font-weight:600;text-decoration:none;text-align:center;">🌿 LINEを開いて「${label}」と送る</a>`;
   }
   showStep('result');
 }
 
 function openLine() {
   const msg = encodeURIComponent(currentResultType + 'タイプでした');
-  window.open('https://lin.ee/6I4mkia?text=' + msg, '_blank');
+  window.open('https://line.me/R/oaMessage/@078ikxqn/?' + msg, '_blank');
 }
 
 // ?test=A / ?test=B / ?test=C をURLに付けると、その結果画面に直接ジャンプできる（確認用）
@@ -487,7 +485,7 @@ function openLine() {
       const pcLinks = document.getElementById('pc-line-links');
       if (pcLinks) {
         const label = r.type + 'タイプでした';
-        pcLinks.innerHTML = `<a href="https://lin.ee/6I4mkia" target="_blank" style="display:block;background:white;border:1.5px solid #F2A7B8;border-radius:14px;padding:12px 16px;color:#C4607A;font-size:15px;font-weight:600;text-decoration:none;text-align:center;">🌿 LINEを開いて「${label}」と送る</a>`;
+        pcLinks.innerHTML = `<a href="https://line.me/R/oaMessage/@078ikxqn/?${encodeURIComponent(label)}" target="_blank" style="display:block;background:white;border:1.5px solid #F2A7B8;border-radius:14px;padding:12px 16px;color:#C4607A;font-size:15px;font-weight:600;text-decoration:none;text-align:center;">🌿 LINEを開いて「${label}」と送る</a>`;
       }
 
       showStep('result');
