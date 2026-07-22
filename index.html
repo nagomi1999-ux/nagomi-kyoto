@@ -247,12 +247,50 @@ nav{
   position:relative;overflow:hidden;
 }
 .hero-bg-text{
-  position:absolute;right:-20px;top:50%;transform:translateY(-50%);
+  position:absolute;left:-20px;top:50%;transform:translateY(-50%);
   font-family:'Noto Serif JP',serif;font-size:380px;font-weight:300;
-  color:rgba(212,168,83,0.07);line-height:1;pointer-events:none;
+  color:rgba(212,168,83,0.06);line-height:1;pointer-events:none;
   letter-spacing:-0.05em;
 }
-.hero-inner{max-width:720px;position:relative;z-index:1}
+.hero-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+}
+.hero-inner{max-width:100%;position:relative;z-index:1}
+.hero-photo-wrap{
+  position:relative;
+  height:580px;
+  overflow:hidden;
+}
+.hero-photo-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 40%;
+  display:block;
+}
+.hero-photo-wrap::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  box-shadow:inset 0 0 60px 40px var(--cream);
+}
+@media(max-width:960px){
+  .hero-layout{grid-template-columns:1fr;gap:32px}
+  .hero-photo-wrap{height:260px;order:-1}
+  .hero-photo-wrap::before{
+    box-shadow:inset 0 0 40px 25px var(--cream);
+  }
+}
 .hero-eyebrow{
   font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:0.1em;
   color:var(--earth);margin-bottom:36px;
@@ -962,35 +1000,40 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg-text">至福</div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow">京都スリープツーリズム　｜　KYOTO SLEEP TOURISM　｜　女性限定</div>
-    <h1 class="hero-main">
-      京都を楽しんでいたら、<br><em>いつのまにか整ってました。</em>
-    </h1>
-    <p class="hero-desc">
-      遊んで、歩いて、話していたら——<br>
-      <strong>セロトニン</strong>という「幸せホルモン」が、<br>
-      脳の深いところを静かに整えていきます。<br>
-      観光の疲れが回復に変わり、来た時より元気になって帰る。<br>
-      そんな体験を、京都でお届けしています。
-    </p>
-    <div class="hero-targets">
-      <div class="hero-target-a">
-        <span class="hero-target-badge">こんな方へ</span>
-        <p class="hero-target-head">眠れない・<br>疲れが取れない方</p>
-        <p class="hero-target-body">頑張って治すのではなく、気づいたら整っていた体験を。マッサージでは届かなかった根本の疲れに、ようやく届きます。</p>
+  <div class="hero-layout">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">京都スリープツーリズム　｜　KYOTO SLEEP TOURISM　｜　女性限定</div>
+      <h1 class="hero-main">
+        京都を楽しんでいたら、<br><em>いつのまにか整ってました。</em>
+      </h1>
+      <p class="hero-desc">
+        遊んで、歩いて、話していたら——<br>
+        <strong>セロトニン</strong>という「幸せホルモン」が、<br>
+        脳の深いところを静かに整えていきます。<br>
+        観光の疲れが回復に変わり、来た時より元気になって帰る。<br>
+        そんな体験を、京都でお届けしています。
+      </p>
+      <div class="hero-targets">
+        <div class="hero-target-a">
+          <span class="hero-target-badge">こんな方へ</span>
+          <p class="hero-target-head">眠れない・<br>疲れが取れない方</p>
+          <p class="hero-target-body">頑張って治すのではなく、気づいたら整っていた体験を。マッサージでは届かなかった根本の疲れに、ようやく届きます。</p>
+        </div>
+        <div class="hero-target-b">
+          <span class="hero-target-badge">こんな方へ</span>
+          <p class="hero-target-head">旅をしながら<br>特別な体験を<br>してみたい方</p>
+          <p class="hero-target-body">京都を満喫しつつ、脳も一緒に整っていく。旅の楽しさと深い回復が同時に叶う、一石二鳥な体験を。</p>
+        </div>
       </div>
-      <div class="hero-target-b">
-        <span class="hero-target-badge">こんな方へ</span>
-        <p class="hero-target-head">旅をしながら<br>特別な体験を<br>してみたい方</p>
-        <p class="hero-target-body">京都を満喫しつつ、脳も一緒に整っていく。旅の楽しさと深い回復が同時に叶う、一石二鳥な体験を。</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn-main">至福のメニューへ</a>
+        <a href="#cta" class="btn-sub">まず相談する</a>
       </div>
+      <p class="hero-voice">❝ ぐっすり眠れた、来た時より元気になっている ❞<span>— ご参加者の声</span></p>
     </div>
-    <div class="hero-btns">
-      <a href="#menu" class="btn-main">至福のメニューへ</a>
-      <a href="#cta" class="btn-sub">まず相談する</a>
+    <div class="hero-photo-wrap">
+      <img src="IMG_4926.JPG" alt="長岡天満宮 池の風景">
     </div>
-    <p class="hero-voice">❝ ぐっすり眠れた、来た時より元気になっている ❞<span>— ご参加者の声</span></p>
   </div>
 </section>
 <section class="recog">
@@ -1577,13 +1620,14 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 <!-- PARTNER -->
 <section style="padding:80px 60px;background:white;">
   <div style="max-width:860px;margin:0 auto;">
-    <div class="section-tag">PARTNER</div>
-    <h2 class="section-title">滞在先のご案内</h2>
+    <div class="section-tag">PARTNER HOTEL</div>
+    <h2 class="section-title">提携ホテル</h2>
     <div style="display:flex;align-items:center;gap:48px;padding:40px 48px;border:1px solid rgba(184,154,106,0.25);background:var(--cream);">
       <div style="flex:1;">
         <p style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:500;color:var(--text);margin-bottom:12px;letter-spacing:0.05em;">高雄観光ホテル</p>
         <p style="font-size:15px;color:var(--text-mid);line-height:2.2;margin-bottom:24px;">京都・高雄の自然に囲まれた老舗旅館。リトリートの宿泊先としてご利用いただけます。</p>
         <a href="http://takaokanko-hotel.com/" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:12px 28px;border:1px solid var(--sage);color:var(--moss);font-size:13px;letter-spacing:0.1em;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--sage)';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='var(--moss)';">ホテルサイトへ →</a>
+        <p style="margin-top:20px;font-size:14px;color:var(--text-light);line-height:1.9;">その他のホテルご利用をご希望の場合も、お気軽にお声掛けください。</p>
       </div>
       <div style="width:1px;height:80px;background:rgba(184,154,106,0.2);flex-shrink:0;"></div>
       <div style="text-align:center;flex-shrink:0;">
