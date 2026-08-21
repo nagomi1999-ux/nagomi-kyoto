@@ -247,50 +247,12 @@ nav{
   position:relative;overflow:hidden;
 }
 .hero-bg-text{
-  position:absolute;left:-20px;top:50%;transform:translateY(-50%);
+  position:absolute;right:-20px;top:50%;transform:translateY(-50%);
   font-family:'Noto Serif JP',serif;font-size:380px;font-weight:300;
-  color:rgba(212,168,83,0.06);line-height:1;pointer-events:none;
+  color:rgba(212,168,83,0.07);line-height:1;pointer-events:none;
   letter-spacing:-0.05em;
 }
-.hero-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-  width:100%;
-  max-width:1200px;
-  margin:0 auto;
-  position:relative;
-  z-index:1;
-}
-.hero-inner{max-width:100%;position:relative;z-index:1}
-.hero-photo-wrap{
-  position:relative;
-  height:580px;
-  overflow:hidden;
-}
-.hero-photo-wrap img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center 40%;
-  display:block;
-}
-.hero-photo-wrap::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
-  box-shadow:inset 0 0 60px 40px var(--cream);
-}
-@media(max-width:960px){
-  .hero-layout{grid-template-columns:1fr;gap:32px}
-  .hero-photo-wrap{height:260px;order:-1}
-  .hero-photo-wrap::before{
-    box-shadow:inset 0 0 40px 25px var(--cream);
-  }
-}
+.hero-inner{max-width:720px;position:relative;z-index:1}
 .hero-eyebrow{
   font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:0.1em;
   color:var(--earth);margin-bottom:36px;
@@ -1000,40 +962,35 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg-text">至福</div>
-  <div class="hero-layout">
-    <div class="hero-inner">
-      <div class="hero-eyebrow">京都スリープツーリズム　｜　KYOTO SLEEP TOURISM　｜　女性限定</div>
-      <h1 class="hero-main">
-        京都を楽しんでいたら、<br><em>いつのまにか整ってました。</em>
-      </h1>
-      <p class="hero-desc">
-        遊んで、歩いて、話していたら——<br>
-        <strong>セロトニン</strong>という「幸せホルモン」が、<br>
-        脳の深いところを静かに整えていきます。<br>
-        観光の疲れが回復に変わり、来た時より元気になって帰る。<br>
-        そんな体験を、京都でお届けしています。
-      </p>
-      <div class="hero-targets">
-        <div class="hero-target-a">
-          <span class="hero-target-badge">こんな方へ</span>
-          <p class="hero-target-head">眠れない・<br>疲れが取れない方</p>
-          <p class="hero-target-body">頑張って治すのではなく、気づいたら整っていた体験を。マッサージでは届かなかった根本の疲れに、ようやく届きます。</p>
-        </div>
-        <div class="hero-target-b">
-          <span class="hero-target-badge">こんな方へ</span>
-          <p class="hero-target-head">旅をしながら<br>特別な体験を<br>してみたい方</p>
-          <p class="hero-target-body">京都を満喫しつつ、脳も一緒に整っていく。旅の楽しさと深い回復が同時に叶う、一石二鳥な体験を。</p>
-        </div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">京都スリープツーリズム　｜　KYOTO SLEEP TOURISM　｜　女性限定</div>
+    <h1 class="hero-main">
+      京都を楽しんでいたら、<br><em>いつのまにか整ってました。</em>
+    </h1>
+    <p class="hero-desc">
+      遊んで、歩いて、話していたら——<br>
+      <strong>セロトニン</strong>という「幸せホルモン」が、<br>
+      脳の深いところを静かに整えていきます。<br>
+      観光の疲れが回復に変わり、来た時より元気になって帰る。<br>
+      そんな体験を、京都でお届けしています。
+    </p>
+    <div class="hero-targets">
+      <div class="hero-target-a">
+        <span class="hero-target-badge">こんな方へ</span>
+        <p class="hero-target-head">眠れない・<br>疲れが取れない方</p>
+        <p class="hero-target-body">頑張って治すのではなく、気づいたら整っていた体験を。マッサージでは届かなかった根本の疲れに、ようやく届きます。</p>
       </div>
-      <div class="hero-btns">
-        <a href="#menu" class="btn-main">至福のメニューへ</a>
-        <a href="#cta" class="btn-sub">まず相談する</a>
+      <div class="hero-target-b">
+        <span class="hero-target-badge">こんな方へ</span>
+        <p class="hero-target-head">旅をしながら<br>特別な体験を<br>してみたい方</p>
+        <p class="hero-target-body">京都を満喫しつつ、脳も一緒に整っていく。旅の楽しさと深い回復が同時に叶う、一石二鳥な体験を。</p>
       </div>
-      <p class="hero-voice">❝ ぐっすり眠れた、来た時より元気になっている ❞<span>— ご参加者の声</span></p>
     </div>
-    <div class="hero-photo-wrap">
-      <img src="IMG_4926.JPG" alt="長岡天満宮 池の風景">
+    <div class="hero-btns">
+      <a href="#menu" class="btn-main">至福のメニューへ</a>
+      <a href="#cta" class="btn-sub">まず相談する</a>
     </div>
+    <p class="hero-voice">❝ ぐっすり眠れた、来た時より元気になっている ❞<span>— ご参加者の声</span></p>
   </div>
 </section>
 <section class="recog">
@@ -1334,17 +1291,18 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
       <div class="menu-card featured">
         <div class="menu-lbl">MOST RECOMMENDED</div>
         <h3 class="menu-name">京都快眠リトリート<br>3泊4日</h3>
-        <div class="menu-desc">最も深く、最も変わる。小顔フェイシャルケア込みで、一番お得なプラン。</div>
+        <div class="menu-desc">最も深く、最も変わる。特別な時間を1つお選びいただける、一番贅沢なプラン。</div>
         <div class="menu-price">¥230,000</div>
-        <div class="menu-unit">税込・小顔フェイシャルケア込み</div>
+        <div class="menu-unit">税込</div>
         <ul class="menu-features">
           <li>DAY 1　快眠セッション</li>
-          <li>DAY 2　京都さんぽセッション<br>　　　　＋ 小顔フェイシャルケア</li>
+          <li>DAY 2　京都さんぽセッション</li>
           <li>DAY 3　京都さんぽセッション</li>
           <li>DAY 4　お仕上げセッション</li>
           <li style="font-size:0.9em;color:rgba(255,255,255,0.8);list-style:none;padding-top:4px;">京都さんぽは、1日を贅沢に、時間にとらわれず、<br>自由に京都とエステを楽しみます。</li>
           <li style="font-size:0.9em;color:rgba(255,255,255,0.8);list-style:none;">お一人様（1組）だけの、快眠エスコートプラン</li>
           <li style="font-size:0.9em;color:rgba(255,255,255,0.8);list-style:none;">朝10時から21時の間で、あなたの京都滞在の目的やご体調に合わせて、無理のない範囲でご相談しながら整えていきます。</li>
+          <li>オプション（各+¥18,000、いずれか1つをお選びください）<br>　小顔フェイシャルケア／自分史／発酵の時間（糀）</li>
           <li>日程の詳細はご相談の上、<br>決定させていただきます</li>
         </ul>
         <a href="#menu-detail" class="menu-detail-link" onclick="openMenuDetail(event,'all')">各セッションの詳細はこちら →</a>
@@ -1400,6 +1358,18 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 
     </div>
 
+    <!-- PHOTO STRIP: 3泊4日限定オプション（写真は撮影後に差し替え） -->
+    <div class="photo-strip cols-2" style="margin-top:40px;">
+      <div class="photo-strip-item">
+        <img src="kouji.jpg" alt="発酵の時間（糀づくり）の様子" style="width:100%;height:320px;object-fit:cover;display:block;">
+        <div class="photo-strip-caption">発酵の時間（糀づくり）</div>
+      </div>
+      <div class="photo-strip-item">
+        <img src="自分史.jpg" alt="自分史づくりの様子" style="width:100%;height:320px;object-fit:cover;display:block;">
+        <div class="photo-strip-caption">自分史（3泊4日のおしゃべりから）</div>
+      </div>
+    </div>
+
     <!-- セッション詳細（折りたたみ） -->
     <div id="menu-detail" class="menu-detail-wrap">
       <h3 class="menu-detail-heading">各セッションについて</h3>
@@ -1438,12 +1408,34 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
 
       <div class="menu-detail-item" id="detail-facial">
         <button class="menu-detail-q" onclick="toggleMenuDetail(this)" aria-expanded="false">
-          小顔フェイシャルケア（40分）とは？
+          小顔フェイシャルケア（75分）とは？
           <span class="menu-detail-icon">＋</span>
         </button>
         <div class="menu-detail-a">
           <p>高品質のホホバオイルを使用し、お顔のコリをほぐしていきます。フェイスラインも引き締まり、老廃物も流れ、スッキリ透明感のあるお肌へ。痛くないのにしっかりリフトアップし、頭や目の疲れも改善。デコルテ・首・肩のオイルトリートメントで肩こりも一緒に解消できます。ヘッドマッサージで頭もスッキリ！オールハンドの施術です。</p>
-          <p>3泊4日プランに含まれています。2泊3日プランはオプションでご追加いただけます（+¥18,000）。</p>
+          <p>2泊3日・3泊4日ともに、オプションでお選びいただけます（+¥18,000）。3泊4日は、自分史・発酵の時間（糀）とあわせて3つから1つをお選びいただけます。</p>
+        </div>
+      </div>
+
+      <div class="menu-detail-item" id="detail-jibunshi">
+        <button class="menu-detail-q" onclick="toggleMenuDetail(this)" aria-expanded="false">
+          自分史とは？
+          <span class="menu-detail-icon">＋</span>
+        </button>
+        <div class="menu-detail-a">
+          <p>話した言葉が、物語になる。3泊4日でたくさん話したことを、そのまま自分史としてまとめてみませんか。人生を振り返ってみたい方に。上手にまとめようとはせず、あなたの言葉がそのまま残るように仕上げます。</p>
+          <p>3泊4日限定のオプションです（+¥18,000）。</p>
+        </div>
+      </div>
+
+      <div class="menu-detail-item" id="detail-koji">
+        <button class="menu-detail-q" onclick="toggleMenuDetail(this)" aria-expanded="false">
+          発酵の時間（糀）とは？
+          <span class="menu-detail-icon">＋</span>
+        </button>
+        <div class="menu-detail-a">
+          <p>滞在中、米糀を仕込む時間をご一緒します。蒸して、種をつけて、あとは時間に委ねるだけ。何でもすぐに手に入る時代だからこそ、時間をかけてできあがるものと過ごす時間を大切にしています。</p>
+          <p>3泊4日限定のオプションです（+¥18,000）。思い通りにいかないこともありますが、それも含めて時間に委ねる体験です。</p>
         </div>
       </div>
 
@@ -1617,24 +1609,27 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
     </div>
   </div>
 </section>
-<!-- PARTNER -->
-<section style="padding:80px 60px;background:white;">
-  <div style="max-width:860px;margin:0 auto;">
-    <div class="section-tag">PARTNER HOTEL</div>
-    <h2 class="section-title">提携ホテル</h2>
-    <div style="display:flex;align-items:center;gap:48px;padding:40px 48px;border:1px solid rgba(184,154,106,0.25);background:var(--cream);">
-      <div style="flex:1;">
-        <p style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:500;color:var(--text);margin-bottom:12px;letter-spacing:0.05em;">高雄観光ホテル</p>
-        <p style="font-size:15px;color:var(--text-mid);line-height:2.2;margin-bottom:24px;">京都・高雄の自然に囲まれた老舗旅館。リトリートの宿泊先としてご利用いただけます。</p>
-        <a href="http://takaokanko-hotel.com/" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:12px 28px;border:1px solid var(--sage);color:var(--moss);font-size:13px;letter-spacing:0.1em;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--sage)';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='var(--moss)';">ホテルサイトへ →</a>
-        <p style="margin-top:20px;font-size:14px;color:var(--text-light);line-height:1.9;">その他のホテルご利用をご希望の場合も、お気軽にお声掛けください。</p>
-      </div>
-      <div style="width:1px;height:80px;background:rgba(184,154,106,0.2);flex-shrink:0;"></div>
-      <div style="text-align:center;flex-shrink:0;">
-        <p style="font-size:11px;letter-spacing:0.15em;color:var(--text-light);margin-bottom:8px;">LOCATION</p>
-        <p style="font-family:'Noto Serif JP',serif;font-size:15px;color:var(--text-mid);">京都市右京区<br>梅ヶ畑高雄町５番地<br>神護寺上がり口</p>
-      </div>
+
+<!-- PARTNER STAY -->
+<section style="padding:100px 60px;background:var(--cream);">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div class="section-tag">PARTNER STAY</div>
+    <h2 class="section-title">提携宿泊先のご紹介</h2>
+    <p style="font-size:16px;color:var(--text-mid);line-height:2;margin-bottom:40px;">宿泊先は基本的にお客様にご自由にお選びいただいておりますが、京都・西陣にある一棟貸しの町家「YUMEJI Vintage Villa」様、また京都の自然の中に佇む「高雄観光ホテル」様と、それぞれご縁をいただいております。ご希望の方には、滞在先の一つとしてご案内も可能です。</p>
+
+    <div style="background:white;padding:40px 44px;">
+      <p style="font-family:'Noto Serif JP',serif;font-size:16px;color:var(--text);font-weight:500;margin-bottom:16px;">YUMEJI Vintage Villa（夢路）</p>
+      <p style="font-size:15px;color:var(--text-mid);line-height:2.1;margin-bottom:16px;">金閣寺や北野天満宮にほど近い、京都・西陣エリアに佇む一棟貸しの町家です。京町家の趣を残しながら、居心地よく整えられた一軒家を、お一人（またはグループ）で丸ごと使っていただけます。西陣織で知られる、昔ながらの町並みが残るエリアです。</p>
+      <a href="https://share.google/wKw1PbSXZoAMVSctA" target="_blank" rel="noopener" style="font-size:14px;color:var(--moss);text-decoration:underline;">Googleマップで見る →</a>
     </div>
+
+    <div style="background:white;padding:40px 44px;margin-top:24px;">
+      <p style="font-family:'Noto Serif JP',serif;font-size:16px;color:var(--text);font-weight:500;margin-bottom:16px;">高雄観光ホテル</p>
+      <p style="font-size:15px;color:var(--text-mid);line-height:2.1;margin-bottom:16px;">京都市街から少し離れた、高雄の自然に抱かれたホテルです。四季折々の緑や紅葉に包まれながら、静かに過ごしていただけます。</p>
+      <a href="http://takaokanko-hotel.com/" target="_blank" rel="noopener" style="font-size:14px;color:var(--moss);text-decoration:underline;">公式サイトを見る →</a>
+    </div>
+
+    <p style="font-size:13px;color:var(--text-light);margin-top:20px;">※ ご宿泊のご希望は、お問い合わせの際にお申し付けください。空室状況により、必ずしもご案内できるとは限りません。</p>
   </div>
 </section>
 
@@ -1731,7 +1726,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
           <select id="programSelect" name="program" required onchange="toggleRetreatNote()">
             <option value="">選択してください</option>
             <option value="京都快眠リトリート 3泊4日 ¥230,000">京都快眠リトリート　3泊4日　¥230,000</option>
-            <option value="京都快眠リトリート 2泊3日 ¥205,000">京都快眠リトリート　2泊3日　¥205,000</option>
+            <option value="京都快眠リトリート 2泊3日 ¥155,000・¥205,000">京都快眠リトリート　2泊3日　¥155,000・¥205,000</option>
             <option value="京都快眠リトリート 日帰り体験 ¥55,000">京都快眠リトリート　日帰り体験　¥55,000</option>
             <option value="未定・宿泊プランも含めて相談したい">未定・宿泊プランも含めて相談したい</option>
           </select>
@@ -1812,7 +1807,7 @@ footer{background:#3E6B42;padding:56px 60px;display:flex;justify-content:space-b
     <div class="cta-line-wrap" style="margin-top:32px;">
       <div style="text-align:center;">
         <a href="https://lin.ee/PJsxLNO">
-          <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="44" border="0">
+          <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
         </a>
         <p style="font-size:15px;color:var(--text-mid);margin-top:6px;letter-spacing:0.08em;">和 nagomi Premium　LINE</p>
       </div>
