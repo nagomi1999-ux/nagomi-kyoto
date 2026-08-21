@@ -107,6 +107,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 .line-keyword-box{background:white;border:2px solid var(--pink);border-radius:14px;padding:14px;margin:14px 0;font-size:20px;color:var(--pink-dark);font-weight:700;font-family:'Noto Serif JP',serif;}
 .btn-line{width:100%;padding:16px;background:#00B900;color:white;border:none;border-radius:var(--radius);font-size:16px;font-weight:500;cursor:pointer;transition:all 0.2s;font-family:'Noto Sans JP',sans-serif;margin-top:8px;}
 .btn-line:hover{background:#00A000;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,185,0,0.3)}
+.send-msg{color:#057a30;font-weight:700}
 .addon-divider{display:flex;align-items:center;gap:8px;margin:16px 0 10px}
 .addon-divider::before,.addon-divider::after{content:'';flex:1;height:0.5px;background:var(--pink-mid)}
 .addon-divider-text{font-size:15px;color:var(--text-mid);font-weight:600;white-space:nowrap}
@@ -341,27 +342,29 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
     </div>
 
     <div class="line-cta-box">
-      <div class="line-cta-badge">🎁 無料プレゼント</div>
-      <div class="line-cta-title">あなただけの結果、<br>受け取りませんか？</div>
+      <div class="line-cta-badge">🎁 2つの無料プレゼント</div>
       <div class="line-cta-text">
-        LINEにご登録いただくと、<br>
-        今すぐこの2つをお届けします。
+        下のボタンを押すとLINEが開きます。<br>
+        すでに入力されている<span class="send-msg">「残高Aでした」</span>を<br>
+        そのまま送信していただくと、
       </div>
       <div class="line-gift-box">
-        <div class="line-gift-item">🌸 あなたの残高タイプ別の詳しい結果</div>
-        <div class="line-gift-item">🌷 <strong>7日間連続</strong>でお届け<br>「セロトニンの分泌を助ける<br>7つの習慣」<br><span style="font-size:15px;color:var(--text-mid);font-weight:400">（例：①朝日を浴びる ②リズム運動を取り入れる…など、今日からできる簡単な習慣を毎日1枚ずつ）</span></div>
+        <div class="line-gift-item"><strong>1・</strong>🌸 あなたの残高タイプ別の<br>詳しい結果（すぐに届きます）</div>
+        <div class="line-gift-item"><strong>2・</strong>🌷 <strong>7日間連続</strong>でお届け<br>「セロトニンの分泌を助ける<br>7つの習慣」<br><span style="font-size:15px;color:var(--text-mid);font-weight:400">（例：①朝日を浴びる ②リズム運動を取り入れる…など、今日からできる簡単な習慣を毎日1枚ずつ）</span></div>
       </div>
+      <div class="line-cta-text" style="margin-top:12px">が、届きます🌸</div>
+
       <div class="device-box device-box-sp">
         <div class="device-box-title">📱 スマホの方はこちら</div>
-        <div class="device-box-note">ボタンを押すとLINEが開きます。<br>メッセージはもう入力されているので、<br>そのまま送信してください🌸</div>
-        <button class="btn-line" onclick="openLine()">🌸 今すぐ無料で受け取る</button>
+        <div class="device-box-note">下のボタンからどうぞ🌸</div>
+        <button class="btn-line" onclick="openLine()">🌸 LINEを開く</button>
       </div>
 
       <div class="device-divider"><span class="device-divider-text">または</span></div>
 
       <div class="device-box device-box-pc">
         <div class="device-box-title">💻 PCの方はこちら</div>
-        <div class="device-box-note">スマホのカメラでQRコードを読み取ると<br>LINEが開きます。メッセージはもう入力されているので、<br>そのまま送信してください🌸</div>
+        <div class="device-box-note">スマホのカメラで、<br>QRコードを読み取ってください🌸</div>
         <div class="qr-wrap"><div id="qr-code"></div></div>
       </div>
 
@@ -369,7 +372,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
       <div class="addon-text">今の状況を誰かに話してみたい、<br>本当に変われるのか聞いてみたい——<br>そんな方には、30分の無料カウンセリングもご利用いただけます<br>（LINE登録後にご案内します）</div>
     </div>
 
-    <div class="result-note" style="margin-top:16px">※ あなたの残高タイプ別の詳しい解説をLINEでお届けします</div>
+    <div class="result-note" style="margin-top:16px">※ メッセージを送信いただいた方に、残高タイプ別の詳しい解説をお届けします</div>
 
     <div class="footer">
       脳活性エステ なごみ<br>
@@ -477,8 +480,15 @@ function showResult() {
   document.getElementById('result-meter').textContent = r.meter;
   document.getElementById('result-body').textContent = r.body;
 
+  updateSendMsg(r.type);
   renderQrForType(r.type);
   showStep('result');
+}
+
+function updateSendMsg(type) {
+  document.querySelectorAll('.send-msg').forEach(function(el) {
+    el.textContent = '「残高' + type + 'でした」';
+  });
 }
 
 function openLine() {
@@ -515,6 +525,7 @@ function renderQrForType(type) {
       document.getElementById('result-meter').textContent = r.meter;
       document.getElementById('result-body').textContent = r.body;
 
+      updateSendMsg(r.type);
       renderQrForType(r.type);
 
       showStep('result');
