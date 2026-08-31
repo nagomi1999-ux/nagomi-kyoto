@@ -10,7 +10,7 @@
     --surface: #e2e2d0;
     --surface-line: #cfcfba;
     --ink: #302e27;
-    --sub: #6e6b5c;
+    --sub: #454236;
     --sage: #5f6f54;
     --sage-soft: #74836a;
     --plum: #a15c74;
@@ -24,7 +24,7 @@
       --surface: #2b2d25;
       --surface-line: #404236;
       --ink: #ece8dc;
-      --sub: #aba894;
+      --sub: #c9c6b4;
       --sage: #9cb38c;
       --sage-soft: #86a077;
       --plum: #d68ca0;
@@ -75,7 +75,7 @@
     filter: blur(6px);
   }
 
-  .content { position: relative; z-index: 1; }
+  .content { position: relative; z-index: 1; text-align: center; }
 
   .eyebrow {
     font-size: 1.12rem;
@@ -97,6 +97,7 @@
 
   .lede {
     font-family: var(--font-display);
+    font-weight: 600;
     font-size: clamp(1.4rem, 5vw, 1.55rem);
     line-height: 1.8;
     color: var(--sub);
@@ -108,7 +109,7 @@
     font-size: 1.32rem;
     color: var(--ink);
     max-width: 34em;
-    margin: 0 0 2.6rem;
+    margin: 0 auto 2.6rem;
   }
 
   .cta {
@@ -198,6 +199,7 @@
 
   .meta-row {
     display: flex;
+    justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
     margin-top: 1.4rem;
