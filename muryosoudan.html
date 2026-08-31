@@ -1,0 +1,296 @@
+<title>セロトニン残高相談</title>
+<style>
+  :root {
+    --bg: #eeeee2;
+    --surface: #e2e2d0;
+    --surface-line: #cfcfba;
+    --ink: #302e27;
+    --sub: #6e6b5c;
+    --sage: #5f6f54;
+    --sage-soft: #74836a;
+    --plum: #a15c74;
+    --plum-ink: #ffffff;
+    --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    --font-body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #22241e;
+      --surface: #2b2d25;
+      --surface-line: #404236;
+      --ink: #ece8dc;
+      --sub: #aba894;
+      --sage: #9cb38c;
+      --sage-soft: #86a077;
+      --plum: #d68ca0;
+      --plum-ink: #241417;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #22241e;
+    --surface: #2b2d25;
+    --surface-line: #404236;
+    --ink: #ece8dc;
+    --sub: #aba894;
+    --sage: #9cb38c;
+    --sage-soft: #86a077;
+    --plum: #d68ca0;
+    --plum-ink: #241417;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 1.75rem 5rem;
+    position: relative;
+  }
+
+  .ambient {
+    position: absolute;
+    top: -6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 780px;
+    height: 780px;
+    max-width: 140vw;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--sage-soft) 34%, transparent), transparent 60%),
+      radial-gradient(circle at 68% 46%, color-mix(in srgb, var(--plum) 22%, transparent), transparent 55%);
+    filter: blur(6px);
+  }
+
+  .content { position: relative; z-index: 1; }
+
+  .eyebrow {
+    font-size: 0.92rem;
+    letter-spacing: 0.12em;
+    color: var(--sub);
+    margin: 0 0 3rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 5vw, 2.35rem);
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    margin: 0 0 1.6rem;
+  }
+  h1 .accent { color: var(--sage); }
+
+  .lede {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 3vw, 1.4rem);
+    line-height: 1.85;
+    color: var(--sub);
+    margin: 0 0 2.4rem;
+    text-wrap: balance;
+  }
+
+  p.body-text {
+    font-size: 1.04rem;
+    color: var(--ink);
+    max-width: 34em;
+    margin: 0 0 2.6rem;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    background: var(--plum);
+    color: var(--plum-ink);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 0.95em 1.6em;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--plum) 65%, transparent);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .cta:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -12px color-mix(in srgb, var(--plum) 70%, transparent); }
+  .cta:focus-visible { outline: 3px solid var(--sage); outline-offset: 3px; }
+  .cta .arrow { font-size: 1.1em; }
+
+  .cta-row { margin: 0 0 3.4rem; }
+  .cta-note {
+    display: block;
+    margin-top: 0.9rem;
+    font-size: 0.86rem;
+    color: var(--sub);
+  }
+
+  section { margin: 3.4rem 0; }
+  section:first-of-type { margin-top: 3.8rem; }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.28rem;
+    font-weight: 600;
+    color: var(--sage);
+    margin: 0 0 1.3rem;
+  }
+
+  ul.plain { list-style: none; margin: 0; padding: 0; }
+  ul.plain li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--surface-line);
+    font-size: 1rem;
+  }
+  ul.plain li:last-child { border-bottom: none; }
+  ul.plain.no-rule li { border-bottom: none; padding: 0.4rem 0; }
+
+  ul.not-list li {
+    color: var(--sub);
+  }
+
+  .formats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 480px) {
+    .formats { grid-template-columns: 1fr 1fr; }
+  }
+  .format-card {
+    background: var(--surface);
+    border-top: 3px solid var(--sage);
+    padding: 1.5rem 1.4rem;
+  }
+  .format-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.08rem;
+    margin: 0 0 0.5rem;
+  }
+  .format-card p {
+    margin: 0;
+    color: var(--sub);
+    font-size: 0.94rem;
+  }
+  .format-card .tag {
+    display: inline-block;
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    color: var(--sage);
+    border: 1px solid var(--sage);
+    border-radius: 999px;
+    padding: 0.15em 0.75em;
+    margin-bottom: 0.7rem;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.4rem;
+    font-size: 0.92rem;
+    color: var(--sub);
+  }
+  .meta-row strong { color: var(--ink); font-weight: 700; }
+
+  .meta-note {
+    margin: 0.9rem 0 0;
+    font-size: 0.88rem;
+    color: var(--sub);
+  }
+
+  footer {
+    margin-top: 4.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--surface-line);
+    font-size: 0.88rem;
+    color: var(--sub);
+  }
+  footer .name { color: var(--ink); font-weight: 700; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+
+<div class="wrap">
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="content">
+
+    <p class="eyebrow">なごみ｜快眠・自律神経ケア専門セラピスト 紫藤珠佑</p>
+
+    <h1>眠れない、疲れが取れない。<br>それ、<span class="accent">原因はひとつ</span>かもしれません。</h1>
+    <p class="lede">あなたの中の"当たり前"、<br>実はいらなかったのかも。</p>
+
+    <p class="body-text">
+      セロトニン残高チェックと、7日間の習慣配信。ここまでお付き合いいただき、ありがとうございます。
+      ここから先は、一般論ではなく、あなた自身の話をお聞きする時間です。
+      無料のオンライン相談で、あなたのストレスの正体に、一緒に気づいていきませんか。
+    </p>
+
+    <div class="cta-row">
+      <a class="cta" href="https://line.me/R/oaMessage/@078ikxqn/?%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%82%92%E5%B8%8C%E6%9C%9B%E3%81%97%E3%81%BE%E3%81%99">
+        LINEで無料相談を申し込む <span class="arrow">→</span>
+      </a>
+      <span class="cta-note">LINEアプリが開きます。「無料相談を希望します」の一文が入力された状態で送信できます。</span>
+    </div>
+
+    <section>
+      <p class="section-title">この時間ですること</p>
+      <ul class="plain">
+        <li>診断結果をもとに、あなたの"今"をお聞きします</li>
+        <li>なぜセロトニンが減っているのか、一緒に整理します</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-title">こういう時間ではありません</p>
+      <ul class="plain no-rule not-list">
+        <li>講座やプログラムのセールストークをする場ではありません</li>
+        <li>無理な勧誘や、その場での契約を求めることはありません</li>
+        <li>ただ、話を聞いてもらう。それだけでも十分です</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-title">開催形式</p>
+      <div class="formats">
+        <div class="format-card">
+          <span class="tag">おすすめ</span>
+          <h3>オンライン（Zoom）</h3>
+          <p>全国どこからでも。まずはこちらでお話しするのがおすすめです。</p>
+        </div>
+        <div class="format-card">
+          <span class="tag">亀岡市の方へ</span>
+          <h3>対面（亀岡サロン）</h3>
+          <p>直接お話ししたい方、亀岡市にお住まいの方はこちらもどうぞ。</p>
+        </div>
+      </div>
+      <div class="meta-row">
+        <span>所要時間　<strong>30分〜</strong></span>
+        <span>料金　<strong>無料</strong></span>
+      </div>
+      <p class="meta-note">あなたに合う整え方（リトリートから、セロトニンケアまで）を、ご希望があればそのまま詳しくご案内します。</p>
+    </section>
+
+    <div class="cta-row">
+      <a class="cta" href="https://line.me/R/oaMessage/@078ikxqn/?%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%82%92%E5%B8%8C%E6%9C%9B%E3%81%97%E3%81%BE%E3%81%99">
+        LINEで無料相談を申し込む <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <footer>
+      <p><span class="name">紫藤珠佑（しどう みう）</span>／快眠・自律神経ケア専門セラピスト<br>
+      施術歴28年／リトリート主宰8年／心とからだのバランス改善サロン なごみ</p>
+    </footer>
+
+  </div>
+</div>
