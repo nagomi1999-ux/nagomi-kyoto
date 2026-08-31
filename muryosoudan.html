@@ -216,6 +216,49 @@
   }
   footer .name { color: var(--ink); font-weight: 700; }
 
+  .cta-final { margin: 0 0 3.4rem; }
+  .device-box {
+    background: var(--surface);
+    border-top: 3px solid var(--sage);
+    padding: 1.6rem 1.5rem;
+    text-align: center;
+  }
+  .device-box-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 0.9rem;
+  }
+  .device-box-note {
+    font-size: 0.88rem;
+    color: var(--sub);
+    margin: 0 0 1rem;
+  }
+  .device-box .cta { margin: 0 auto; }
+  .device-box .cta-note { text-align: center; }
+  .device-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0.9rem 0;
+    font-size: 0.82rem;
+    color: var(--sub);
+  }
+  .device-divider::before,
+  .device-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--surface-line);
+  }
+  .qr-wrap {
+    display: inline-block;
+    background: #ffffff;
+    padding: 0.9rem;
+    border-radius: 8px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .cta { transition: none; }
   }
@@ -281,10 +324,20 @@
       <p class="meta-note">あなたに合う整え方（リトリートから、セロトニンケアまで）を、ご希望があればそのまま詳しくご案内します。</p>
     </section>
 
-    <div class="cta-row">
-      <a class="cta" href="https://line.me/R/oaMessage/@078ikxqn/?%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%82%92%E5%B8%8C%E6%9C%9B%E3%81%97%E3%81%BE%E3%81%99">
-        LINEで無料相談を申し込む <span class="arrow">→</span>
-      </a>
+    <div class="cta-final">
+      <div class="device-box">
+        <p class="device-box-title">スマホの方はこちら</p>
+        <a class="cta" href="https://line.me/R/oaMessage/@078ikxqn/?%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%82%92%E5%B8%8C%E6%9C%9B%E3%81%97%E3%81%BE%E3%81%99">
+          LINEで無料相談を申し込む <span class="arrow">→</span>
+        </a>
+        <span class="cta-note">LINEアプリが開きます。「無料相談を希望します」の一文が入力された状態で送信できます。</span>
+      </div>
+      <div class="device-divider"><span>または</span></div>
+      <div class="device-box">
+        <p class="device-box-title">PCの方はこちら</p>
+        <p class="device-box-note">スマホのカメラで、QRコードを読み取ってください</p>
+        <div class="qr-wrap"><div id="qr-code"></div></div>
+      </div>
     </div>
 
     <footer>
@@ -294,3 +347,19 @@
 
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  (function () {
+    var qrContainer = document.getElementById('qr-code');
+    if (!qrContainer || typeof QRCode === 'undefined') return;
+    var url = 'https://line.me/R/oaMessage/@078ikxqn/?%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%82%92%E5%B8%8C%E6%9C%9B%E3%81%97%E3%81%BE%E3%81%99';
+    new QRCode(qrContainer, {
+      text: url,
+      width: 150,
+      height: 150,
+      colorDark: '#302e27',
+      colorLight: '#ffffff',
+    });
+  })();
+</script>
