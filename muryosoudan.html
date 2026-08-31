@@ -6,13 +6,13 @@
 <title>セロトニン残高相談</title>
 <style>
   :root {
-    --bg: #eeeee2;
-    --surface: #e2e2d0;
-    --surface-line: #cfcfba;
-    --ink: #302e27;
-    --sub: #454236;
-    --sage: #5f6f54;
-    --sage-soft: #74836a;
+    --bg: #f5f8f1;
+    --surface: #e2ead9;
+    --surface-line: #cfdbc5;
+    --ink: #26301f;
+    --sub: #3d4a35;
+    --sage: #4c7442;
+    --sage-soft: #8fb37f;
     --plum: #a15c74;
     --plum-ink: #ffffff;
     --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
@@ -20,25 +20,25 @@
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #22241e;
-      --surface: #2b2d25;
-      --surface-line: #404236;
-      --ink: #ece8dc;
-      --sub: #c9c6b4;
-      --sage: #9cb38c;
-      --sage-soft: #86a077;
+      --bg: #1b2118;
+      --surface: #232b1e;
+      --surface-line: #3a4632;
+      --ink: #eaf0e4;
+      --sub: #c3d0b8;
+      --sage: #9cc78c;
+      --sage-soft: #b7d9a9;
       --plum: #d68ca0;
       --plum-ink: #241417;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #22241e;
-    --surface: #2b2d25;
-    --surface-line: #404236;
-    --ink: #ece8dc;
-    --sub: #aba894;
-    --sage: #9cb38c;
-    --sage-soft: #86a077;
+    --bg: #1b2118;
+    --surface: #232b1e;
+    --surface-line: #3a4632;
+    --ink: #eaf0e4;
+    --sub: #c3d0b8;
+    --sage: #9cc78c;
+    --sage-soft: #b7d9a9;
     --plum: #d68ca0;
     --plum-ink: #241417;
   }
@@ -69,10 +69,33 @@
     max-width: 140vw;
     pointer-events: none;
     z-index: 0;
+  }
+  .ambient-glow {
+    position: absolute;
+    inset: 0;
     background:
-      radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--sage-soft) 34%, transparent), transparent 60%),
-      radial-gradient(circle at 68% 46%, color-mix(in srgb, var(--plum) 22%, transparent), transparent 55%);
+      radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--sage-soft) 16%, transparent), transparent 60%),
+      radial-gradient(circle at 68% 46%, color-mix(in srgb, var(--plum) 10%, transparent), transparent 55%);
     filter: blur(6px);
+  }
+  .wrap::before,
+  .wrap::after {
+    content: "🌸";
+    position: absolute;
+    font-size: 2.4rem;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wrap::before {
+    top: 1.2rem;
+    left: 0.4rem;
+    transform: rotate(-14deg);
+  }
+  .wrap::after {
+    top: 2.6rem;
+    right: 0.4rem;
+    transform: rotate(12deg);
   }
 
   .content { position: relative; z-index: 1; text-align: center; }
@@ -274,7 +297,7 @@
 <body>
 
 <div class="wrap">
-  <div class="ambient" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true"><div class="ambient-glow"></div></div>
   <div class="content">
 
     <p class="eyebrow">なごみ｜快眠・自律神経ケア専門セラピスト 紫藤珠佑</p>
