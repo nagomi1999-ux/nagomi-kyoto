@@ -38,12 +38,12 @@
   --gold:       #C4956A;
   --text:       #3D2B2B;
   --text-mid:   #6B4A4A;
-  --text-light: #A88888;
+  --text-light: #7A5858;
   --sage:       #8FAE8B;
   --radius:     18px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+html,body{overflow-x:hidden;min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
 .page{display:flex;flex-direction:column;align-items:center;padding:0 0 60px}
 
 .header{width:100%;background:linear-gradient(135deg,#FDE8EE 0%,#FFF0F5 50%,#FDE8EE 100%);padding:32px 24px 28px;text-align:center;position:relative;overflow:hidden}
@@ -85,7 +85,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 .btn{flex:1;padding:15px;border:none;border-radius:var(--radius);font-family:'Noto Sans JP',sans-serif;font-size:17px;font-weight:500;cursor:pointer;transition:all 0.2s;-webkit-tap-highlight-color:transparent}
 .btn-primary{background:linear-gradient(135deg,var(--pink),var(--rose));color:white;box-shadow:0 4px 16px rgba(242,167,184,0.4)}
 .btn-primary:hover{box-shadow:0 6px 20px rgba(242,167,184,0.5);transform:translateY(-1px)}
-.btn-secondary{background:white;color:var(--text-mid);border:1.5px solid var(--pink-mid);flex:0 0 auto;width:76px}
+.btn-secondary{background:white;color:var(--text-mid);border:1.5px solid var(--pink-mid);flex:0 0 auto;width:96px;white-space:nowrap}
 .err-msg{font-size:14px;color:#C0392B;margin-top:8px;display:none}
 
 .result-header{background:linear-gradient(135deg,#FDE8EE,#FFF0F5);border-radius:20px;padding:28px 20px;text-align:center;margin-bottom:20px}
@@ -176,7 +176,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
   <!-- Q1〜Q10 -->
   <div class="step" id="step-1">
     <div class="q-label">Q 1 / 10</div>
-    <div class="q-title">朝起きても、疲れが<br>残っていることが多い</div>
+    <div class="q-title">朝起きたとき、<br>スッキリしない</div>
     <div class="options" id="opt-1">
       <div class="option" onclick="selectAnswer(this,1,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,1,'たまにある')">たまにある</div>
@@ -191,7 +191,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <div class="step" id="step-2">
     <div class="q-label">Q 2 / 10</div>
-    <div class="q-title">理由もなく、不安になる<br>ことがある</div>
+    <div class="q-title">鏡を見て、たるみやほうれい線など<br>お顔の老化が気になる</div>
     <div class="options" id="opt-2">
       <div class="option" onclick="selectAnswer(this,2,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,2,'たまにある')">たまにある</div>
@@ -206,7 +206,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <div class="step" id="step-3">
     <div class="q-label">Q 3 / 10</div>
-    <div class="q-title">眠りが浅い、または<br>夜中に目が覚める</div>
+    <div class="q-title">まぶたが重い、<br>目が開きにくくなってきた</div>
     <div class="options" id="opt-3">
       <div class="option" onclick="selectAnswer(this,3,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,3,'たまにある')">たまにある</div>
@@ -221,7 +221,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <div class="step" id="step-4">
     <div class="q-label">Q 4 / 10</div>
-    <div class="q-title">イライラすることが<br>増えた気がする</div>
+    <div class="q-title">肩や首のこり、<br>頭痛がある</div>
     <div class="options" id="opt-4">
       <div class="option" onclick="selectAnswer(this,4,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,4,'たまにある')">たまにある</div>
@@ -236,7 +236,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <div class="step" id="step-5">
     <div class="q-label">Q 5 / 10</div>
-    <div class="q-title">頑張っているのに<br>報われない気がする</div>
+    <div class="q-title">腰や股関節、<br>ひざに痛みがある</div>
     <div class="options" id="opt-5">
       <div class="option" onclick="selectAnswer(this,5,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,5,'たまにある')">たまにある</div>
@@ -251,7 +251,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <div class="step" id="step-6">
     <div class="q-label">Q 6 / 10</div>
-    <div class="q-title">自分を後回しにして<br>しまうことが多い</div>
+    <div class="q-title">眠りが浅い、または<br>夜中に目が覚める</div>
     <div class="options" id="opt-6">
       <div class="option" onclick="selectAnswer(this,6,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,6,'たまにある')">たまにある</div>
@@ -266,7 +266,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <div class="step" id="step-7">
     <div class="q-label">Q 7 / 10</div>
-    <div class="q-title">最近、ワクワクしたり<br>感動することが少ない</div>
+    <div class="q-title">イライラすることが<br>増えた気がする</div>
     <div class="options" id="opt-7">
       <div class="option" onclick="selectAnswer(this,7,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,7,'たまにある')">たまにある</div>
@@ -281,7 +281,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <div class="step" id="step-8">
     <div class="q-label">Q 8 / 10</div>
-    <div class="q-title">肩こりや頭痛など<br>体の不調が続いている</div>
+    <div class="q-title">自分のことは<br>後回しにしてしまう</div>
     <div class="options" id="opt-8">
       <div class="option" onclick="selectAnswer(this,8,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,8,'たまにある')">たまにある</div>
@@ -296,7 +296,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <div class="step" id="step-9">
     <div class="q-label">Q 9 / 10</div>
-    <div class="q-title">このままでいいのかな、と<br>ふと思うことがある</div>
+    <div class="q-title">最近、ワクワクしたり<br>感動することが少ない</div>
     <div class="options" id="opt-9">
       <div class="option" onclick="selectAnswer(this,9,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,9,'たまにある')">たまにある</div>
@@ -311,7 +311,7 @@ html,body{min-height:100vh;background:var(--cream);font-family:'Noto Sans JP',sa
 
   <div class="step" id="step-10">
     <div class="q-label">Q 10 / 10</div>
-    <div class="q-title">人生を少し変えたい、<br>もっと楽になりたいと思う</div>
+    <div class="q-title">もうちょっと元気になれたら<br>いいな、と思う</div>
     <div class="options" id="opt-10">
       <div class="option" onclick="selectAnswer(this,10,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,10,'たまにある')">たまにある</div>
@@ -439,15 +439,15 @@ function calcScore() {
 
 const results = [
   {
-    min:0, max:6,
+    min:0, max:4,
     type:'A',
     icon:'🌷',
-    meter:'●●●●●',
-    title:'セロトニン残高：たっぷり\nしっかり分泌できています',
-    body:'今は心と体のバランスが保たれているようです。\nただ、セロトニンの分泌量は年齢とともに自然に減っていくと言われています。\n\n今は何かを足す必要はありません。月に一度、残高を確かめてみてください。'
+    meter:'●●●●○',
+    title:'セロトニン残高：今は十分\nからだのサインは見逃しがち',
+    body:'今は、心のバランスは\n保てているようです。\n\nただ、気持ちより先に、\nお顔やからだの変化として\n気づくことも多いもの。\n\nまぶたの重さ、背中のこわばり、\nなんとなく元気が出ない感じ——\n自分では気づきにくいところから\n始まります。\n\n「もうちょっと元気に」と思ったら、\nそれが見直しどきです。'
   },
   {
-    min:7, max:12,
+    min:5, max:11,
     type:'B',
     icon:'🌸',
     meter:'●●●○○',
@@ -455,7 +455,7 @@ const results = [
     body:'頑張っているのに、なんとなく満たされない。\nそれは性格のせいでも、年齢のせいでもありません。\n\nセロトニンの分泌が\n少し落ちているサインかもしれません。'
   },
   {
-    min:13, max:20,
+    min:12, max:20,
     type:'C',
     icon:'💐',
     meter:'●○○○○',
