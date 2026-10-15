@@ -144,8 +144,8 @@ html,body{overflow-x:hidden;min-height:100vh;background:var(--cream);font-family
 <div class="page">
 
 <div class="header">
-  <div class="header-title">何か楽しいことないかな〜🤍<br>幸せを感じる出来事ないかな〜🤍</div>
-  <div class="header-sub">そう思っているあなたへ</div>
+  <div class="header-title">朝起きても、疲れが残っている<br>まぶたが重く、目が開きにくい<br>顔のたるみが気になる</div>
+  <div class="header-sub">そんな変化を感じていませんか？</div>
   <span class="header-badge">セロトニン残高チェック｜無料・約2分</span>
 </div>
 
@@ -160,13 +160,13 @@ html,body{overflow-x:hidden;min-height:100vh;background:var(--cream);font-family
   <div class="step active" id="step-0">
     <div class="welcome-flower">💐</div>
     <div class="check-list">
-      <div class="check-item">特別不幸じゃないのに満たされない</div>
-      <div class="check-item">人の幸せが少し羨ましい</div>
-      <div class="check-item">人には言えない寂しさがある</div>
-      <div class="check-item">何かを変えたいけど何を変えたらいいかわからない</div>
+      <div class="check-item">休んだはずなのに、疲れがなかなか取れない</div>
+      <div class="check-item">眠りが浅く、ぐっすり眠れた感じがしない</div>
+      <div class="check-item">肩や首のこり、頭痛が気になる</div>
+      <div class="check-item">目元や顔の変化が気になってきた</div>
     </div>
     <div class="welcome-body" style="margin-top:16px">
-      それ、性格のせいでも<br>年齢のせいでもないかもしれません。<br><br>
+      その疲れや目元の変化、<br>年齢だけのせいではないかもしれません。<br><br>
       <strong>セロトニン（幸せホルモン）の残高</strong>が<br>減っているサインかもしれません。
     </div>
     <div class="divider"><span class="divider-text">10問で残高をチェックしてみましょう</span></div>
@@ -266,7 +266,7 @@ html,body{overflow-x:hidden;min-height:100vh;background:var(--cream);font-family
 
   <div class="step" id="step-7">
     <div class="q-label">Q 7 / 10</div>
-    <div class="q-title">イライラすることが<br>増えた気がする</div>
+    <div class="q-title">以前より、イライラや不安を<br>感じることが増えた</div>
     <div class="options" id="opt-7">
       <div class="option" onclick="selectAnswer(this,7,'よくある')">よくある</div>
       <div class="option" onclick="selectAnswer(this,7,'たまにある')">たまにある</div>
@@ -324,28 +324,19 @@ html,body{overflow-x:hidden;min-height:100vh;background:var(--cream);font-family
     </div>
   </div>
 
-  <!-- 結果 -->
+  <!-- 診断完了：結果はLINEで確認 -->
   <div class="step" id="step-result">
     <div class="result-header">
-      <div class="result-type-badge" id="result-type-badge"></div>
-      <div class="result-type">あなたのセロトニン残高</div>
-      <div class="result-title" id="result-title"></div>
-      <div class="result-meter" id="result-meter"></div>
-      <div class="result-body" id="result-body"></div>
-    </div>
-
-    <div class="bridge-text">
-      不思議なんですが、セロトニンの残高が戻ってくると、<br>
-      幸せな出来事が舞い込んでくるようになるんです。<br>
-      セロトニンを活性化すると、何が変わるのか。<br>
-      <span style="color:var(--pink-dark);font-weight:600">試してみたいな、と思ったあなたへ。</span>
+      <div class="welcome-flower">🌸</div>
+      <div class="result-title">診断が終わりました</div>
+      <div class="result-body">診断結果は、このページには表示されません。<br>LINEを開いて、入力済みのメッセージを送信すると、あなたのタイプ別の結果が届きます。</div>
     </div>
 
     <div class="line-cta-box">
       <div class="line-cta-badge">🎁 2つの無料プレゼント</div>
       <div class="line-cta-text">
         下のボタンを押すとLINEが開きます。<br>
-        すでに入力されている<span class="send-msg">「残高Aでした」</span>を<br>
+        LINEを開くと、診断結果を知らせるメッセージが入力されています。<br>
         そのまま送信していただくと、
       </div>
       <div class="line-gift-box">
@@ -372,7 +363,8 @@ html,body{overflow-x:hidden;min-height:100vh;background:var(--cream);font-family
       <div class="addon-text">今の状況を誰かに話してみたい、<br>本当に変われるのか聞いてみたい——<br>そんな方には、30分の無料カウンセリングもご利用いただけます<br>（LINE登録後にご案内します）</div>
     </div>
 
-    <div class="result-note" style="margin-top:16px">※ メッセージを送信いただいた方に、残高タイプ別の詳しい解説をお届けします</div>
+    <div class="result-note" style="margin-top:16px">※ LINEでメッセージを送信すると、残高タイプ別の詳しい解説を確認できます</div>
+    <div style="text-align:center;margin-top:12px;font-size:14px"><a href="https://lin.ee/zJeMCHUg" target="_blank" rel="noopener" style="color:#057a30">LINEの友だち追加はこちら</a></div>
 
     <div class="footer">
       脳活性エステ なごみ<br>
@@ -475,11 +467,6 @@ function showResult() {
   const r = results.find(x => score >= x.min && score <= x.max) || results[2];
   currentResultType = r.type;
 
-  document.getElementById('result-type-badge').textContent = r.type;
-  document.getElementById('result-title').textContent = r.icon + '\n' + r.title;
-  document.getElementById('result-meter').textContent = r.meter;
-  document.getElementById('result-body').textContent = r.body;
-
   updateSendMsg(r.type);
   renderQrForType(r.type);
   showStep('result');
@@ -520,11 +507,6 @@ function renderQrForType(type) {
     const r = results.find(x => x.type === t.toUpperCase());
     if (r) {
       currentResultType = r.type;
-      document.getElementById('result-type-badge').textContent = r.type;
-      document.getElementById('result-title').textContent = r.icon + '\n' + r.title;
-      document.getElementById('result-meter').textContent = r.meter;
-      document.getElementById('result-body').textContent = r.body;
-
       updateSendMsg(r.type);
       renderQrForType(r.type);
 
